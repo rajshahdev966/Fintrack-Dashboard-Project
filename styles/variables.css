@@ -1,0 +1,140 @@
+/* ==========================================
+   LIGHT THEME (DEFAULT)
+============================================= */
+
+:root {
+
+    /* ---------- Backgrounds ---------- */
+
+    --bg-primary: #F8FAFC;
+    --bg-secondary: #FFFFFF;
+    --bg-tertiary: #F1F5F9;
+
+    /* ---------- Surface Layers ---------- */
+
+    --surface: #FFFFFF;
+    --surface-dim: #F8FAFC;
+    --surface-bright: #FFFFFF;
+
+    --surface-lowest: #FFFFFF;
+    --surface-low: #F8FAFC;
+    --surface-container: #EEF2F7;
+    --surface-high: #E2E8F0;
+    --surface-highest: #CBD5E1;
+
+    /* ---------- Typography ---------- */
+
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --text-muted: #64748B;
+
+    /* ---------- Brand ---------- */
+
+    --primary: #0EA5E9;
+    --primary-hover: #0284C7;
+    --primary-container: #E0F2FE;
+
+    --secondary: #14B8A6;
+    --secondary-container: #CCFBF1;
+
+    --tertiary: #F59E0B;
+    --tertiary-container: #FEF3C7;
+
+    /* ---------- Semantic ---------- */
+
+    --success: #10B981;
+    --danger: #EF4444;
+    --warning: #F59E0B;
+
+    /* ---------- Borders ---------- */
+
+    --border: #CBD5E1;
+    --border-light: #E2E8F0;
+
+    /* ---------- Inputs ---------- */
+
+    --input-bg: #FFFFFF;
+    --input-border: #CBD5E1;
+    --input-focus: #0EA5E9;
+
+    /* ---------- Shadows ---------- */
+
+    --shadow-sm: 0 1px 2px rgba(15,23,42,.05);
+    --shadow-md: 0 6px 12px rgba(15,23,42,.08);
+    --shadow-lg: 0 20px 25px rgba(15,23,42,.12);
+
+    /* ---------- Charts ---------- */
+
+    --chart-income: #10B981;
+    --chart-expense: #EF4444;
+    --chart-primary: #0EA5E9;
+    --chart-secondary: #14B8A6;
+
+    /* ---------- Radius ---------- */
+
+    --radius-sm: .25rem;
+    --radius: .5rem;
+    --radius-md: .75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-full: 9999px;
+}
+/* ==========================================
+   DARK THEME
+============================================= */
+
+.dark {
+
+    /* ---------- Backgrounds ---------- */
+
+    --bg-primary: #031427;
+    --bg-secondary: #0B1C30;
+    --bg-tertiary: #102034;
+
+    /* ---------- Surface Layers ---------- */
+
+    --surface: #031427;
+    --surface-dim: #031427;
+    --surface-bright: #2A3A4F;
+
+    --surface-lowest: #000F21;
+    --surface-low: #0B1C30;
+    --surface-container: #102034;
+    --surface-high: #1B2B3F;
+    --surface-highest: #26364A;
+
+    /* ---------- Typography ---------- */
+
+    --text-primary: #D3E4FE;
+    --text-secondary: #BEC8D2;
+    --text-muted: #88929B;
+
+    /* ---------- Brand ---------- */
+
+    --primary: #0EA5E9;
+    --primary-hover: #38BDF8;
+    --primary-container: #003751;
+
+    --secondary: #04B4A2;
+    --secondary-container: #003F38;
+
+    --tertiary: #DE8712;
+    --tertiary-container: #4D2B00;
+
+    /* ---------- Borders ---------- */
+
+    --border: #3E4850;
+    --border-light: #26364A;
+
+    /* ---------- Inputs ---------- */
+
+    --input-bg: #102034;
+    --input-border: #3E4850;
+    --input-focus: #89CEFF;
+
+    /* ---------- Shadows ---------- */
+
+    --shadow-sm: 0 1px 2px rgba(0,0,0,.25);
+    --shadow-md: 0 10px 20px rgba(0,0,0,.35);
+    --shadow-lg: 0 20px 35px rgba(0,0,0,.55);
+}
