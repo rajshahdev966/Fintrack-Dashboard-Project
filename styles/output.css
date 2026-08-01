@@ -377,6 +377,9 @@
   .border-\(--text-primary\) {
     border-color: var(--text-primary);
   }
+  .bg-\(--danger\) {
+    background-color: var(--danger);
+  }
   .bg-\(--in\) {
     background-color: var(--in);
   }
@@ -574,6 +577,12 @@
   }
   .text-\(--chart\) {
     color: var(--chart);
+  }
+  .text-\(--chart-expen\) {
+    color: var(--chart-expen);
+  }
+  .text-\(--chart-expense\) {
+    color: var(--chart-expense);
   }
   .text-\(--chart-income\) {
     color: var(--chart-income);
