@@ -431,6 +431,21 @@
     outline-width: 1px;
   }
   @media (hover: hover) {
+    .hover\:bg-\(--bg\):hover {
+      background-color: var(--bg);
+    }
+    .hover\:bg-\(--bg-teritare\):hover {
+      background-color: var(--bg-teritare);
+    }
+    .hover\:bg-\(--bg-teritary\):hover {
+      background-color: var(--bg-teritary);
+    }
+    .hover\:bg-\(--bg-tertary\):hover {
+      background-color: var(--bg-tertary);
+    }
+    .hover\:bg-\(--bg-tertiary\):hover {
+      background-color: var(--bg-tertiary);
+    }
     .hover\:bg-\(--primary\):hover {
       background-color: var(--primary);
     }
