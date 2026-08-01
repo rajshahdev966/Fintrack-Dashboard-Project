@@ -478,7 +478,7 @@
     }
   }
 }
-.dark {
+:root {
   --bg-primary: #F8FAFC;
   --bg-secondary: #FFFFFF;
   --bg-tertiary: #F1F5F9;
@@ -540,7 +540,7 @@
   --leading-normal: 1.5;
   --leading-loose: 1.75;
 }
-:root {
+.dark {
   --bg-primary: #031427;
   --bg-secondary: #0d1f35;
   --bg-tertiary: #15273d;
