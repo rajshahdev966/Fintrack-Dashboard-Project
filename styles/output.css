@@ -318,6 +318,21 @@
     --tw-border-style: dashed;
     border-style: dashed;
   }
+  .border-\(--text-\) {
+    border-color: var(--text-);
+  }
+  .border-\(--text-prima\) {
+    border-color: var(--text-prima);
+  }
+  .border-\(--text-primary\) {
+    border-color: var(--text-primary);
+  }
+  .border-\(--text-se\) {
+    border-color: var(--text-se);
+  }
+  .border-\(--text-secondary\) {
+    border-color: var(--text-secondary);
+  }
   .border-sky-300 {
     border-color: var(--color-sky-300);
   }
