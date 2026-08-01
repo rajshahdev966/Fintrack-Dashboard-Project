@@ -786,6 +786,9 @@
   .text-\(--text-lg\) {
     color: var(--text-lg);
   }
+  .text-\(--text-muted\) {
+    color: var(--text-muted);
+  }
   .text-\(--text-secondary\) {
     color: var(--text-secondary);
   }
