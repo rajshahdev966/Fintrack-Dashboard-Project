@@ -71,13 +71,17 @@
     --chart-secondary: #14B8A6;
 
     /* ---------- Radius ---------- */
-
+    
     --radius-sm: .25rem;
     --radius: .5rem;
     --radius-md: .75rem;
     --radius-lg: 1rem;
     --radius-xl: 1.5rem;
     --radius-full: 9999px;
+    
+    /* ---------- Fonts ---------- */
+    --font-primary: "Inter", sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
 }
 /* ==========================================
    DARK THEME
