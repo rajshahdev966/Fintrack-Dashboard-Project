@@ -434,6 +434,12 @@
     .hover\:bg-\(--primary\):hover {
       background-color: var(--primary);
     }
+    .hover\:bg-\(--shadow\):hover {
+      background-color: var(--shadow);
+    }
+    .hover\:bg-\(--shadow-md\):hover {
+      background-color: var(--shadow-md);
+    }
     .hover\:bg-\(--sur\):hover {
       background-color: var(--sur);
     }
