@@ -515,11 +515,17 @@
   .text-\(length\:--text-2xl\) {
     font-size: var(--text-2xl);
   }
+  .text-\(length\:--text-3xl\) {
+    font-size: var(--text-3xl);
+  }
   .text-\(length\:--text-5xl\) {
     font-size: var(--text-5xl);
   }
   .text-\(length\:--text-base\) {
     font-size: var(--text-base);
+  }
+  .text-\(length\:--text-lg\) {
+    font-size: var(--text-lg);
   }
   .text-\(length\:--text-sm\) {
     font-size: var(--text-sm);
@@ -572,6 +578,9 @@
   .text-\(--chart-income\) {
     color: var(--chart-income);
   }
+  .text-\(--lg\) {
+    color: var(--lg);
+  }
   .text-\(--primary\) {
     color: var(--primary);
   }
@@ -581,8 +590,14 @@
   .text-\(--success\) {
     color: var(--success);
   }
+  .text-\(--text\) {
+    color: var(--text);
+  }
   .text-\(--text-5xl\) {
     color: var(--text-5xl);
+  }
+  .text-\(--text-lg\) {
+    color: var(--text-lg);
   }
   .text-\(--text-sm\) {
     color: var(--text-sm);
