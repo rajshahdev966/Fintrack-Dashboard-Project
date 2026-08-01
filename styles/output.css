@@ -735,6 +735,12 @@
   .text-\(--chart-income\) {
     color: var(--chart-income);
   }
+  .text-\(--inputs\) {
+    color: var(--inputs);
+  }
+  .text-\(--inputs-bg\) {
+    color: var(--inputs-bg);
+  }
   .text-\(--lg\) {
     color: var(--lg);
   }
