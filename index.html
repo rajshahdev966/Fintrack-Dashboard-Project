@@ -52,194 +52,294 @@
         </div>
       </div>
     </nav>
-    <div>
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 p-20">
+    
+    <div class="w-full rounded-3xl border border-slate-200 bg-white shadow-sm overflow-hidden">
 
-        <!-- LEFT SIDE -->
-        <div class="lg:col-span-2 space-y-6">
+    <!-- Header -->
+    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 p-8 border-b">
 
-            <!-- TOP CARDS -->
-            <div class="grid md:grid-cols-3 gap-6">
+        <div>
+            <h2 class="text-3xl font-bold text-slate-800">
+                Transactions
+            </h2>
 
-                <!-- Net Worth -->
-                <div class="md:col-span-2 rounded-3xl bg-(--primary) text-white p-8 flex flex-col justify-between">
+            <p class="mt-2 text-slate-500">
+                Manage and track all your fiscal movements
+            </p>
+        </div>
 
-                    <div class="flex flex-col gap-3">
-                        <p class="text-sm">
-                            TOTAL NET WORTH
-                        </p>
+        <div class="flex gap-4">
 
-                        <h1 class="text-5xl font-bold">
-                            $124,592.00
-                        </h1>
+            <div class="rounded-xl border border-slate-200 px-6 py-3 bg-slate-50">
+                <p class="text-[11px] uppercase tracking-widest text-slate-500 font-semibold">
+                    Total Items
+                </p>
 
-                        <span class="items-center bg-[#3EB7ED] px-4 py-2 rounded-full text-sm w-min">
-                            ↗ +12.4% this month
-                        </span>
-                    </div>
-
-                    <div class="flex gap-4 mt-8">
-
-                        <button
-                            class="bg-white text-(--primary) font-semibold px-6 py-4 rounded-2xl cursor-pointer">
-                            <i class="ri-add-large-line"></i> Quick Add
-                        </button>
-
-                        <button
-                            class="border border-sky-300 text-(--inputs-bg) px-6 py-4 rounded-2xl cursor-pointer">
-                            <i class="ri-send-ins-line"></i> Transfer
-                        </button>
-
-                    </div>
-
-                </div>
-
-                <!-- Right Stats -->
-                <div class="space-y-6">
-
-                    <div
-                        class="bg-(--bg-secondary) rounded-3xl shadow p-6 flex items-center gap-5">
-
-                        <div
-                            class="h-14 w-14 rounded-2xl bg-emerald-100 flex items-center justify-center text-2xl">
-                            ↑
-                        </div>
-
-                        <div>
-                            <p class="text-xs uppercase font-semibold text-(--text-secondary)">
-                                Monthly Income
-                            </p>
-
-                            <h3 class="text-3xl font-bold text-(--secondary)">
-                                $14,200.00
-                            </h3>
-                        </div>
-
-                    </div>
-
-                    <div
-                        class="bg-(--bg-secondary) rounded-3xl shadow p-6 flex items-center gap-5">
-
-                        <div
-                            class="h-14 w-14 rounded-2xl bg-red-100 flex items-center justify-center text-2xl">
-                            ↓
-                        </div>
-
-                        <div>
-                            <p class="text-xs uppercase font-semibold text-(--text-secondary)">
-                                Monthly Expenses
-                            </p>
-
-                            <h3 class="text-3xl font-bold text-(--danger)">
-                                $6,840.00
-                            </h3>
-                        </div>
-
-                    </div>
-
-                </div>
-
+                <p class="text-2xl font-bold text-sky-500">
+                    1,248
+                </p>
             </div>
 
-            <!-- Cash Flow -->
-            <div class="bg-(--bg-secondary) rounded-3xl shadow p-8 flex flex-col gap-5">
-
-                <div class="flex justify-between items-center">
-
-                    <h2 class="text-3xl font-bold text-(--text-primary)">
-                        Cash Flow Trends
-                    </h2>
-
-                    <div class="flex bg-slate-100 rounded-xl p-1 gap-1">
-
-                        <button class="bg-white px-4 py-2 rounded-lg text-(--primary-hover) cursor-pointer">
-                            1M
-                        </button>
-
-                        <button class="px-4 py-2 cursor-pointer">
-                            6M
-                        </button>
-
-                        <button class="px-4 py-2 cursor-pointer">
-                            1Y
-                        </button>
-
-                    </div>
-
-                </div>
-
-                <!-- Placeholder Chart -->
-                <div
-                    class="h-80 rounded-2xl border-2 border-dashed border-slate-300 flex items-center justify-center text-slate-400">
-                    Chart goes here
-                </div>
-
-            </div>
+            <button
+                class="rounded-xl bg-sky-500 hover:bg-sky-600 transition px-8 py-4 font-semibold text-white flex items-center gap-3">
+                +
+                <span>Add New</span>
+            </button>
 
         </div>
 
-        <!-- RIGHT PANEL -->
-        <div class="bg-(--bg-secondary) rounded-3xl shadow p-6 flex flex-col gap-4 w-full">
+    </div>
 
-            <div class="flex justify-between items-center">
+    <!-- Filters -->
+    <div class="flex flex-col lg:flex-row justify-between gap-5 p-6">
 
-                <h2 class="text-3xl font-bold text-(--text-primary)">
-                    Recent
-                </h2>
+        <div class="flex rounded-xl bg-slate-100 p-1">
 
-                <button class="text-(--primary-hover) font-semibold cursor-pointer">
-                    VIEW ALL
+            <button class="rounded-lg bg-sky-500 px-6 py-2 text-white font-semibold">
+                All
+            </button>
+
+            <button class="px-6 py-2 text-slate-600">
+                Income
+            </button>
+
+            <button class="px-6 py-2 text-slate-600">
+                Expense
+            </button>
+
+        </div>
+
+        <div class="flex gap-3">
+
+            <button
+                class="rounded-xl border border-slate-200 px-5 py-2 text-slate-600">
+                Last 30 Days ▼
+            </button>
+
+            <button
+                class="rounded-xl border border-slate-200 px-4 py-2">
+                ☰
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Table -->
+    <div class="px-6 pb-6">
+
+        <div class="overflow-x-auto rounded-2xl border border-slate-200">
+
+            <table class="w-full">
+
+                <!-- Table Head -->
+                <thead class="bg-slate-50">
+
+                    <tr class="text-left text-xs uppercase tracking-wide text-slate-500">
+
+                        <th class="px-6 py-5">Date</th>
+                        <th class="px-6 py-5">Category</th>
+                        <th class="px-6 py-5">Description</th>
+                        <th class="px-6 py-5 text-right">Amount</th>
+                        <th class="px-6 py-5 text-center">Actions</th>
+
+                    </tr>
+
+                </thead>
+
+                <!-- Body -->
+                <tbody class="divide-y divide-slate-100">
+
+                    <!-- Row -->
+                    <tr class="hover:bg-slate-50 transition">
+
+                        <td class="px-6 py-6 font-medium">
+                            Oct 24, 2023
+                        </td>
+
+                        <td class="px-6 py-6">
+
+                            <span
+                                class="rounded-full bg-yellow-100 text-yellow-700 px-3 py-1 text-xs font-semibold">
+                                🛍 Shopping
+                            </span>
+
+                        </td>
+
+                        <td class="px-6 py-6 text-slate-600">
+                            Amazon Premium Web Services Monthly Sub
+                        </td>
+
+                        <td class="px-6 py-6 text-right font-bold text-red-500">
+                            -$142.00
+                        </td>
+
+                        <td class="px-6 py-6 text-center">
+                            ⋮
+                        </td>
+
+                    </tr>
+
+                    <tr class="hover:bg-slate-50">
+
+                        <td class="px-6 py-6 font-medium">
+                            Oct 23, 2023
+                        </td>
+
+                        <td class="px-6 py-6">
+
+                            <span
+                                class="rounded-full bg-sky-100 text-sky-700 px-3 py-1 text-xs font-semibold">
+                                💼 Salary
+                            </span>
+
+                        </td>
+
+                        <td class="px-6 py-6 text-slate-600">
+                            Q3 Performance Bonus Distribution
+                        </td>
+
+                        <td class="px-6 py-6 text-right font-bold text-emerald-600">
+                            +$4,250.00
+                        </td>
+
+                        <td class="text-center">
+                            ⋮
+                        </td>
+
+                    </tr>
+
+                    <tr class="hover:bg-slate-50">
+
+                        <td class="px-6 py-6 font-medium">
+                            Oct 22, 2023
+                        </td>
+
+                        <td class="px-6 py-6">
+
+                            <span
+                                class="rounded-full bg-red-100 text-red-600 px-3 py-1 text-xs font-semibold">
+                                🍴 Dining
+                            </span>
+
+                        </td>
+
+                        <td class="px-6 py-6 text-slate-600">
+                            Blue Door Coffee & Kitchen
+                        </td>
+
+                        <td class="px-6 py-6 text-right font-bold text-red-500">
+                            -$24.50
+                        </td>
+
+                        <td class="text-center">
+                            ⋮
+                        </td>
+
+                    </tr>
+
+                    <tr class="hover:bg-slate-50">
+
+                        <td class="px-6 py-6 font-medium">
+                            Oct 21, 2023
+                        </td>
+
+                        <td class="px-6 py-6">
+
+                            <span
+                                class="rounded-full bg-slate-200 text-slate-700 px-3 py-1 text-xs font-semibold">
+                                🚗 Transport
+                            </span>
+
+                        </td>
+
+                        <td class="px-6 py-6 text-slate-600">
+                            Uber Ride - Airport Express
+                        </td>
+
+                        <td class="px-6 py-6 text-right font-bold text-red-500">
+                            -$56.00
+                        </td>
+
+                        <td class="text-center">
+                            ⋮
+                        </td>
+
+                    </tr>
+
+                    <tr class="hover:bg-slate-50">
+
+                        <td class="px-6 py-6 font-medium">
+                            Oct 20, 2023
+                        </td>
+
+                        <td class="px-6 py-6">
+
+                            <span
+                                class="rounded-full bg-cyan-100 text-cyan-700 px-3 py-1 text-xs font-semibold">
+                                📈 Dividend
+                            </span>
+
+                        </td>
+
+                        <td class="px-6 py-6 text-slate-600">
+                            S&P 500 ETF Quarterly Dividend
+                        </td>
+
+                        <td class="px-6 py-6 text-right font-bold text-emerald-600">
+                            +$128.45
+                        </td>
+
+                        <td class="text-center">
+                            ⋮
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+
+            <p class="text-sm text-slate-500">
+                Showing 1–10 of 1,248
+            </p>
+
+            <div class="flex items-center gap-2">
+
+                <button class="h-9 w-9 rounded-lg border border-slate-200">
+                    ←
                 </button>
 
-            </div>
+                <button class="h-9 w-9 rounded-lg bg-sky-500 text-white">
+                    1
+                </button>
 
-            <div class="flex flex-col gap-3">
+                <button class="h-9 w-9 rounded-lg hover:bg-slate-100">
+                    2
+                </button>
 
-                <div class="flex justify-between items-center border-b pb-4 border-(--text-primary)">
-                    <div>
-                        <h3 class="font-semibold text-(--text-primary)">Apple Store</h3>
-                        <p class="text-(--text-muted) text-sm">Tech & Gear</p>
-                    </div>
-                    <span class="text-(--danger) font-bold">-$1,299</span>
-                </div>
+                <button class="h-9 w-9 rounded-lg hover:bg-slate-100">
+                    3
+                </button>
 
-                <div class="flex justify-between items-center border-b pb-4 border-(--text-primary)">
-                    <div>
-                        <h3 class="font-semibold text-(--text-primary)">Stripe Inc.</h3>
-                        <p class="text-(--text-muted) text-sm">Salary</p>
-                    </div>
-                    <span class="text-(--success) font-bold">+$8,500</span>
-                </div>
+                <span class="px-2 text-slate-400">...</span>
 
-                <div class="flex justify-between items-center border-b pb-4 border-(--text-primary)">
-                    <div>
-                        <h3 class="font-semibold text-(--text-primary)">The Blue Fox</h3>
-                        <p class="text-(--text-muted) text-sm">Dining</p>
-                    </div>
-                    <span class="text-(--danger) font-bold">-$86.50</span>
-                </div>
-
-                <div class="flex justify-between items-center border-b pb-4 border-(--text-primary)">
-                    <div>
-                        <h3 class="font-semibold text-(--text-primary)">Green Energy</h3>
-                        <p class="text-(--text-muted) text-sm">Utilities</p>
-                    </div>
-                    <span class="text-(--danger) font-bold">-$210</span>
-                </div>
-
-                <div class="flex justify-between items-center border-b border-(--text-primary) pb-4">
-                    <div>
-                        <h3 class="font-semibold text-(--text-primary)">Airbnb Refund</h3>
-                        <p class="text-(--text-muted) text-sm">Travel</p>
-                    </div>
-                    <span class="text-(--success) font-bold">+$425</span>
-                </div>
+                <button class="h-9 w-9 rounded-lg border border-slate-200">
+                    →
+                </button>
 
             </div>
 
         </div>
 
     </div>
+
 </div>
+
   </body>
 </html>
