@@ -536,6 +536,18 @@
   .text-\[1rem\] {
     font-size: 1rem;
   }
+  .font-\[var\(--font-\)\] {
+    --tw-font-weight: var(--font-);
+    font-weight: var(--font-);
+  }
+  .font-\[var\(--font-mon\)\] {
+    --tw-font-weight: var(--font-mon);
+    font-weight: var(--font-mon);
+  }
+  .font-\[var\(--font-mono\)\] {
+    --tw-font-weight: var(--font-mono);
+    font-weight: var(--font-mono);
+  }
   .font-\[var\(--font-primary\)\] {
     --tw-font-weight: var(--font-primary);
     font-weight: var(--font-primary);
