@@ -475,6 +475,9 @@
   .bg-\(--inpu\) {
     background-color: var(--inpu);
   }
+  .bg-\(--input-bg\) {
+    background-color: var(--input-bg);
+  }
   .bg-\(--input-focus\) {
     background-color: var(--input-focus);
   }
