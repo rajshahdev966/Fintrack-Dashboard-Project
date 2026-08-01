@@ -747,6 +747,9 @@
   .text-\(--chart-secondary\) {
     color: var(--chart-secondary);
   }
+  .text-\(--danger\) {
+    color: var(--danger);
+  }
   .text-\(--inputs\) {
     color: var(--inputs);
   }
@@ -758,6 +761,9 @@
   }
   .text-\(--primary\) {
     color: var(--primary);
+  }
+  .text-\(--primary-hover\) {
+    color: var(--primary-hover);
   }
   .text-\(--secondary\) {
     color: var(--secondary);
