@@ -231,8 +231,17 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
+  .bg-\[va\] {
+    background-color: va;
+  }
   .bg-\[var\(\)\] {
     background-color: var();
+  }
+  .bg-\[var\(--bg-\)\] {
+    background-color: var(--bg-);
+  }
+  .bg-\[var\(--bg-secondary\)\] {
+    background-color: var(--bg-secondary);
   }
   .bg-amber-400 {
     background-color: var(--color-amber-400);
