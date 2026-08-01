@@ -9,6 +9,7 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-amber-200: oklch(92.4% 0.12 95.746);
+    --color-white: #fff;
     --spacing: 0.25rem;
     --text-xs: 0.75rem;
     --text-sm: 0.875rem;
@@ -333,6 +334,9 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
+  .bg-\(--primary\) {
+    background-color: var(--primary);
+  }
   .bg-\[var\(--bg-primary\)\] {
     background-color: var(--bg-primary);
   }
@@ -396,6 +400,12 @@
   .text-wrap {
     text-wrap: wrap;
   }
+  .text-\(--text-5xl\) {
+    color: var(--text-5xl);
+  }
+  .text-\(--text-xl\) {
+    color: var(--text-xl);
+  }
   .text-\[1\] {
     color: 1;
   }
@@ -420,11 +430,20 @@
   .text-\[var\(--text\)\] {
     color: var(--text);
   }
+  .text-\[var\(--text-\)\] {
+    color: var(--text-);
+  }
   .text-\[var\(--text-5xl\)\] {
     color: var(--text-5xl);
   }
   .text-\[var\(--text-lg\)\] {
     color: var(--text-lg);
+  }
+  .text-\[var\(--text-xl\)\] {
+    color: var(--text-xl);
+  }
+  .text-white {
+    color: var(--color-white);
   }
   .underline {
     text-decoration-line: underline;
