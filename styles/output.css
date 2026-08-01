@@ -762,6 +762,9 @@
   .text-\(--primary\) {
     color: var(--primary);
   }
+  .text-\(--primary-hoi\) {
+    color: var(--primary-hoi);
+  }
   .text-\(--primary-hover\) {
     color: var(--primary-hover);
   }
