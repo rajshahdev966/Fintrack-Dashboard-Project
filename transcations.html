@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/output.css" />
+    <link rel="stylesheet" href="" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-[var(--bg-primary)] font-[var(--font-mono)] text-nowrap flex">
+    <nav
+      class="bg-[var(--bg-secondary)] h-screen w-min flex flex-col justify-between p-5 shadow-(--shadow-md)"
+    >
+      <div class="upper-nav flex flex-col gap-5">
+        <div class="logo-text text-(--primary) text-4xl font-semibold">
+          FinTrack Pro
+        </div>
+        <div class="nav-menu text-(length:--text-xl) flex flex-col gap-4">
+          <div class="dashboard-a flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) cursor-pointer text-(--text-primary)">
+            <i class="ri-dashboard-fill"></i> <span>Dashboard</span>
+          </div>
+          <div class="transcations-a flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) cursor-pointer text-(--text-primary)">
+            <i class="ri-cash-line"></i> <span>Transcations</span>
+          </div>
+          <div class="analytics-a flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) cursor-pointer text-(--text-primary)">
+            <i class="ri-bar-chart-2-fill"></i> <span>Analytics</span>
+          </div>
+          <div class="settings-a flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) cursor-pointer text-(--text-primary)">
+            <i class="ri-settings-2-line"></i> <span>Settings</span>
+          </div>
+        </div>
+      </div>
+      <div class="profile-section flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) cursor-pointer">
+        <div class="profile-photo">
+          <img
+            src="https://plus.unsplash.com/premium_photo-1683121366070-5ceb7e007a97?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="user profile photo" class="h-[50px] w-[50px] rounded-[50%]"
+          />
+        </div>
+        <div class="profile-name text-(--text-primary)"><span>ALEX MORGAN</span></div>
+        </div>
+      </div>
+    </nav>
+    
+    <div class="w-full rounded-3xl border border-slate-200 bg-white shadow-sm overflow-hidden">
+
+    <!-- Header -->
+    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 p-8 border-b">
+
+        <div>
+            <h2 class="text-3xl font-bold text-slate-800">
+                Transactions
+            </h2>
+
+            <p class="mt-2 text-slate-500">
+                Manage and track all your fiscal movements
+            </p>
+        </div>
+
+        <div class="flex gap-4">
+
+            <div class="rounded-xl border border-slate-200 px-6 py-3 bg-slate-50">
+                <p class="text-[11px] uppercase tracking-widest text-slate-500 font-semibold">
+                    Total Items
+                </p>
+
+                <p class="text-2xl font-bold text-sky-500">
+                    1,248
+                </p>
+            </div>
+
+            <button
+                class="rounded-xl bg-sky-500 hover:bg-sky-600 transition px-8 py-4 font-semibold text-white flex items-center gap-3">
+                +
+                <span>Add New</span>
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Filters -->
+    <div class="flex flex-col lg:flex-row justify-between gap-5 p-6">
+
+        <div class="flex rounded-xl bg-slate-100 p-1">
+
+            <button class="rounded-lg bg-sky-500 px-6 py-2 text-white font-semibold">
+                All
+            </button>
+
+            <button class="px-6 py-2 text-slate-600">
+                Income
+            </button>
+
+            <button class="px-6 py-2 text-slate-600">
+                Expense
+            </button>
+
+        </div>
+
+        <div class="flex gap-3">
+
+            <button
+                class="rounded-xl border border-slate-200 px-5 py-2 text-slate-600">
+                Last 30 Days ▼
+            </button>
+
+            <button
+                class="rounded-xl border border-slate-200 px-4 py-2">
+                ☰
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Table -->
+    <div class="px-6 pb-6">
+
+        <div class="overflow-x-auto rounded-2xl border border-slate-200">
+
+            <table class="w-full">
+
+                <!-- Table Head -->
+                <thead class="bg-slate-50">
+
+                    <tr class="text-left text-xs uppercase tracking-wide text-slate-500">
+
+                        <th class="px-6 py-5">Date</th>
+                        <th class="px-6 py-5">Category</th>
+                        <th class="px-6 py-5">Description</th>
+                        <th class="px-6 py-5 text-right">Amount</th>
+                        <th class="px-6 py-5 text-center">Actions</th>
+
+                    </tr>
+
+                </thead>
+
+                <!-- Body -->
+                <tbody class="divide-y divide-slate-100">
+
+                    <!-- Row -->
+                    <tr class="hover:bg-slate-50 transition">
+
+                        <td class="px-6 py-6 font-medium">
+                            Oct 24, 2023
+                        </td>
+
+                        <td class="px-6 py-6">
+
+                            <span
+                                class="rounded-full bg-yellow-100 text-yellow-700 px-3 py-1 text-xs font-semibold">
+                                🛍 Shopping
+                            </span>
+
+                        </td>
+
+                        <td class="px-6 py-6 text-slate-600">
+                            Amazon Premium Web Services Monthly Sub
+                        </td>
+
+                        <td class="px-6 py-6 text-right font-bold text-red-500">
+                            -$142.00
+                        </td>
+
+                        <td class="px-6 py-6 text-center">
+                            ⋮
+                        </td>
+
+                    </tr>
+
+                    <tr class="hover:bg-slate-50">
+
+                        <td class="px-6 py-6 font-medium">
+                            Oct 23, 2023
+                        </td>
+
+                        <td class="px-6 py-6">
+
+                            <span
+                                class="rounded-full bg-sky-100 text-sky-700 px-3 py-1 text-xs font-semibold">
+                                💼 Salary
+                            </span>
+
+                        </td>
+
+                        <td class="px-6 py-6 text-slate-600">
+                            Q3 Performance Bonus Distribution
+                        </td>
+
+                        <td class="px-6 py-6 text-right font-bold text-emerald-600">
+                            +$4,250.00
+                        </td>
+
+                        <td class="text-center">
+                            ⋮
+                        </td>
+
+                    </tr>
+
+                    <tr class="hover:bg-slate-50">
+
+                        <td class="px-6 py-6 font-medium">
+                            Oct 22, 2023
+                        </td>
+
+                        <td class="px-6 py-6">
+
+                            <span
+                                class="rounded-full bg-red-100 text-red-600 px-3 py-1 text-xs font-semibold">
+                                🍴 Dining
+                            </span>
+
+                        </td>
+
+                        <td class="px-6 py-6 text-slate-600">
+                            Blue Door Coffee & Kitchen
+                        </td>
+
+                        <td class="px-6 py-6 text-right font-bold text-red-500">
+                            -$24.50
+                        </td>
+
+                        <td class="text-center">
+                            ⋮
+                        </td>
+
+                    </tr>
+
+                    <tr class="hover:bg-slate-50">
+
+                        <td class="px-6 py-6 font-medium">
+                            Oct 21, 2023
+                        </td>
+
+                        <td class="px-6 py-6">
+
+                            <span
+                                class="rounded-full bg-slate-200 text-slate-700 px-3 py-1 text-xs font-semibold">
+                                🚗 Transport
+                            </span>
+
+                        </td>
+
+                        <td class="px-6 py-6 text-slate-600">
+                            Uber Ride - Airport Express
+                        </td>
+
+                        <td class="px-6 py-6 text-right font-bold text-red-500">
+                            -$56.00
+                        </td>
+
+                        <td class="text-center">
+                            ⋮
+                        </td>
+
+                    </tr>
+
+                    <tr class="hover:bg-slate-50">
+
+                        <td class="px-6 py-6 font-medium">
+                            Oct 20, 2023
+                        </td>
+
+                        <td class="px-6 py-6">
+
+                            <span
+                                class="rounded-full bg-cyan-100 text-cyan-700 px-3 py-1 text-xs font-semibold">
+                                📈 Dividend
+                            </span>
+
+                        </td>
+
+                        <td class="px-6 py-6 text-slate-600">
+                            S&P 500 ETF Quarterly Dividend
+                        </td>
+
+                        <td class="px-6 py-6 text-right font-bold text-emerald-600">
+                            +$128.45
+                        </td>
+
+                        <td class="text-center">
+                            ⋮
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+
+            <p class="text-sm text-slate-500">
+                Showing 1–10 of 1,248
+            </p>
+
+            <div class="flex items-center gap-2">
+
+                <button class="h-9 w-9 rounded-lg border border-slate-200">
+                    ←
+                </button>
+
+                <button class="h-9 w-9 rounded-lg bg-sky-500 text-white">
+                    1
+                </button>
+
+                <button class="h-9 w-9 rounded-lg hover:bg-slate-100">
+                    2
+                </button>
+
+                <button class="h-9 w-9 rounded-lg hover:bg-slate-100">
+                    3
+                </button>
+
+                <span class="px-2 text-slate-400">...</span>
+
+                <button class="h-9 w-9 rounded-lg border border-slate-200">
+                    →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+  </body>
+</html>
