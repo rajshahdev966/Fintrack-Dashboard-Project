@@ -215,6 +215,15 @@
   .h-screen {
     height: 100vh;
   }
+  .w-0 {
+    width: 0px;
+  }
+  .w-0\.5 {
+    width: calc(var(--spacing) * 0.5);
+  }
+  .w-5 {
+    width: calc(var(--spacing) * 5);
+  }
   .w-min {
     width: min-content;
   }
