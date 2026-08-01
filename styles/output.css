@@ -439,6 +439,9 @@
   .text-\(length\:--text-5xl\) {
     font-size: var(--text-5xl);
   }
+  .text-\(length\:--text-base\) {
+    font-size: var(--text-base);
+  }
   .text-\(length\:--text-sm\) {
     font-size: var(--text-sm);
   }
