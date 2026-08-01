@@ -466,6 +466,12 @@
   .border-slate-300 {
     border-color: var(--color-slate-300);
   }
+  .bg-\(--bg-seconda\) {
+    background-color: var(--bg-seconda);
+  }
+  .bg-\(--bg-secondary\) {
+    background-color: var(--bg-secondary);
+  }
   .bg-\(--danger\) {
     background-color: var(--danger);
   }
@@ -738,6 +744,9 @@
   .text-\(--chart-income\) {
     color: var(--chart-income);
   }
+  .text-\(--chart-secondary\) {
+    color: var(--chart-secondary);
+  }
   .text-\(--inputs\) {
     color: var(--inputs);
   }
@@ -759,11 +768,17 @@
   .text-\(--text\) {
     color: var(--text);
   }
+  .text-\(--text-\) {
+    color: var(--text-);
+  }
   .text-\(--text-5xl\) {
     color: var(--text-5xl);
   }
   .text-\(--text-lg\) {
     color: var(--text-lg);
+  }
+  .text-\(--text-secondary\) {
+    color: var(--text-secondary);
   }
   .text-\(--text-sm\) {
     color: var(--text-sm);
