@@ -294,6 +294,9 @@
   .rounded {
     border-radius: 0.25rem;
   }
+  .rounded-\(--ra\) {
+    border-radius: var(--ra);
+  }
   .rounded-\(--radius\) {
     border-radius: var(--radius);
   }
@@ -311,6 +314,9 @@
   }
   .rounded-\(--radius-xl\) {
     border-radius: var(--radius-xl);
+  }
+  .rounded-\(--radiuys\) {
+    border-radius: var(--radiuys);
   }
   .rounded-2xl {
     border-radius: var(--radius-2xl);
@@ -385,6 +391,12 @@
   }
   .bg-\(--primary-hover\) {
     background-color: var(--primary-hover);
+  }
+  .bg-\(--suc\) {
+    background-color: var(--suc);
+  }
+  .bg-\(--success\) {
+    background-color: var(--success);
   }
   .bg-\(--surface\) {
     background-color: var(--surface);
