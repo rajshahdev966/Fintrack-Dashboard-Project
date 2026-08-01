@@ -213,11 +213,20 @@
   .justify-between {
     justify-content: space-between;
   }
+  .justify-center {
+    justify-content: center;
+  }
   .gap-2 {
     gap: calc(var(--spacing) * 2);
   }
+  .gap-3 {
+    gap: calc(var(--spacing) * 3);
+  }
   .gap-5 {
     gap: calc(var(--spacing) * 5);
+  }
+  .gap-6 {
+    gap: calc(var(--spacing) * 6);
   }
   .border {
     border-style: var(--tw-border-style);
@@ -252,6 +261,9 @@
   .text-5xl {
     font-size: var(--text-5xl);
     line-height: var(--tw-leading, var(--text-5xl--line-height));
+  }
+  .text-\(length\:--text-2xl\) {
+    font-size: var(--text-2xl);
   }
   .text-\(length\:--text-xl\) {
     font-size: var(--text-xl);
