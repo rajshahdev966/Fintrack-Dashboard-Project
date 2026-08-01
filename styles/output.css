@@ -297,6 +297,9 @@
   .rounded-\(--radius\) {
     border-radius: var(--radius);
   }
+  .rounded-\(--radius-\) {
+    border-radius: var(--radius-);
+  }
   .rounded-\(--radius-lg\) {
     border-radius: var(--radius-lg);
   }
@@ -361,6 +364,9 @@
   .bg-\(--primary-hover\) {
     background-color: var(--primary-hover);
   }
+  .bg-\[\#3EB7ED\] {
+    background-color: #3EB7ED;
+  }
   .bg-\[var\(--bg-primary\)\] {
     background-color: var(--bg-primary);
   }
@@ -384,6 +390,18 @@
   }
   .p-5 {
     padding: calc(var(--spacing) * 5);
+  }
+  .px-1 {
+    padding-inline: var(--spacing);
+  }
+  .px-1\.5 {
+    padding-inline: calc(var(--spacing) * 1.5);
+  }
+  .py-0 {
+    padding-block: 0px;
+  }
+  .py-0\.5 {
+    padding-block: calc(var(--spacing) * 0.5);
   }
   .align-middle {
     vertical-align: middle;
@@ -445,8 +463,14 @@
   .text-\(--text-5xl\) {
     color: var(--text-5xl);
   }
+  .text-\(--text-sm\) {
+    color: var(--text-sm);
+  }
   .text-\(--text-xl\) {
     color: var(--text-xl);
+  }
+  .text-\(--text-xs\) {
+    color: var(--text-xs);
   }
   .text-\[1\] {
     color: 1;
