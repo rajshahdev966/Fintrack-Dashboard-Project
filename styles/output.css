@@ -461,11 +461,17 @@
   .pr-7 {
     padding-right: calc(var(--spacing) * 7);
   }
+  .pr-8 {
+    padding-right: calc(var(--spacing) * 8);
+  }
   .pr-10 {
     padding-right: calc(var(--spacing) * 10);
   }
   .pr-15 {
     padding-right: calc(var(--spacing) * 15);
+  }
+  .pr-\[120px\] {
+    padding-right: 120px;
   }
   .pl-5 {
     padding-left: calc(var(--spacing) * 5);
