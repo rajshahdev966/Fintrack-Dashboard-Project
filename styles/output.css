@@ -253,6 +253,9 @@
     font-size: var(--text-5xl);
     line-height: var(--tw-leading, var(--text-5xl--line-height));
   }
+  .text-\[1rem\] {
+    font-size: 1rem;
+  }
   .font-\[var\(--font-primary\)\] {
     --tw-font-weight: var(--font-primary);
     font-weight: var(--font-primary);
@@ -270,6 +273,12 @@
   }
   .text-wrap {
     text-wrap: wrap;
+  }
+  .text-\[1\] {
+    color: 1;
+  }
+  .text-\[length\] {
+    color: length;
   }
   .text-\[lenmgvar\(--text-5xl\)\] {
     color: lenmgvar(--text-5xl);
