@@ -364,6 +364,12 @@
   .bg-\(--primary-hover\) {
     background-color: var(--primary-hover);
   }
+  .bg-\(--surface\) {
+    background-color: var(--surface);
+  }
+  .bg-\(--surface-bright\) {
+    background-color: var(--surface-bright);
+  }
   .bg-\[\#3EB7ED\] {
     background-color: #3EB7ED;
   }
@@ -375,6 +381,9 @@
   }
   .bg-amber-200 {
     background-color: var(--color-amber-200);
+  }
+  .bg-transparent {
+    background-color: transparent;
   }
   .p-1 {
     padding: var(--spacing);
@@ -462,6 +471,9 @@
   }
   .text-wrap {
     text-wrap: wrap;
+  }
+  .text-\(--primary\) {
+    color: var(--primary);
   }
   .text-\(--text-5xl\) {
     color: var(--text-5xl);
