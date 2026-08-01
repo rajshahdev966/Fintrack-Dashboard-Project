@@ -655,6 +655,9 @@
   .text-\(length\:--text-3xl\) {
     font-size: var(--text-3xl);
   }
+  .text-\(length\:--text-5\) {
+    font-size: var(--text-5);
+  }
   .text-\(length\:--text-5xl\) {
     font-size: var(--text-5xl);
   }
