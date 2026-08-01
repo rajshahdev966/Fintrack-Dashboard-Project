@@ -353,6 +353,24 @@
     border-style: var(--tw-border-style);
     border-width: 2px;
   }
+  .border-\(--bg\) {
+    border-color: var(--bg);
+  }
+  .border-\(--bg-\) {
+    border-color: var(--bg-);
+  }
+  .border-\(--bg-0\) {
+    border-color: var(--bg-0);
+  }
+  .border-\(--bg-secondary\) {
+    border-color: var(--bg-secondary);
+  }
+  .border-\(--bg-tertiary\) {
+    border-color: var(--bg-tertiary);
+  }
+  .border-\(--text-primary\) {
+    border-color: var(--text-primary);
+  }
   .bg-\(--in\) {
     background-color: var(--in);
   }
