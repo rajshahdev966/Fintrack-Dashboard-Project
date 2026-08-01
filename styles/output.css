@@ -554,8 +554,20 @@
   .text-wrap {
     text-wrap: wrap;
   }
+  .text-\(--chart\) {
+    color: var(--chart);
+  }
+  .text-\(--chart-income\) {
+    color: var(--chart-income);
+  }
   .text-\(--primary\) {
     color: var(--primary);
+  }
+  .text-\(--secondary\) {
+    color: var(--secondary);
+  }
+  .text-\(--success\) {
+    color: var(--success);
   }
   .text-\(--text-5xl\) {
     color: var(--text-5xl);
