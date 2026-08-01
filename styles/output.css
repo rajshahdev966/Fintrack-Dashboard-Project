@@ -260,6 +260,9 @@
   .flex-col {
     flex-direction: column;
   }
+  .items-center {
+    align-items: center;
+  }
   .justify-between {
     justify-content: space-between;
   }
@@ -295,6 +298,9 @@
   }
   .rounded-\[18px\] {
     border-radius: 18px;
+  }
+  .rounded-\[50\%\] {
+    border-radius: 50%;
   }
   .rounded-\[\<value\>\] {
     border-radius: <value>;
