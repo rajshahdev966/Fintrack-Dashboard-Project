@@ -431,6 +431,21 @@
     outline-width: 1px;
   }
   @media (hover: hover) {
+    .hover\:bg-\[var\(\)\]:hover {
+      background-color: var();
+    }
+    .hover\:bg-\[var\(--\)\]:hover {
+      background-color: var(--);
+    }
+    .hover\:bg-\[var\(--bg-teri\)\]:hover {
+      background-color: var(--bg-teri);
+    }
+    .hover\:bg-\[var\(--bg-teritary\)\]:hover {
+      background-color: var(--bg-teritary);
+    }
+    .hover\:bg-\[var\]:hover {
+      background-color: var;
+    }
     .hover\:bg-amber-200:hover {
       background-color: var(--color-amber-200);
     }
