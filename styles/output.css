@@ -431,6 +431,27 @@
     outline-width: 1px;
   }
   @media (hover: hover) {
+    .hover\:bg-\(--primary\):hover {
+      background-color: var(--primary);
+    }
+    .hover\:bg-\(--sur\):hover {
+      background-color: var(--sur);
+    }
+    .hover\:bg-\(--surface\):hover {
+      background-color: var(--surface);
+    }
+    .hover\:bg-\(--surface-dim\):hover {
+      background-color: var(--surface-dim);
+    }
+    .hover\:bg-\(--text-mut\):hover {
+      background-color: var(--text-mut);
+    }
+    .hover\:bg-\(--text-muted\):hover {
+      background-color: var(--text-muted);
+    }
+    .hover\:bg-\(--text-primary\):hover {
+      background-color: var(--text-primary);
+    }
     .hover\:bg-\[var\(\)\]:hover {
       background-color: var();
     }
