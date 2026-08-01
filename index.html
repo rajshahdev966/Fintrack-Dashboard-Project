@@ -52,5 +52,166 @@
         </div>
       </div>
     </nav>
+    <main class="dashboard">
+
+    <!-- Top Summary -->
+    <section class="dashboard-summary">
+
+        <!-- Balance Card -->
+        <article class="balance-card">
+
+            <p class="balance-label">TOTAL NET WORTH</p>
+
+            <h1 class="balance-amount">$124,592.00</h1>
+
+            <div class="balance-growth">
+                +12.4% this month
+            </div>
+
+            <div class="balance-actions">
+                <button>+ Quick Add</button>
+                <button>Transfer</button>
+            </div>
+
+        </article>
+
+        <!-- Income + Expense -->
+        <div class="summary-side">
+
+            <article class="summary-card income-card">
+
+                <div class="summary-icon">
+                    ↓
+                </div>
+
+                <div>
+                    <p>MONTHLY INCOME</p>
+                    <h2>$14,200.00</h2>
+                </div>
+
+            </article>
+
+            <article class="summary-card expense-card">
+
+                <div class="summary-icon">
+                    ↑
+                </div>
+
+                <div>
+                    <p>MONTHLY EXPENSES</p>
+                    <h2>$6,840.00</h2>
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+    <!-- Bottom Section -->
+    <section class="dashboard-content">
+
+        <!-- Chart -->
+        <article class="chart-card">
+
+            <div class="card-header">
+                <h2>Cash Flow Trends</h2>
+
+                <div class="chart-filter">
+                    <button>1M</button>
+                    <button>6M</button>
+                    <button>1Y</button>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <!-- Chart.js Canvas -->
+                <canvas id="cashFlowChart"></canvas>
+            </div>
+
+        </article>
+
+        <!-- Recent Transactions -->
+        <aside class="recent-card">
+
+            <div class="card-header">
+                <h2>Recent</h2>
+                <a href="#">VIEW ALL</a>
+            </div>
+
+            <div class="transaction-list">
+
+                <article class="transaction">
+
+                    <div class="transaction-icon"></div>
+
+                    <div class="transaction-info">
+                        <h3>Apple Store</h3>
+                        <p>Tech &amp; Gear</p>
+                    </div>
+
+                    <span class="expense">-$1,299.00</span>
+
+                </article>
+
+                <article class="transaction">
+
+                    <div class="transaction-icon"></div>
+
+                    <div class="transaction-info">
+                        <h3>Stripe Inc.</h3>
+                        <p>Monthly Salary</p>
+                    </div>
+
+                    <span class="income">+$8,500.00</span>
+
+                </article>
+
+                <article class="transaction">
+
+                    <div class="transaction-icon"></div>
+
+                    <div class="transaction-info">
+                        <h3>The Blue Fox</h3>
+                        <p>Dining</p>
+                    </div>
+
+                    <span class="expense">-$86.50</span>
+
+                </article>
+
+                <article class="transaction">
+
+                    <div class="transaction-icon"></div>
+
+                    <div class="transaction-info">
+                        <h3>Green Energy Co.</h3>
+                        <p>Utilities</p>
+                    </div>
+
+                    <span class="expense">-$210.00</span>
+
+                </article>
+
+                <article class="transaction">
+
+                    <div class="transaction-icon"></div>
+
+                    <div class="transaction-info">
+                        <h3>Airbnb Refund</h3>
+                        <p>Travel</p>
+                    </div>
+
+                    <span class="income">+$425.00</span>
+
+                </article>
+
+            </div>
+
+        </aside>
+
+    </section>
+
+</main>
   </body>
 </html>
