@@ -294,6 +294,18 @@
   .rounded {
     border-radius: 0.25rem;
   }
+  .rounded-\(--radius\) {
+    border-radius: var(--radius);
+  }
+  .rounded-\(--radius-lg\) {
+    border-radius: var(--radius-lg);
+  }
+  .rounded-\(--radius-md\) {
+    border-radius: var(--radius-md);
+  }
+  .rounded-\(--radius-sm\) {
+    border-radius: var(--radius-sm);
+  }
   .rounded-\(--radius-xl\) {
     border-radius: var(--radius-xl);
   }
@@ -346,6 +358,9 @@
   .bg-amber-200 {
     background-color: var(--color-amber-200);
   }
+  .p-1 {
+    padding: var(--spacing);
+  }
   .p-2 {
     padding: calc(var(--spacing) * 2);
   }
@@ -373,11 +388,26 @@
     font-size: var(--text-5xl);
     line-height: var(--tw-leading, var(--text-5xl--line-height));
   }
+  .text-\(length\:--text\) {
+    font-size: var(--text);
+  }
+  .text-\(length\:--text-\) {
+    font-size: var(--text-);
+  }
   .text-\(length\:--text-2xl\) {
     font-size: var(--text-2xl);
   }
+  .text-\(length\:--text-5xl\) {
+    font-size: var(--text-5xl);
+  }
+  .text-\(length\:--text-sm\) {
+    font-size: var(--text-sm);
+  }
   .text-\(length\:--text-xl\) {
     font-size: var(--text-xl);
+  }
+  .text-\(length\:--textxl\) {
+    font-size: var(--textxl);
   }
   .text-\[1rem\] {
     font-size: 1rem;
