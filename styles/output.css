@@ -410,6 +410,9 @@
   .bg-\(--bg-secondary\) {
     background-color: var(--bg-secondary);
   }
+  .bg-\(--bg-ter\) {
+    background-color: var(--bg-ter);
+  }
   .bg-\(--bg-terti\) {
     background-color: var(--bg-terti);
   }
@@ -563,11 +566,23 @@
     font-size: var(--text-xs);
     line-height: var(--tw-leading, var(--text-xs--line-height));
   }
+  .text-\(length\:--text\) {
+    font-size: var(--text);
+  }
   .text-\(length\:--text-\) {
     font-size: var(--text-);
   }
+  .text-\(length\:--text-2xl\) {
+    font-size: var(--text-2xl);
+  }
+  .text-\(length\:--text-3xl\) {
+    font-size: var(--text-3xl);
+  }
   .text-\(length\:--text-base\) {
     font-size: var(--text-base);
+  }
+  .text-\(length\:--text-lg\) {
+    font-size: var(--text-lg);
   }
   .text-\(length\:--text-sm\) {
     font-size: var(--text-sm);
