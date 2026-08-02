@@ -684,6 +684,9 @@
     .hover\:text-\(--surface\):hover {
       color: var(--surface);
     }
+    .hover\:text-\(--text\):hover {
+      color: var(--text);
+    }
   }
   @media (width >= 48rem) {
     .md\:col-span-2 {
