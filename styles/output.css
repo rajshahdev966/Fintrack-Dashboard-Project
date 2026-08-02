@@ -383,6 +383,15 @@
   .bg-\(--bg-secondary\) {
     background-color: var(--bg-secondary);
   }
+  .bg-\(--bg-terti\) {
+    background-color: var(--bg-terti);
+  }
+  .bg-\(--bg-tertiary\) {
+    background-color: var(--bg-tertiary);
+  }
+  .bg-\(--pr\) {
+    background-color: var(--pr);
+  }
   .bg-\(--primary\) {
     background-color: var(--primary);
   }
@@ -572,6 +581,15 @@
   .text-\(--success\) {
     color: var(--success);
   }
+  .text-\(--sur\) {
+    color: var(--sur);
+  }
+  .text-\(--surface\) {
+    color: var(--surface);
+  }
+  .text-\(--t\) {
+    color: var(--t);
+  }
   .text-\(--text-muted\) {
     color: var(--text-muted);
   }
@@ -641,6 +659,9 @@
   @media (hover: hover) {
     .hover\:bg-\(--bg-tertiary\):hover {
       background-color: var(--bg-tertiary);
+    }
+    .hover\:bg-\(--primary-ho\):hover {
+      background-color: var(--primary-ho);
     }
     .hover\:bg-\(--primary-hover\):hover {
       background-color: var(--primary-hover);
