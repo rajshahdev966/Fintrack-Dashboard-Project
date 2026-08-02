@@ -681,6 +681,9 @@
     .hover\:bg-slate-100:hover {
       background-color: var(--color-slate-100);
     }
+    .hover\:text-\(--surface\):hover {
+      color: var(--surface);
+    }
   }
   @media (width >= 48rem) {
     .md\:col-span-2 {
