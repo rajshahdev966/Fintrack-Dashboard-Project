@@ -563,6 +563,18 @@
     font-size: var(--text-xs);
     line-height: var(--tw-leading, var(--text-xs--line-height));
   }
+  .text-\(length\:--text-\) {
+    font-size: var(--text-);
+  }
+  .text-\(length\:--text-base\) {
+    font-size: var(--text-base);
+  }
+  .text-\(length\:--text-sm\) {
+    font-size: var(--text-sm);
+  }
+  .text-\(length\:--text-sm\,\) {
+    font-size: var(--text-sm,);
+  }
   .text-\(length\:--text-xl\) {
     font-size: var(--text-xl);
   }
@@ -632,6 +644,12 @@
   .text-\(--text-\) {
     color: var(--text-);
   }
+  .text-\(--text-base\) {
+    color: var(--text-base);
+  }
+  .text-\(--text-lg\) {
+    color: var(--text-lg);
+  }
   .text-\(--text-muted\) {
     color: var(--text-muted);
   }
@@ -640,6 +658,12 @@
   }
   .text-\(--text-secondary\) {
     color: var(--text-secondary);
+  }
+  .text-\(--text-sm\) {
+    color: var(--text-sm);
+  }
+  .text-\(--text-xl\) {
+    color: var(--text-xl);
   }
   .text-cyan-700 {
     color: var(--color-cyan-700);
