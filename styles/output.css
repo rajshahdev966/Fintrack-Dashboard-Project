@@ -602,6 +602,12 @@
   .text-\(--t\) {
     color: var(--t);
   }
+  .text-\(--text\) {
+    color: var(--text);
+  }
+  .text-\(--text-\) {
+    color: var(--text-);
+  }
   .text-\(--text-muted\) {
     color: var(--text-muted);
   }
