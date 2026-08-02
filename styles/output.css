@@ -328,6 +328,18 @@
   .overflow-x-auto {
     overflow-x: auto;
   }
+  .rounded-\(--radius-\) {
+    border-radius: var(--radius-);
+  }
+  .rounded-\(--radius-lg\) {
+    border-radius: var(--radius-lg);
+  }
+  .rounded-\(--radius-m\) {
+    border-radius: var(--radius-m);
+  }
+  .rounded-\(--radius-md\) {
+    border-radius: var(--radius-md);
+  }
   .rounded-2xl {
     border-radius: var(--radius-2xl);
   }
@@ -394,6 +406,9 @@
   }
   .bg-\(--bg-terti\) {
     background-color: var(--bg-terti);
+  }
+  .bg-\(--bg-tertia\) {
+    background-color: var(--bg-tertia);
   }
   .bg-\(--bg-tertiary\) {
     background-color: var(--bg-tertiary);
