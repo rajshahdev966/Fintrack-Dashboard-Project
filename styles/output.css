@@ -365,6 +365,12 @@
     --tw-border-style: dashed;
     border-style: dashed;
   }
+  .border-\(--border\) {
+    border-color: var(--border);
+  }
+  .border-\(--border-light\) {
+    border-color: var(--border-light);
+  }
   .border-\(--text-primary\) {
     border-color: var(--text-primary);
   }
