@@ -783,6 +783,9 @@
   .text-\(--text-muted\) {
     color: var(--text-muted);
   }
+  .text-\(--text-prima\) {
+    color: var(--text-prima);
+  }
   .text-\(--text-primary\) {
     color: var(--text-primary);
   }
