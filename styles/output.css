@@ -789,6 +789,9 @@
   .text-\(--text-primary\) {
     color: var(--text-primary);
   }
+  .text-\(--text-primmary\) {
+    color: var(--text-primmary);
+  }
   .text-\(--text-secondary\) {
     color: var(--text-secondary);
   }
