@@ -401,11 +401,20 @@
   .border-slate-300 {
     border-color: var(--color-slate-300);
   }
+  .bg-\(--bg\) {
+    background-color: var(--bg);
+  }
   .bg-\(--bg-\) {
     background-color: var(--bg-);
   }
+  .bg-\(--bg-p\) {
+    background-color: var(--bg-p);
+  }
   .bg-\(--bg-primary\) {
     background-color: var(--bg-primary);
+  }
+  .bg-\(--bg-seco\) {
+    background-color: var(--bg-seco);
   }
   .bg-\(--bg-secondary\) {
     background-color: var(--bg-secondary);
