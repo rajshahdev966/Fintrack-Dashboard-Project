@@ -487,6 +487,9 @@
   .bg-\(--bg-primary\) {
     background-color: var(--bg-primary);
   }
+  .bg-\(--bg-se\) {
+    background-color: var(--bg-se);
+  }
   .bg-\(--bg-seco\) {
     background-color: var(--bg-seco);
   }
@@ -513,6 +516,15 @@
   }
   .bg-\(--surface\) {
     background-color: var(--surface);
+  }
+  .bg-\(--surface-dim\) {
+    background-color: var(--surface-dim);
+  }
+  .bg-\(--surface-light\) {
+    background-color: var(--surface-light);
+  }
+  .bg-\(--surface-lowest\) {
+    background-color: var(--surface-lowest);
   }
   .bg-\[\#3EB7ED\] {
     background-color: #3EB7ED;
