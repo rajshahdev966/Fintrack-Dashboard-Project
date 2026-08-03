@@ -508,6 +508,9 @@
   .bg-\(--bg-tertiary\) {
     background-color: var(--bg-tertiary);
   }
+  .bg-\(--danger\) {
+    background-color: var(--danger);
+  }
   .bg-\(--pr\) {
     background-color: var(--pr);
   }
