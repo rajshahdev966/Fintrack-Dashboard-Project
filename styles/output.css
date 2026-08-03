@@ -798,6 +798,9 @@
   .text-\(--text-sm\) {
     color: var(--text-sm);
   }
+  .text-\(--text-tertiary\) {
+    color: var(--text-tertiary);
+  }
   .text-\(--text-xl\) {
     color: var(--text-xl);
   }
