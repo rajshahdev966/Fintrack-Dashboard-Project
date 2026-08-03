@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/output.css" />
+    <link rel="stylesheet" href="" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-[var(--bg-primary)] font-[var(--font-mono)] text-nowrap flex">
+    <nav
+      class="bg-[var(--bg-secondary)] h-screen w-min flex flex-col justify-between p-5 shadow-(--shadow-md)"
+    >
+      <div class="upper-nav flex flex-col gap-5">
+        <div class="logo-text text-(--primary) text-4xl font-semibold">
+          FinTrack Pro
+        </div>
+        <div class="nav-menu text-(length:--text-xl) flex flex-col gap-4">
+          <div class="dashboard-a flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) cursor-pointer text-(--text-primary)" href="./index.html">
+            <i class="ri-dashboard-fill"></i> <a href="./index.html">Dashboard</a>
+          </div>
+          <div class="transcations-a flex gap-2 items-center p-4 rounded-[var(--radius-md)] bg-(--primary) cursor-pointer text-(--text-primary)">
+            <i class="ri-cash-line"></i> <a href="./transcations.html">Transcations</a>
+          </div>
+          <div class="analytics-a flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) cursor-pointer text-(--text-primary)">
+            <i class="ri-bar-chart-2-fill"></i> <span>Analytics</span>
+          </div>
+          <div class="settings-a flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) cursor-pointer text-(--text-primary)">
+            <i class="ri-settings-2-line"></i> <span>Settings</span>
+          </div>
+        </div>
+      </div>
+      <div class="profile-section flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) cursor-pointer">
+        <div class="profile-photo">
+          <img
+            src="https://plus.unsplash.com/premium_photo-1683121366070-5ceb7e007a97?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="user profile photo" class="h-[50px] w-[50px] rounded-[50%]"
+          />
+        </div>
+        <div class="profile-name text-(--text-primary)"><span>ALEX MORGAN</span></div>
+        </div>
+      </div>
+    </nav>
+    
+    <div class="max-w-5xl mx-auto space-y-10">
+
+    <!-- ================= PROFILE ================= -->
+    <section>
+
+        <h2 class="text-2xl font-bold text-slate-800 mb-5">
+            Profile
+        </h2>
+
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+
+            <div class="flex flex-col md:flex-row gap-6 items-center">
+
+                <!-- Avatar -->
+                <div
+                    class="h-20 w-20 rounded-full bg-slate-200 flex items-center justify-center text-3xl font-bold text-slate-600">
+                    JD
+                </div>
+
+                <!-- Form -->
+                <div class="flex-1 space-y-5">
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-slate-500 mb-2">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            value="Alexander Sterling"
+                            class="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-sky-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-slate-500 mb-2">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            value="alex.sterling@fintrack.pro"
+                            class="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-sky-500">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= PREFERENCES ================= -->
+    <section>
+
+        <h2 class="text-2xl font-bold text-slate-800 mb-5">
+            Preferences
+        </h2>
+
+        <div class="rounded-2xl border border-slate-200 bg-white shadow-sm divide-y">
+
+            <!-- Currency -->
+            <div class="flex justify-between items-center p-6">
+
+                <div>
+                    <h3 class="font-semibold">
+                        Preferred Currency
+                    </h3>
+
+                    <p class="text-sm text-slate-500">
+                        Default currency for summaries
+                    </p>
+                </div>
+
+                <select
+                    class="rounded-lg border border-slate-200 px-4 py-2 bg-white">
+                    <option>USD ($)</option>
+                    <option>EUR (€)</option>
+                    <option>INR (₹)</option>
+                </select>
+
+            </div>
+
+            <!-- Dark Mode -->
+            <div class="flex justify-between items-center p-6">
+
+                <div>
+                    <h3 class="font-semibold">
+                        Appearance
+                    </h3>
+
+                    <p class="text-sm text-slate-500">
+                        Switch between Light and Dark mode
+                    </p>
+                </div>
+
+                <button
+                    class="relative w-14 h-8 rounded-full bg-slate-300">
+
+                    <span
+                        class="absolute left-1 top-1 h-6 w-6 rounded-full bg-white shadow"></span>
+
+                </button>
+
+            </div>
+
+            <!-- Language -->
+            <div class="flex justify-between items-center p-6">
+
+                <div>
+                    <h3 class="font-semibold">
+                        Language
+                    </h3>
+
+                    <p class="text-sm text-slate-500">
+                        Regional formatting and display
+                    </p>
+                </div>
+
+                <button class="text-slate-600 font-medium">
+                    English (US) →
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= DATA ================= -->
+    <section>
+
+        <h2 class="text-2xl font-bold text-slate-800 mb-5">
+            Data Management
+        </h2>
+
+        <div
+            class="rounded-2xl border border-red-200 bg-white shadow-sm p-6">
+
+            <div class="flex gap-4">
+
+                <div class="text-red-500 text-xl">
+                    ⚠
+                </div>
+
+                <div>
+
+                    <h3 class="font-semibold text-red-500">
+                        Reset All Data
+                    </h3>
+
+                    <p class="mt-2 text-sm text-slate-500">
+                        This action permanently deletes your financial history,
+                        categories and settings stored in this browser.
+                    </p>
+
+                    <p class="text-sm text-slate-500">
+                        This cannot be undone.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <button
+                class="mt-6 w-full rounded-xl bg-red-500 py-4 font-semibold text-white hover:bg-red-600 transition">
+                🗑 Reset Account Data
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section>
+
+        <h2 class="text-2xl font-bold text-slate-800 mb-5">
+            About FinTrack Pro
+        </h2>
+
+        <div
+            class="rounded-2xl border border-slate-200 bg-white shadow-sm p-6">
+
+            <div class="flex gap-4">
+
+                <div class="text-sky-500 text-xl">
+                    🛡
+                </div>
+
+                <div>
+
+                    <h3 class="font-semibold">
+                        Privacy First Architecture
+                    </h3>
+
+                    <p class="mt-2 text-sm leading-6 text-slate-500">
+                        FinTrack Pro is built on a Local-Only principle.
+                        Your financial data is stored using browser Local Storage.
+                        No transaction data, account balances or personal
+                        identifiers ever leave your device.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div
+                class="mt-6 flex justify-between border-t border-slate-200 pt-5 text-sm text-slate-500">
+
+                <span>Version 2.4.0 (Corporate Build)</span>
+
+                <button class="text-sky-500 hover:underline">
+                    Privacy Policy
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+  </body>
+</html>
