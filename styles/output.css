@@ -747,6 +747,21 @@
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
   @media (hover: hover) {
+    .hover\:bg-\(---surface-dim\):hover {
+      background-color: var(---surface-dim);
+    }
+    .hover\:bg-\(--bg\):hover {
+      background-color: var(--bg);
+    }
+    .hover\:bg-\(--bg--surface\):hover {
+      background-color: var(--bg--surface);
+    }
+    .hover\:bg-\(--bg-surface\):hover {
+      background-color: var(--bg-surface);
+    }
+    .hover\:bg-\(--bg-surface-dim\):hover {
+      background-color: var(--bg-surface-dim);
+    }
     .hover\:bg-\(--bg-tertiary\):hover {
       background-color: var(--bg-tertiary);
     }
@@ -755,6 +770,12 @@
     }
     .hover\:bg-\(--primary-hover\):hover {
       background-color: var(--primary-hover);
+    }
+    .hover\:bg-\(--surface-bright\):hover {
+      background-color: var(--surface-bright);
+    }
+    .hover\:bg-\(--surface-dim\):hover {
+      background-color: var(--surface-dim);
     }
     .hover\:bg-sky-600:hover {
       background-color: var(--color-sky-600);
