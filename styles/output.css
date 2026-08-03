@@ -798,8 +798,14 @@
   .text-\(--text-secondary\) {
     color: var(--text-secondary);
   }
+  .text-\(--text-seconds\) {
+    color: var(--text-seconds);
+  }
   .text-\(--text-sm\) {
     color: var(--text-sm);
+  }
+  .text-\(--text-ssecondary\) {
+    color: var(--text-ssecondary);
   }
   .text-\(--text-tertiary\) {
     color: var(--text-tertiary);
