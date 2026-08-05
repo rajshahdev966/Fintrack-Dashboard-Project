@@ -2,7 +2,8 @@ import { closeTransactionModal, openTransactionModal, transModalSubmit } from ".
 import { allTrans } from "../core/storage.js";
 
 export let allTransUpdate = ()=>{
-    let transTable = document.querySelector("#trans-table");
+    const transTable = document.querySelector("#trans-table");
+    if(!transTable) return;
     transTable.innerHTML = ``
     allTrans.forEach((transcation, index)=>[
         transTable.innerHTML += `<tr class="hover:bg-(--surface-bright) transition">
