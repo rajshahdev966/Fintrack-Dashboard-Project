@@ -1,5 +1,6 @@
 import { allTrans } from "../core/storage.js";
 import { dashboardTransUpd } from "../pages/dashboard.js";
+import { allTransUpdate } from "../pages/transcation.js";
 
 export function openTransactionModal() {
     const formCard = document.querySelector("#transFormCard");
@@ -26,7 +27,7 @@ export function transModalSubmit(){
         form.reset();
         closeTransactionModal();
         dashboardTransUpd();
-        transUpdate();
+        allTransUpdate();
     })
 }
 export function transUpdate(){
