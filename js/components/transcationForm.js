@@ -24,10 +24,12 @@ export function transModalSubmit(){
             date: e.target[4].value,
         }
         allTrans.push(transcation);
+        localStorage.setItem(allTrans);
         form.reset();
         closeTransactionModal();
         dashboardTransUpd();
         allTransUpdate();
+        
     })
 }
 export function transUpdate(){
