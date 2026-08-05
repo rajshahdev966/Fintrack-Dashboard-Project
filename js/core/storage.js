@@ -1,2 +1,1 @@
 let allTrans = []
-export 
