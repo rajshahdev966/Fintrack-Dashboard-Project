@@ -6,17 +6,18 @@ console.log("Main Work!");
 const page = document.body.id;
 
 switch (page) {
-    case "dashboard-page":
-        initDashboard();
-        dashboardTransUpd();
-        allTransUpdate();
-        break;
+  case "dashboard-page":
+    initDashboard();
+    dashboardTransUpd();
+    break;
 
-    case "transactions-page":
-        initTransPage();
-        break;
+  case "transactions-page":
+    initTransPage();
+    allTransUpdate();
 
-    case "settings-page":
-        initSettings();
-        break;
+    break;
+
+  case "settings-page":
+    initSettings();
+    break;
 }
