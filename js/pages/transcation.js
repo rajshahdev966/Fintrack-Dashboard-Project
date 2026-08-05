@@ -1,7 +1,7 @@
 import { closeTransactionModal, openTransactionModal, transModalSubmit } from "../components/transcationForm.js";
 
 export let allTransUpdate = ()=>{
-    
+    let 
 }
 
 export function initTransPage(){
