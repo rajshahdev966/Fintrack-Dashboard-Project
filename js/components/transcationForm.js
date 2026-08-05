@@ -25,7 +25,6 @@ export function transModalSubmit(){
         }
         allTrans.push(transcation);
         saveTrans();
-        
         form.reset();
         closeTransactionModal();
         dashboardTransUpd();
