@@ -20,6 +20,133 @@
   </head>
   <body class="bg-[var(--bg-primary)] font-[var(--font-mono)] text-nowrap flex relative" id="dashboard-page">
 
+    <div class="min-h-screen w-full flex items-center justify-center bg-(--background) p-6">
+
+    <!-- Login Card -->
+    <div id="loginCard"
+        class="w-full max-w-md rounded-2xl bg-(--surface-container) border border-(--outline-variant) p-8 shadow-xl">
+
+        <div class="mb-8 text-center">
+            <h1 class="text-3xl font-bold text-(--text-primary)">
+                Welcome Back
+            </h1>
+            <p class="mt-2 text-(--text-muted)">
+                Sign in to continue managing your finances.
+            </p>
+        </div>
+
+        <form class="space-y-5">
+
+            <div>
+                <label class="mb-2 block text-sm font-medium text-(--text-secondary)">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    placeholder="you@example.com"
+                    class="w-full rounded-xl border border-(--outline) bg-(--surface) px-4 py-3 outline-none focus:border-(--primary)">
+            </div>
+
+            <div>
+                <label class="mb-2 block text-sm font-medium text-(--text-secondary)">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    placeholder="••••••••"
+                    class="w-full rounded-xl border border-(--outline) bg-(--surface) px-4 py-3 outline-none focus:border-(--primary)">
+            </div>
+
+            <button
+                class="w-full rounded-xl bg-(--primary) py-3 font-semibold text-(--on-primary)">
+                Login
+            </button>
+
+        </form>
+
+        <p class="mt-6 text-center text-sm text-(--text-muted)">
+            Don't have an account?
+
+            <button id="showSignup"
+                class="ml-1 font-semibold text-(--primary)">
+                Sign Up
+            </button>
+        </p>
+
+    </div>
+
+
+    <!-- Signup Card -->
+    <div id="signupCard"
+        class="hidden absolute w-full max-w-md rounded-2xl bg-(--surface-container) border border-(--outline-variant) p-8 shadow-xl">
+
+        <div class="mb-8 text-center">
+            <h1 class="text-3xl font-bold text-(--text-primary)">
+                Create Account
+            </h1>
+
+            <p class="mt-2 text-(--text-muted)">
+                Start tracking your finances today.
+            </p>
+        </div>
+
+        <form class="space-y-5">
+
+            <div>
+                <label class="mb-2 block text-sm font-medium text-(--text-secondary)">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    placeholder="Raj Shah"
+                    class="w-full rounded-xl border border-(--outline) bg-(--surface) px-4 py-3 outline-none focus:border-(--primary)">
+            </div>
+
+            <div>
+                <label class="mb-2 block text-sm font-medium text-(--text-secondary)">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    placeholder="you@example.com"
+                    class="w-full rounded-xl border border-(--outline) bg-(--surface) px-4 py-3 outline-none focus:border-(--primary)">
+            </div>
+
+            <div>
+                <label class="mb-2 block text-sm font-medium text-(--text-secondary)">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    placeholder="Create password"
+                    class="w-full rounded-xl border border-(--outline) bg-(--surface) px-4 py-3 outline-none focus:border-(--primary)">
+            </div>
+
+            <button
+                class="w-full rounded-xl bg-(--primary) py-3 font-semibold text-(--on-primary)">
+                Create Account
+            </button>
+
+        </form>
+
+        <p class="mt-6 text-center text-sm text-(--text-muted)">
+            Already have an account?
+
+            <button id="showLogin"
+                class="ml-1 font-semibold text-(--primary)">
+                Login
+            </button>
+        </p>
+
+    </div>
+
+</div>
+
 
     <div class="w-full h-full rounded-2xl border border-slate-200 bg-transparent p-8 shadow-sm absolute backdrop-blur-sm flex justify-center items-center hidden" id="transFormCard">
 
