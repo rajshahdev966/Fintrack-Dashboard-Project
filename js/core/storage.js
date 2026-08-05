@@ -1,7 +1,5 @@
 export let allTrans = [];
 
-export function localStorTrans(){
-    allTrans = JSON.parse(localStorage.getItem("allTrans"));
-    console.log(allTrans);
-       
+export function saveTrans (){
+    localStorage.setItem('savedTrans', JSON.stringify(allTrans));
 }

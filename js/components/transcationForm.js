@@ -1,4 +1,4 @@
-import { allTrans } from "../core/storage.js";
+import { allTrans, saveTrans } from "../core/storage.js";
 import { dashboardTransUpd } from "../pages/dashboard.js";
 import { allTransUpdate } from "../pages/transcation.js";
 
@@ -24,7 +24,8 @@ export function transModalSubmit(){
             date: e.target[4].value,
         }
         allTrans.push(transcation);
-        localStorage.setItem("allTrans", JSON.stringify(allTrans));
+        saveTrans();
+        
         form.reset();
         closeTransactionModal();
         dashboardTransUpd();
