@@ -1,2 +1,6 @@
-export let allTrans = localStorage.getItem("allTrans") ?? [];
+export let allTrans = [];
 
+export function localStorTrans(){
+    allTrans = localStorage.getItem("allTrans");
+    
+}

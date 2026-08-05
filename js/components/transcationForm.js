@@ -24,7 +24,7 @@ export function transModalSubmit(){
             date: e.target[4].value,
         }
         allTrans.push(transcation);
-        localStorage.setItem("allTrans", JSON.stringify(allTrans) );
+        localStorage.setItem("allTrans", JSON.stringify(allTrans));
         form.reset();
         closeTransactionModal();
         dashboardTransUpd();
