@@ -37,11 +37,11 @@ export let allTransUpdate = ()=>{
     ])
 }
 
-let totalTransUpdate = ()=>{
+export const totalTransUpdate = ()=>{
     const totalDisplay = document.querySelector("#total-trans")
-    totalDisplay.textContent = allTrans.length();
+    totalDisplay.textContent = allTrans.length;
 }
-tot
+
 
 export function initTransPage(){
     
@@ -54,4 +54,5 @@ export function initTransPage(){
     .addEventListener("click", closeTransactionModal)
     
     transModalSubmit();
+    totalTransUpdate();
 }
