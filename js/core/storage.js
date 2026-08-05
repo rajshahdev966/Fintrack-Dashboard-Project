@@ -1,1 +1,1 @@
-let allTrans = []
+export let allTrans = []

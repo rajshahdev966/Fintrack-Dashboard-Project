@@ -12,6 +12,14 @@ export function closeTransactionModal() {
 export function transModalSubmit(){
     let form = document.querySelector("form");
     form.addEventListener("submit", (e)=>{
+        e.preventDefault();
+        let transcation = {
+            type: e.target[0].value,
+            amount: e.target[0].value == "Income" ? `+${e.target[1].value}`: `-${e.target[1].value}`,
+            category: e.target[2].value,
+            date: e.target[3].value,
+        }
+        console.log(transcation);
         
     })
 }
