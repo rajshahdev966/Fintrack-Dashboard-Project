@@ -1,9 +1,9 @@
-import { openTransactionModal } from "../components/transcationForm.js";
+import { closeTransactionModal, openTransactionModal } from "../components/transcationForm.js";
 
 export function initDashboard (){
     document.querySelector("#quickAddBtn")
             .addEventListener("click", openTransactionModal)
     
-    document.querySelector("#cancelBtn")\
-            .add
+    document.querySelector("#cancelBtn")
+            .addEventListener("click", closeTransactionModal)
 }
