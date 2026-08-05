@@ -3,6 +3,7 @@ import { allTrans } from "../core/storage.js";
 
 export let dashboardTransUpd = ()=>{
     let recentList = document.querySelector("#recent-trans-list")
+    recentList.innerHTML = ``
     allTrans.forEach((transcation, index)=>{
         recentList.innerHTML += `<div class="flex justify-between items-center border-b pb-4 border-(--text-primary)">
                     <div>
