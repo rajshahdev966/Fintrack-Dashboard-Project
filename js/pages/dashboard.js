@@ -35,6 +35,11 @@ export const expenseUpdate = ()=>{
         
     }
 }
+export const allAmountUpdate = ()=>{
+    netWorthUpdate();
+    expenseUpdate();
+    
+}
 
 export function initDashboard (){
 
