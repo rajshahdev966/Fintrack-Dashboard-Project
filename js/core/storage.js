@@ -1,2 +1,2 @@
-export let allTrans = JSON.parse(localStorage.getItem(allTrans)) ?? [];
+export let allTrans = JSON.parse(localStorage.getItem(transArr)) ?? [];
 
