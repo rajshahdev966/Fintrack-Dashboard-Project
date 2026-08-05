@@ -1,4 +1,6 @@
+import { openTransactionModal } from "../components/transcationForm";
+
 export function initDashboard (){
     const quickAddBtn = document.querySelector("#quickAddBtn");
-    quickAddBtn.addEventListener('click', transFormOpen)
+    quickAddBtn.addEventListener('click', openTransactionModal)
 }
