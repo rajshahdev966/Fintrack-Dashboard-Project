@@ -3,6 +3,7 @@ import { closeTransactionModal, openTransactionModal, transModalSubmit } from ".
 export function initTransPage(){
     
     console.log("TransPage Work!");
+    
     document.querySelector("#add-new-btn")
     .addEventListener("click", openTransactionModal)
     
