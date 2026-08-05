@@ -1,4 +1,5 @@
 import { dashboardTransUpd, initDashboard } from "./pages/dashboard.js";
+import { initSettings } from "./pages/settings.js";
 import { allTransUpdate, initTransPage } from "./pages/transcation.js";
 
 console.log("Main Work!");
