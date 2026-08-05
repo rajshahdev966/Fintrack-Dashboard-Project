@@ -8,24 +8,24 @@ export let allTransUpdate = ()=>{
         transTable.innerHTML += `<tr class="hover:bg-(--surface-bright) transition">
 
                         <td class="px-6 py-6 font-medium">
-                            ${all}
+                            ${transcation.date}
                         </td>
 
                         <td class="px-6 py-6">
 
                             <span
                                 class="rounded-full px-3 py-1 text-xs font-semibold">
-                                Shopping
+                                ${transcation.category}
                             </span>
 
                         </td>
 
                         <td class="px-6 py-6 text-(--text-secondary)">
-                            Amazon Premium Web Services Monthly Sub
+                            ${transcation.purpose}
                         </td>
 
-                        <td class="px-6 py-6 text-right font-bold text-(--danger)">
-                            -$142.00
+                        <td class="px-6 py-6 text-right font-bold text-(--${transcation.type == "Income" ? "success" : "danger"})">
+                            ${transcation.amount}
                         </td>
 
                         <td class="px-6 py-6 text-center">
