@@ -1,0 +1,2 @@
+let allTrans = []
+export 

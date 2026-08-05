@@ -11,12 +11,11 @@ export function initDashboard (){
     let form = document.querySelector("form")
     form.addEventListener("submit", (e)=>{
         e.preventDefault();
-        console.log(e.target[0].value);
-        console.log(e.target[1].value);
-        console.log(e.target[2].value);
-        console.log(e.target[3].value);
-        console.log(e.target[4].value);
-        // console.log(e.target[5].value);
+        console.log(e.target[0].value); //transType 
+        console.log(e.target[1].value); // amount
+        console.log(e.target[2].value); // category
+        console.log(e.target[3].value); // date
+       
         
         // console.log(e.srcElement);
         

@@ -11,4 +11,7 @@ export function closeTransactionModal() {
 
 export function transModalSubmit(){
     let form = document.querySelector("form");
+    form.addEventListener("submit", (e)=>{
+        
+    })
 }
