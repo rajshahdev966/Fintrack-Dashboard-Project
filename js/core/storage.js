@@ -1,7 +1,7 @@
 export let allTrans = [];
 
 export function localStorTrans(){
-    allTrans = localStorage.getItem("allTrans");
+    allTrans = JSON.parse(localStorage.getItem("allTrans"));
     console.log(allTrans);
        
 }
