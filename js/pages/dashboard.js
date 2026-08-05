@@ -1,3 +1,4 @@
 export function initDashboard (){
-    const 
+    const quickAddBtn = document.querySelector("#quickAddBtn");
+    quickAddBtn.addEventListener('click', transFormOpen)
 }
