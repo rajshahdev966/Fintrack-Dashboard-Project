@@ -24,11 +24,11 @@ export function transModalSubmit(){
             date: e.target[4].value,
         }
         allTrans.push(transcation);
+        saveTrans();
         if(document.body.id == "dashboard-page") allAmountUpdate();
         if(document.body.id == "dashboard-page") dashboardTransUpd();
         if(document.body.id == "transactions-page") totalTransUpdate();
         if(document.body.id == "transactions-page") allTransUpdate();
-        saveTrans();
         form.reset();
         closeTransactionModal();
         // dashboardTransUpd();
