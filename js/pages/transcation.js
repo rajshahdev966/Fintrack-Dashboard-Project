@@ -2,8 +2,7 @@ import { closeTransactionModal, openTransactionModal, transModalSubmit } from ".
 import { allTrans } from "../core/storage.js";
 
 export let allTransUpdate = ()=>{
-    console.log("hello");
-    
+    console.log("all Trans Update working");
     const transTable = document.querySelector("#trans-table");
     if(!transTable) return;
     transTable.innerHTML = ``
@@ -34,7 +33,6 @@ export let allTransUpdate = ()=>{
                         <td class="px-6 py-6 text-center">
                             ⋮
                         </td>
-
                     </tr>`
     ])
 }
