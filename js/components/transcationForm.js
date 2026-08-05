@@ -99,5 +99,5 @@ export function transFormOpen (){
     </div>
 
 </div>`
-    document.body.append
+    document.body.append(formCard);
 }
