@@ -9,3 +9,6 @@ export function closeTransactionModal() {
     formCard.classList.add("hidden");
 }
 
+export function transModalSubmit(){
+    let form = document.querySelector("form");
+}
