@@ -6,7 +6,7 @@ export let allTransUpdate = ()=>{
     const transTable = document.querySelector("#trans-table");
     if(!transTable) return;
     transTable.innerHTML = ``
-    allTrans.forEach((transcation, index)=>[
+    allTrans.forEach((transcation, index)=>{
         transTable.innerHTML += `<tr class="hover:bg-(--surface-bright) transition">
 
                         <td class="px-6 py-6 font-medium">
@@ -34,7 +34,7 @@ export let allTransUpdate = ()=>{
                             ⋮
                         </td>
                     </tr>`
-    ])
+})
 }
 
 export const totalTransUpdate = ()=>{
