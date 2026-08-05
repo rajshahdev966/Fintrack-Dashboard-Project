@@ -1,5 +1,9 @@
 import { closeTransactionModal, openTransactionModal, transModalSubmit } from "../components/transcationForm.js";
 
+export let allTransUpdate = ()=>{
+    
+}
+
 export function initTransPage(){
     
     console.log("TransPage Work!");
