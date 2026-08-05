@@ -25,11 +25,12 @@ export function transModalSubmit(){
         }
         allTrans.push(transcation);
         if(document.body.id == "dashboard-page") allAmountUpdate();
+        if(document.body.id == "dashboard-page") dashboardTransUpd();
         if(document.body.id == "transactions-page") totalTransUpdate();
         saveTrans();
         form.reset();
         closeTransactionModal();
-        dashboardTransUpd();
+        // dashboardTransUpd();
         allTransUpdate();
         
     })
