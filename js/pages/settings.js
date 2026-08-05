@@ -1,10 +1,9 @@
-export const delAllData = ()=>{
-    document.querySelector("#del-all-data-btn")
-            .addEventListener("click", ()=>{
-                localStorage.clear();
-            })
-}
-export const initSettings = ()=>{
-    localStorage.setItem("trial", "Hello")
-    delAllData();
-}
+export const delAllData = () => {
+  const delAllBtn = document.querySelector("#del-all-data-btn");
+  delAllBtn.addEventListener("click", () => {
+    localStorage.clear();
+  });
+};
+export const initSettings = () => {
+  delAllData();
+};
