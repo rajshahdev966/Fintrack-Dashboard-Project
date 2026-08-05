@@ -2,6 +2,8 @@ import { closeTransactionModal, openTransactionModal, transModalSubmit } from ".
 import { allTrans } from "../core/storage.js";
 
 export let allTransUpdate = ()=>{
+    console.log("hello");
+    
     const transTable = document.querySelector("#trans-table");
     if(!transTable) return;
     transTable.innerHTML = ``
