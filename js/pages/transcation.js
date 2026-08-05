@@ -37,6 +37,12 @@ export let allTransUpdate = ()=>{
     ])
 }
 
+let totalTransUpdate = ()=>{
+    const totalDisplay = document.querySelector("#total-trans")
+    totalDisplay.textContent = allTrans.length();
+}
+tot
+
 export function initTransPage(){
     
     console.log("TransPage Work!");
