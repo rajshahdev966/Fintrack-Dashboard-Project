@@ -34,9 +34,21 @@ export const expenseUpdate = ()=>{
     let expenseCount = ()=>{
         expense = 0;
         income = 0;
-        if(allTrans)
+        allTrans.forEach((transaction,index)=>{
+            if(transaction.type == "Income"){
+                income += Number(transaction.amount);
+            }else{
+                expense += Number(transaction.amount);
+            }
+        })
         
     }
+    expenseCount();
+    let expenseDisplay = document.querySelector("#expense-display")
+    let incomeDisplay = document.querySelector("#income-display")
+    expenseDisplay.textContent = expense;
+    incomeDisplay.textContent = income;
+    
 }
 export const allAmountUpdate = ()=>{
     netWorthUpdate();
