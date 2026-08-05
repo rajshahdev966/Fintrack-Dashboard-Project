@@ -17,7 +17,12 @@ export let dashboardTransUpd = ()=>{
 }
 
 export const allAmountUpdate = ()=>{
-    let netWorthCount = 
+    let netWorthCount = ()=>{
+        let netWorth = 0;
+        allTrans.forEach(()=>{
+            netWorth += 
+        })
+    }
 }
 
 export function initDashboard (){
