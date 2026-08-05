@@ -9,13 +9,12 @@ const page = document.body.id;
 switch (page) {
   case "dashboard-page":
     initDashboard();
-    dashboardTransUpd();
+    // dashboardTransUpd();
     break;
 
   case "transactions-page":
     initTransPage();
-    allTransUpdate();
-
+    // allTransUpdate();
     break;
 
   case "settings-page":
