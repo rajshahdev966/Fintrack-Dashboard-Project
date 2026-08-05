@@ -26,6 +26,7 @@ export function transModalSubmit(){
         form.reset();
         closeTransactionModal();
         dashboardTransUpd();
+        transUpdate();
     })
 }
 export function transUpdate(){
