@@ -16,6 +16,10 @@ export let dashboardTransUpd = ()=>{
     })
 }
 
+export const allAmountUpdate = ()=>{
+    let netWorthCount = 
+}
+
 export function initDashboard (){
 
     console.log("Dashboard Work!");
