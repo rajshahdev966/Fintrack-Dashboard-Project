@@ -39,16 +39,11 @@
                 <label class="mb-3 block text-sm font-semibold text-slate-700">
                     Transaction Type
                 </label>
-                <div class="grid grid-cols-2 gap-4">
-                    <button type="button"
-                        class="rounded-xl border-2 border-emerald-500 bg-emerald-50 py-4 font-semibold text-emerald-600 transition hover:bg-emerald-100">
-                        Income
-                    </button>
-                    <button type="button"
-                        class="rounded-xl border border-slate-300 py-4 font-semibold text-slate-600 transition hover:bg-slate-100">
-                        Expense
-                    </button>
-                </div>
+                <select
+                    class="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-sky-500 focus:ring-4 focus:ring-sky-100">
+                    <option>Income</option>
+                    <option>Expense</option>
+                </select>
             </div>
             <!-- Amount -->
             <div>

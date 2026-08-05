@@ -8,3 +8,4 @@ export function closeTransactionModal() {
     const formCard = document.querySelector("#transFormCard");
     formCard.classList.add("hidden");
 }
+
