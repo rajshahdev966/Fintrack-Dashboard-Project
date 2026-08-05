@@ -17,12 +17,18 @@ export let dashboardTransUpd = ()=>{
 }
 
 export const allAmountUpdate = ()=>{
+    let netWorth;
     let netWorthCount = ()=>{
-        let netWorth = 0;
-        allTrans.forEach(()=>{
-            netWorth += 
+        netWorth = 0;
+        allTrans.forEach((transaction, index)=>{
+            netWorth += transaction.amount
         })
     }
+    netWorthCount();
+    let netWorthDisplay = document.querySelector("#net-worth")
+    netWorthDisplay.textContent = netWorth;
+    console.log(netWorth);
+    
 }
 
 export function initDashboard (){
@@ -37,5 +43,6 @@ export function initDashboard (){
             .addEventListener("click", closeTransactionModal)
 
     transModalSubmit();
+    allAmountUpdate();
 
 }
