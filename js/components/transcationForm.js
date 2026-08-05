@@ -1,5 +1,5 @@
 import { allTrans, saveTrans } from "../core/storage.js";
-import { dashboardTransUpd } from "../pages/dashboard.js";
+import { allAmountUpdate, dashboardTransUpd } from "../pages/dashboard.js";
 import { allTransUpdate, totalTransUpdate } from "../pages/transcation.js";
 
 export function openTransactionModal() {
@@ -25,6 +25,7 @@ export function transModalSubmit(){
         }
         allTrans.push(transcation);
         totalTransUpdate();
+        allAmountUpdate();
         saveTrans();
         form.reset();
         closeTransactionModal();

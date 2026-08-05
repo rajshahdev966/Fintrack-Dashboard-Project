@@ -21,14 +21,12 @@ export const allAmountUpdate = ()=>{
     let netWorthCount = ()=>{
         netWorth = 0;
         allTrans.forEach((transaction, index)=>{
-            netWorth += transaction.amount
+            netWorth += Number(transaction.amount)
         })
     }
     netWorthCount();
     let netWorthDisplay = document.querySelector("#net-worth")
-    netWorthDisplay.textContent = netWorth;
-    console.log(netWorth);
-    
+    netWorthDisplay.textContent = netWorth;    
 }
 
 export function initDashboard (){
