@@ -48,7 +48,6 @@ export const expenseUpdate = ()=>{
     let incomeDisplay = document.querySelector("#income-display")
     expenseDisplay.textContent = expense;
     incomeDisplay.textContent = income;
-    
 }
 export const allAmountUpdate = ()=>{
     netWorthUpdate();
