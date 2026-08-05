@@ -31,6 +31,8 @@ export function transModalSubmit(){
         if(document.body.id == "transactions-page") allTransUpdate();
         form.reset();
         closeTransactionModal();
+        console.log("Transcation Modal Working");
+        
         // dashboardTransUpd();
         // allTransUpdate();
         
