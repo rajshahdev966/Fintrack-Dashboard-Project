@@ -21,5 +21,10 @@ export function transModalSubmit(){
             date: e.target[3].value,
         }
         allTrans.push(transcation);
+        form.reset();
+        closeTransactionModal();
     })
+}
+export function transUpdate(){
+    
 }
