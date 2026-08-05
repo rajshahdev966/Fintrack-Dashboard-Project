@@ -6,10 +6,10 @@ let dashboardTransUpd = ()=>{
     allTrans.forEach((transcation, index)=>{
         recentList += `<div class="flex justify-between items-center border-b pb-4 border-(--text-primary)">
                     <div>
-                        <h3 class="font-semibold text-(--text-primary)">${transcation}</h3>
-                        <p class="text-(--text-muted) text-sm">Tech & Gear</p>
+                        <h3 class="font-semibold text-(--text-primary)">${transcation.purpose}</h3>
+                        <p class="text-(--text-muted) text-sm">${transcation.category}</p>
                     </div>
-                    <span class="text-(--danger) font-bold">-$1,299</span>
+                    <span class="text-(--${transcation.type == "Income" ? "success" : "danger"}) font-bold">${transcation.amount}</span>
                 </div>` 
     })
 }

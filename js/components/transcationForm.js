@@ -17,8 +17,9 @@ export function transModalSubmit(){
         let transcation = {
             type: e.target[0].value,
             amount: e.target[0].value == "Income" ? `+${e.target[1].value}`: `-${e.target[1].value}`,
-            category: e.target[2].value,
-            date: e.target[3].value,
+            purpose: e.target[2].value,
+            category: e.target[3].value,
+            date: e.target[4].value,
         }
         allTrans.push(transcation);
         form.reset();
@@ -26,5 +27,5 @@ export function transModalSubmit(){
     })
 }
 export function transUpdate(){
-    
+
 }
