@@ -1,4 +1,4 @@
-import { openTransactionModal } from "../components/transcationForm";
+import { openTransactionModal } from "../components/transcationForm.js";
 
 export function initDashboard (){
     document.querySelector("#quickAddBtn")
