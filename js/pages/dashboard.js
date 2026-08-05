@@ -30,15 +30,18 @@ export const netWorthUpdate = ()=>{
 }
 export const expenseUpdate = ()=>{
     let expense;
+    let income;
     let expenseCount = ()=>{
         expense = 0;
+        income = 0;
+        if(allTrans)
         
     }
 }
 export const allAmountUpdate = ()=>{
     netWorthUpdate();
     expenseUpdate();
-    
+
 }
 
 export function initDashboard (){
