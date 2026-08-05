@@ -14,6 +14,8 @@ export let dashboardTransUpd = ()=>{
                     <span class="text-(--${transcation.type == "Income" ? "success" : "danger"}) font-bold">${transcation.amount}</span>
                 </div>` 
     })
+    console.log("dashboard should get updated");
+    
 }
 
 export const netWorthUpdate = ()=>{
@@ -58,7 +60,6 @@ export const allAmountUpdate = ()=>{
 export function initDashboard (){
 
     console.log("Dashboard Work!");
-
 
     document.querySelector("#quickAddBtn")
             .addEventListener("click", openTransactionModal)
