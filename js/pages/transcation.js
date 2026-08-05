@@ -3,10 +3,10 @@ import { closeTransactionModal, openTransactionModal, transModalSubmit } from ".
 export function initTransPage(){
     
     console.log("TransPage Work!");
-    let addNew = document.querySelector("#add-new-btn")
-    addNew.addEventListener("click", openTransactionModal)
+    document.querySelector("#add-new-btn")
+    .addEventListener("click", openTransactionModal)
     
-    document.querySelector("cancelBtn")
+    document.querySelector("#cancelBtn")
     .addEventListener(closeTransactionModal)
     
     transModalSubmit();
