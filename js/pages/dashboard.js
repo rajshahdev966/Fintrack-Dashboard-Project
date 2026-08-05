@@ -16,7 +16,7 @@ export let dashboardTransUpd = ()=>{
     })
 }
 
-export const allAmountUpdate = ()=>{
+export const netWorthUpdate = ()=>{
     let netWorth;
     let netWorthCount = ()=>{
         netWorth = 0;
@@ -27,6 +27,13 @@ export const allAmountUpdate = ()=>{
     netWorthCount();
     let netWorthDisplay = document.querySelector("#net-worth")
     netWorthDisplay.textContent = netWorth;    
+}
+export const expenseUpdate = ()=>{
+    let expense;
+    let expenseCount = ()=>{
+        expense = 0;
+        
+    }
 }
 
 export function initDashboard (){
