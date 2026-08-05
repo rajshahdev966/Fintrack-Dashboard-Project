@@ -5,5 +5,6 @@ export const delAllData = ()=>{
             })
 }
 export const initSettings = ()=>{
+    localStorage.setItem("trial", "Hello")
     delAllData();
 }
