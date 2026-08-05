@@ -4,7 +4,7 @@ import { allTrans } from "../core/storage.js";
 export let dashboardTransUpd = ()=>{
     let recentList = document.querySelector("#recent-trans-list")
     allTrans.forEach((transcation, index)=>{
-        recentList += `<div class="flex justify-between items-center border-b pb-4 border-(--text-primary)">
+        recentList.innerHTML += `<div class="flex justify-between items-center border-b pb-4 border-(--text-primary)">
                     <div>
                         <h3 class="font-semibold text-(--text-primary)">${transcation.purpose}</h3>
                         <p class="text-(--text-muted) text-sm">${transcation.category}</p>
