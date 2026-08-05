@@ -1,3 +1,4 @@
+import { allTrans } from "../core/storage.js";
 
 export function openTransactionModal() {
     const formCard = document.querySelector("#transFormCard");
@@ -19,7 +20,6 @@ export function transModalSubmit(){
             category: e.target[2].value,
             date: e.target[3].value,
         }
-        console.log(transcation);
-        
+        allTrans.push(transcation);
     })
 }
