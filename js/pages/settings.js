@@ -1,3 +1,4 @@
+import { allTrans } from "../core/storage.js";
 import { dashboardTransUpd } from "./dashboard.js";
 import { allTransUpdate } from "./transcation.js";
 
@@ -6,6 +7,7 @@ export const clearLocalStor = () => {
     allClearBtn.addEventListener("click", () => {
       console.log("Button Working");
     localStorage.clear();
+    allTrans.splice(0)
     dashboardTransUpd();
     allTransUpdate();
   });
