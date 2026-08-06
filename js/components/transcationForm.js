@@ -34,10 +34,6 @@ export function transModalSubmit() {
       allTransUpdate();
     }
     form.reset();
-    closeTransactionModal();
-    console.log("Transcation Modal Working");
-
-    // dashboardTransUpd();
-    // allTransUpdate();
+    closeTransactionModal();    
   });
 }
