@@ -27,7 +27,7 @@ export let allTransUpdate = ()=>{
                         </td>
 
                         <td class="px-6 py-6 text-right font-bold text-(--${transcation.type == "Income" ? "success" : "danger"})">
-                            ${transcation.amount}
+                            ${transcation.type == "Income" ? "+" : "-"}${transcation.amount}
                         </td>
 
                         <td class="px-6 py-6 text-center">

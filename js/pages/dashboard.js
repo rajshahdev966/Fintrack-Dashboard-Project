@@ -11,7 +11,7 @@ export let dashboardTransUpd = ()=>{
                         <h3 class="font-semibold text-(--text-primary)">${transcation.purpose}</h3>
                         <p class="text-(--text-muted) text-sm">${transcation.category}</p>
                     </div>
-                    <span class="text-(--${transcation.type == "Income" ? "success" : "danger"}) font-bold">${transcation.amount}</span>
+                    <span class="text-(--${transcation.type == "Income" ? "success" : "danger"}) font-bold">${transcation.type == "Income" ? "+" : "-"}${transcation.amount}</span>
                 </div>` 
     })
     console.log("dashboard should get updated");
