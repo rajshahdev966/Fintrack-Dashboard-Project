@@ -1,5 +1,5 @@
-import { dashboardTransUpd } from "./dashboard";
-import { allTransUpdate } from "./transcation";
+import { dashboardTransUpd } from "./dashboard.js";
+import { allTransUpdate } from "./transcation.js";
 
 export const clearLocalStor = () => {
     
