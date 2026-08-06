@@ -1,5 +1,5 @@
 import { dashboardTransUpd, initDashboard } from "./pages/dashboard.js";
-// import { initSettings } from "./pages/settings.js";
+import { initSettings } from "./pages/settings.js";
 import { allTransUpdate, initTransPage } from "./pages/transcation.js";
 
 const page = document.body.id;
