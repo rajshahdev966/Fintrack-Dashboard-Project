@@ -26,7 +26,7 @@ export const netWorthUpdate = ()=>{
             if(transaction.type == "Income"){
                 netWorth += transaction.amount;
             }else{
-                netWorth -= transaction.amount
+                netWorth -= transaction.amount;
             }
         })
     }
