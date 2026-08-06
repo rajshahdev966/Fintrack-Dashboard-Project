@@ -6,7 +6,7 @@ export const clearLocalStor = () => {
     let allClearBtn = document.querySelector("#all-clear-btn");
     allClearBtn.addEventListener("click", () => {
       console.log("Button Working");
-    localStorage.clear();
+      localStorage.removeItem("savedTrans")
     allTrans.splice(0)
     dashboardTransUpd();
     allTransUpdate();
