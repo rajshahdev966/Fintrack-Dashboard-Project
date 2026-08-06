@@ -23,7 +23,11 @@ export const netWorthUpdate = ()=>{
     let netWorthCount = ()=>{
         netWorth = 0;
         allTrans.forEach((transaction, index)=>{
-            netWorth += Number(transaction.amount)
+            if(transaction.type == "Income"){
+                netWorth += transaction.amount;
+            }else{
+                netWorth -= transaction.amount
+            }
         })
     }
     netWorthCount();
