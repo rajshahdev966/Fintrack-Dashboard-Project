@@ -5,5 +5,7 @@ export const clearLocalStor = () => {
   });
 };
 export const initSettings = ()=>{
+    console.log("Settigns working");
+    
     clearLocalStor();
 }
