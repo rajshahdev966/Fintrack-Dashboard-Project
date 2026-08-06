@@ -36,7 +36,7 @@ export const expenseUpdate = ()=>{
     let expenseCount = ()=>{
         expense = 0;
         income = 0;
-        x``.forEach((transaction,index)=>{
+        allTrans.forEach((transaction,index)=>{
             if(transaction.type == "Income"){
                 income += Number(transaction.amount);
             }else{
