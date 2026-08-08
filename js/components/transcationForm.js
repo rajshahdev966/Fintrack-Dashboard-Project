@@ -57,7 +57,7 @@ export const openEditModal = (index) => {
   formCard.addEventListener("submit", (e) => {
     e.preventDefault();
     allTrans[index].type = e.target[0].value;
-    allTrans[index].amount = e.target[1].value;
+    allTrans[index].amount = Number(e.target[1].value);
     allTrans[index].purpose = e.target[2].value;
     allTrans[index].category = e.target[3].value;
     allTrans[index].date = e.target[4].value;
