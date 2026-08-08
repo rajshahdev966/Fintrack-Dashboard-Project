@@ -1,4 +1,4 @@
-import { allTrans } from "../core/storage";
+import { allTrans } from "../core/storage.js";
 
 export const transSort = () => {
   const incSortBtn = document.querySelector("#inc-sort-btn");
@@ -7,11 +7,11 @@ export const transSort = () => {
   incSortBtn.addEventListener("click", () => {
     remove = "Expense";
     console.log("Hi");
-    
     sortUpdate();
   });
   expSortBtn.addEventListener("click", () => {
     remove = "Income";
+    sortUpdate();
   });
   const sortUpdate = () => {
     const transTable = document.querySelector("#trans-table");

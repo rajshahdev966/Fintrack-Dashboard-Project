@@ -1,4 +1,5 @@
 import { closeTransactionModal, openEditModal, openTransactionModal, transModalSubmit } from "../components/transcationForm.js";
+import { transSort } from "../components/transcationTable.js";
 import { allTrans, saveTrans } from "../core/storage.js";
 
 
@@ -58,6 +59,7 @@ export function initTransPage(){
     transModalSubmit();
     totalTransUpdate();
     allTransUpdate();
+    transSort();
 }
 
 export const delTrans = (index)=>{
