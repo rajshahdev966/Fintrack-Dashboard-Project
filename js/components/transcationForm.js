@@ -10,13 +10,13 @@ import { allTransUpdate, totalTransUpdate } from "../pages/transcation.js";
 import { updateGraph } from "./charts.js";
 
 export function openTransactionModal() {
-  const formCard = document.querySelector("#transFormCard");
-  formCard.classList.remove("hidden");
+  const form = document.querySelector("#transFormCard");
+  form.classList.remove("hidden");
 }
 
 export function closeTransactionModal() {
-  const formCard = document.querySelector("#transFormCard");
-  formCard.classList.add("hidden");
+  const form = document.querySelector("#transFormCard");
+  form.classList.add("hidden");
 }
 
 export function transModalSubmit() {
