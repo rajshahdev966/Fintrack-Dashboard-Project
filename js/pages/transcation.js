@@ -31,7 +31,8 @@ export let allTransUpdate = ()=>{
                         </td>
 
                         <td class="px-6 py-6 text-center">
-                            ⋮
+                            <span><i class="ri-close-circle-fill"></i></span>
+                            <span><i class="ri-close-circle-fill"></i></span>
                         </td>
                     </tr>`
 })
