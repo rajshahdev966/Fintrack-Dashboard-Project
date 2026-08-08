@@ -48,4 +48,6 @@ export const openEditModal = (index)=>{
   formCard[2].value = allTrans[index].purpose;
   formCard[3].value = allTrans[index].category;
   formCard[4].value = allTrans[index].date;
+
+  
 }
