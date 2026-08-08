@@ -251,9 +251,10 @@
 
           <!-- Placeholder Chart -->
           <div
-            class="h-80 rounded-2xl border-2 border-dashed border-slate-300 flex items-center justify-center"
+            class="h-80 rounded-2xl border-2 border-dashed border-slate-300 flex items-end justify-center gap-5"
           >
-          <div class="h-72 bg-amber-500">Hello</div>
+          <div class="h-50 w-40 bg-(--success) " id="income-graph">Income</div>
+          <div class="h-72 w-40 bg-(--danger) " id="expense-graph">Expense</div>
         </div>
         </div>
       </div>
@@ -265,7 +266,7 @@
         <div class="flex justify-between items-center">
           <h2 class="text-3xl font-bold text-(--text-primary)">Recent</h2>
 
-          <button class="text-(--primary-hover) font-semibold cursor-pointer bg-amber-800">
+          <button class="text-(--primary-hover) font-semibold cursor-pointer">
             VIEW ALL
           </button>
         </div>
