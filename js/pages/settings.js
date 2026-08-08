@@ -3,8 +3,8 @@ import { dashboardTransUpd } from "./dashboard.js";
 import { allTransUpdate } from "./transcation.js";
 
 export const themeSwitch = ()=>{
-  const switchBtn = document.querySelector("switch-btn");
-  const switchLogo = document.querySelector("switch-logo");
+  const switchBtn = document.querySelector("#switch-btn");
+  const switchLogo = document.querySelector("#switch-logo");
   const themeLogic = ()=>{
     if(darkOn){
       document.body.classList.add(dark)
