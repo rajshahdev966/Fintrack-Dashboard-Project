@@ -12,17 +12,16 @@ export const themeSwitch = ()=>{
       document.body.classList.add("dark")
       switchLogo.classList.replace("ri-moon-fill", "ri-sun-fill");
       
-      darkOn != darkOn;
       
     }else{
       console.log("Theme should be light");
       switchLogo.classList.replace("ri-sun-fill", "ri-moon-fill");
-      darkOn != darkOn;
       
     }
   }
   switchBtn.addEventListener("click", ()=>{
     console.log("Theme Chnaged");
+    darkOn = !darkOn;
     themeLogic();
     saveTheme();
   })
