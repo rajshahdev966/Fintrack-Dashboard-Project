@@ -29,7 +29,7 @@ export function transModalSubmit() {
     if (document.body.id == "dashboard-page") {
       allAmountUpdate();
       dashboardTransUpd();
-      updateGraph(income, expense, netWorth);
+      updateGraph();
     }
     if (document.body.id == "transactions-page") {
       totalTransUpdate();
