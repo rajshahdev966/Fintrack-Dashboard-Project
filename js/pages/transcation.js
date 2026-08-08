@@ -1,6 +1,7 @@
 import { closeTransactionModal, openEditModal, openTransactionModal, transModalSubmit } from "../components/transcationForm.js";
 import { transSort } from "../components/transcationTable.js";
 import { allTrans, saveTrans } from "../core/storage.js";
+import { themeLogic } from "./settings.js";
 
 
 
@@ -60,6 +61,7 @@ export function initTransPage(){
     totalTransUpdate();
     allTransUpdate();
     transSort();
+    themeLogic();
 }
 
 export const delTrans = (index)=>{
