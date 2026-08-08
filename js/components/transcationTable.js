@@ -6,6 +6,8 @@ export const transSort = () => {
   let remove;
   incSortBtn.addEventListener("click", () => {
     remove = "Expense";
+    console.log("Hi");
+    
     sortUpdate();
   });
   expSortBtn.addEventListener("click", () => {
