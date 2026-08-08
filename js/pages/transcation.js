@@ -4,7 +4,6 @@ import { allTrans, saveTrans } from "../core/storage.js";
 
 
 export let allTransUpdate = ()=>{
-    console.log("all Trans Update working");
     const transTable = document.querySelector("#trans-table");
     if(!transTable) return;
     transTable.innerHTML = ``
