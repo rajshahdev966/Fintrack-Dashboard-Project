@@ -15,6 +15,7 @@ export const themeSwitch = ()=>{
       
     }else{
       console.log("Theme should be light");
+      document.body.classList.remove("dark")
       switchLogo.classList.replace("ri-sun-fill", "ri-moon-fill");
       
     }
