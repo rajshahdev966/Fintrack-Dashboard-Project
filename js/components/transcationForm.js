@@ -44,6 +44,7 @@ export const openEditModal = (index)=>{
   openTransactionModal();
   const formCard = document.querySelector("form")
   console.log(formCard);
+  console.
   
 
 }
