@@ -797,6 +797,12 @@
     .hover\:bg-slate-100:hover {
       background-color: var(--color-slate-100);
     }
+    .hover\:text-\(--danger\):hover {
+      color: var(--danger);
+    }
+    .hover\:text-\(--primary\):hover {
+      color: var(--primary);
+    }
     .hover\:text-\(--text-primary\):hover {
       color: var(--text-primary);
     }

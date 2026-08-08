@@ -30,9 +30,9 @@ export let allTransUpdate = ()=>{
                             ${transcation.type == "Income" ? "+" : "-"}${transcation.amount}
                         </td>
 
-                        <td class="px-6 py-6 text-center">
-                            <span><i class="ri-close-circle-fill"></i></span>
-                            <span><i class="ri-close-circle-fill"></i></span>
+                        <td class="px-6 py-6 text-center flex items-center justify-center gap-4 text-3xl">
+                            <span class="hover:text-(--danger) cursor-pointer"><i class="ri-close-circle-fill"></i></span>
+                            <span class="hover:text-(--primary) cursor-pointer" ><i class="ri-pencil-fill"></i></span>
                         </td>
                     </tr>`
 })
