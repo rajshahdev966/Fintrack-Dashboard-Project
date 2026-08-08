@@ -6,46 +6,28 @@
     <title>Document</title>
     <link rel="stylesheet" href="./styles/output.css" />
     <link rel="stylesheet" href="" />
-    <style>
-      :root {
-        --bg-primary: #eef1f6;
-        --bg-secondary: #ffffff;
-        --bg-tertiary: #e4e9f1;
-        --primary: #14544a;
-        --primary-hover: #0e3d35;
-        --secondary: #2f7d5c;
-        --danger: #b8433a;
-        --text-primary: #16211f;
-        --text-secondary: #64748b;
-        --radius-md: 1.1rem;
-        --shadow-md: 0 14px 34px -16px rgba(20, 84, 74, 0.28);
-        --font-mono: "JetBrains Mono", "Courier New", ui-monospace, monospace;
-        --text-xl: 1.125rem;
-      }
-      #dashboard-page { background-image: radial-gradient(var(--bg-tertiary) 1px, transparent 1px); background-size: 22px 22px; }
-      .ri-dashboard-fill::before { content: "▦"; }
-      .ri-cash-line::before { content: "◧"; }
-      .ri-settings-2-line::before { content: "⚙"; }
-      .ri-add-large-line::before { content: "+"; }
-      #net-worth, #income-display, #expense-display { font-family: Georgia, "Times New Roman", serif; letter-spacing: -0.02em; }
-      .upper-nav .logo-text { font-family: Georgia, serif; letter-spacing: -0.01em; }
-      @keyframes riseIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
-      .rise-1 { animation: riseIn .5s ease-out both; }
-      .rise-2 { animation: riseIn .5s ease-out .08s both; }
-      .rise-3 { animation: riseIn .5s ease-out .16s both; }
-      .stub-line { background-image: repeating-linear-gradient(to bottom, rgba(255,255,255,.35) 0 6px, transparent 6px 12px); }
-    </style>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body class="bg-[var(--bg-primary)] font-[var(--font-mono)] text-nowrap flex relative" id="dashboard-page">
 
 
 
-    <div class="w-full h-full rounded-2xl border border-slate-200 bg-transparent p-8 shadow-sm absolute backdrop-blur-md flex justify-center items-center hidden z-50" id="transFormCard">
+    <div class="w-full h-full rounded-2xl border border-slate-200 bg-transparent p-8 shadow-sm absolute backdrop-blur-sm flex justify-center items-center hidden" id="transFormCard">
 
-    <div class="w-max h-max bg-white rounded-2xl border-slate-200 p-8 shadow-2xl">
+    <div class="w-max h-max bg-white rounded-2xl border-slate-200 p-8 shadow-sm ">
         <!-- Header -->
         <div class="mb-8">
-            <h2 class="text-3xl font-bold text-slate-800" style="font-family: Georgia, serif;">
+            <h2 class="text-3xl font-bold text-slate-800">
                 Add Transaction
             </h2>
             <p class="mt-2 text-sm text-slate-500">
@@ -59,7 +41,7 @@
                     Transaction Type
                 </label>
                 <select
-                    class="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-[var(--primary)] focus:ring-4 focus:ring-emerald-100" id="trans-type">
+                    class="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-sky-500 focus:ring-4 focus:ring-sky-100" id="trans-type">
                     <option>Income</option>
                     <option>Expense</option>
                 </select>
@@ -72,7 +54,7 @@
                 <input
                     type="number"
                     placeholder="₹0.00"
-                    class="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-[var(--primary)] focus:ring-4 focus:ring-emerald-100">
+                    class="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-sky-500 focus:ring-4 focus:ring-sky-100">
             </div>
             <!-- Purpose  -->
             <div>
@@ -82,7 +64,7 @@
                 <input
                     type="text"
                     placeholder="Amazon"
-                    class="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-[var(--primary)] focus:ring-4 focus:ring-emerald-100">
+                    class="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-sky-500 focus:ring-4 focus:ring-sky-100">
             </div>
             <!-- Category -->
             <div>
@@ -90,7 +72,7 @@
                     Category
                 </label>
                 <select
-                    class="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-[var(--primary)] focus:ring-4 focus:ring-emerald-100">
+                    class="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-sky-500 focus:ring-4 focus:ring-sky-100">
                     <option>Food</option>
                     <option>Shopping</option>
                     <option>Travel</option>
@@ -106,18 +88,18 @@
                 </label>
                 <input
                     type="date"
-                    class="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-[var(--primary)] focus:ring-4 focus:ring-emerald-100">
+                    class="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-sky-500 focus:ring-4 focus:ring-sky-100">
             </div>
             <!-- Buttons -->
             <div class="flex justify-end gap-4 pt-4">
                 <button
                     type="button"
-                    class="rounded-xl border border-slate-300 px-6 py-3 font-semibold text-slate-600 transition hover:bg-slate-100 cursor-pointer" id="cancelBtn">
+                    class="rounded-xl border border-slate-300 px-6 py-3 font-semibold text-slate-600 transition hover:bg-slate-100" id="cancelBtn">
                     Cancel
                 </button>
                 <button
                     type="submit"
-                    class="rounded-xl bg-(--primary) text-white px-6 py-3 font-semibold text-slate-600 shadow transition hover:bg-(--primary-hover) hover:-translate-y-0.5 hover:text-white cursor-pointer" id="submitBtn">
+                    class="rounded-xl bg-sky-500 px-6 py-3 font-semibold text-white shadow transition hover:bg-sky-600" id="submitBtn">
                     Save Transaction
                 </button>
             </div>
@@ -127,30 +109,30 @@
 </div>
 
     <nav
-      class="bg-[var(--bg-secondary)] h-screen w-min flex flex-col justify-between p-5 shadow-(--shadow-md) border-r border-slate-200"
+      class="bg-[var(--bg-secondary)] h-screen w-min flex flex-col justify-between p-5 shadow-(--shadow-md)"
     >
       <div class="upper-nav flex flex-col gap-5">
         <div class="logo-text text-(--primary) text-4xl font-semibold">
           FinTrack Pro
         </div>
         <div class="nav-menu text-(length:--text-xl) flex flex-col gap-4">
-          <div class="dashboard-a flex gap-2 items-center p-4 rounded-[var(--radius-md)] bg-(--primary) cursor-pointer text-white shadow-(--shadow-md)">
+          <div class="dashboard-a flex gap-2 items-center p-4 rounded-[var(--radius-md)] bg-(--primary) cursor-pointer text-(--text-primary)">
             <i class="ri-dashboard-fill"></i> <a href="./index.html">Dashboard</a>
           </div>
-          <div class="transcations-a flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) transition cursor-pointer text-(--text-primary)">
+          <div class="transcations-a flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) cursor-pointer text-(--text-primary)">
             <i class="ri-cash-line"></i> <a href="./transcations.html">Transcations</a>
           </div>
           
-          <div class="settings-a flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) transition cursor-pointer text-(--text-primary)">
+          <div class="settings-a flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) cursor-pointer text-(--text-primary)">
             <i class="ri-settings-2-line"></i> <a href="./settings.html">Settings</a>
           </div>
         </div>
       </div>
-      <div class="profile-section flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) transition cursor-pointer">
+      <div class="profile-section flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) cursor-pointer">
         <div class="profile-photo">
           <img
             src="https://plus.unsplash.com/premium_photo-1683121366070-5ceb7e007a97?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="user profile photo" class="h-[50px] w-[50px] rounded-[50%] ring-2 ring-(--primary)/20"
+            alt="user profile photo" class="h-[50px] w-[50px] rounded-[50%]"
           />
         </div>
         <div class="profile-name text-(--text-primary)"><span>ALEX MORGAN</span></div>
@@ -158,19 +140,19 @@
       </div>
     </nav>
     
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 p-6 md:p-10 lg:p-16">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 p-20">
 
         <!-- LEFT SIDE -->
-        <div class="lg:col-span-2 flex flex-col gap-6">
+        <div class="lg:col-span-2 h-full w-full">
 
             <!-- TOP CARDS -->
             <div class="grid md:grid-cols-3 gap-6">
 
                 <!-- Net Worth -->
-                <div class=" md:col-span-2 rounded-3xl bg-(--primary) text-white p-8 flex flex-col justify-between overflow-hidden shadow-(--shadow-md)">
-                    <div class="stub-line absolute inset-y-0 left-10 w-px"></div>
+                <div class="md:col-span-2 rounded-3xl bg-(--primary) text-white p-8 flex flex-col justify-between">
+
                     <div class="flex flex-col gap-3">
-                        <p class="text-sm tracking-[0.2em] text-white/70">
+                        <p class="text-sm">
                             TOTAL NET WORTH
                         </p>
 
@@ -181,7 +163,7 @@
                     <div class="flex gap-4 mt-8">
 
                         <button
-                            class="bg-white text-(--primary) font-semibold px-6 py-4 rounded-2xl cursor-pointer transition hover:-translate-y-0.5 hover:shadow-lg" id="quickAddBtn">
+                            class="bg-white text-(--primary) font-semibold px-6 py-4 rounded-2xl cursor-pointer" id="quickAddBtn">
                             <i class="ri-add-large-line"></i> Quick Add
                         </button>
                     </div>
@@ -192,15 +174,15 @@
                 <div class="space-y-6">
 
                     <div
-                        class=" bg-(--bg-secondary) rounded-3xl shadow-(--shadow-md) p-6 flex items-center gap-5 border border-slate-100 transition hover:-translate-y-1">
+                        class="bg-(--bg-secondary) rounded-3xl shadow p-6 flex items-center gap-5">
 
                         <div
-                            class="h-14 w-14 rounded-2xl bg-emerald-100 flex items-center justify-center text-2xl text-(--secondary)">
+                            class="h-14 w-14 rounded-2xl bg-emerald-100 flex items-center justify-center text-2xl">
                             ↑
                         </div>
 
                         <div>
-                            <p class="text-xs uppercase font-semibold text-(--text-secondary) tracking-widest">
+                            <p class="text-xs uppercase font-semibold text-(--text-secondary)">
                                 Income
                             </p>
 
@@ -212,15 +194,15 @@
                     </div>
 
                     <div
-                        class="bg-(--bg-secondary) rounded-3xl shadow-(--shadow-md) p-6 flex items-center gap-5 border border-slate-100 transition hover:-translate-y-1">
+                        class="bg-(--bg-secondary) rounded-3xl shadow p-6 flex items-center gap-5">
 
                         <div
-                            class="h-14 w-14 rounded-2xl bg-red-100 flex items-center justify-center text-2xl text-(--danger)">
+                            class="h-14 w-14 rounded-2xl bg-red-100 flex items-center justify-center text-2xl">
                             ↓
                         </div>
 
                         <div>
-                            <p class="text-xs uppercase font-semibold text-(--text-secondary) tracking-widest">
+                            <p class="text-xs uppercase font-semibold text-(--text-secondary)">
                                 Expenses
                             </p>
 
@@ -236,20 +218,20 @@
             </div>
 
             <!-- Cash Flow -->
-            <div class="bg-(--bg-secondary) rounded-3xl shadow-(--shadow-md) p-8 flex flex-col gap-5 border border-slate-100">
+            <div class="bg-(--bg-secondary) rounded-3xl shadow p-8 flex flex-col gap-5">
 
                 <div class="flex justify-between items-center">
 
-                    <h2 class="text-3xl font-bold text-(--text-primary)" style="font-family: Georgia, serif;">
+                    <h2 class="text-3xl font-bold text-(--text-primary)">
                         Cash Flow Trends
                     </h2>
 
                 </div>
 
                 <!-- Placeholder Chart -->
-                <div>
-                    <div class="h-[50%] bg-(--primary) w-2.5"> hello</div>
-                    <div class="h-96 bg-(--danger) w-2.5"> hello</div>
+                <div
+                    class="h-max rounded-2xl border-2 border-dashed border-slate-300 flex items-center justify-center text-slate-400">
+                    Chart goes here
                 </div>
 
             </div>
@@ -257,21 +239,21 @@
         </div>
 
         <!-- RIGHT PANEL -->
-        <div class="bg-(--bg-secondary) rounded-3xl shadow-(--shadow-md) p-6 flex flex-col gap-4 w-full border border-slate-100 h-fit">
+        <div class="bg-(--bg-secondary) rounded-3xl shadow p-6 flex flex-col gap-4 w-full">
 
             <div class="flex justify-between items-center">
 
-                <h2 class="text-3xl font-bold text-(--text-primary)" style="font-family: Georgia, serif;">
+                <h2 class="text-3xl font-bold text-(--text-primary)">
                     Recent
                 </h2>
 
-                <button class="text-(--primary-hover) font-semibold cursor-pointer text-sm tracking-wide hover:underline">
+                <button class="text-(--primary-hover) font-semibold cursor-pointer">
                     VIEW ALL
                 </button>
 
             </div>
 
-            <div class="flex flex-col gap-3 text-(--text-secondary)" id="recent-trans-list">
+            <div class="flex flex-col gap-3" id="recent-trans-list">
                 No transcation added yet
             </div>
 
