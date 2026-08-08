@@ -65,8 +65,8 @@ export const openEditModal = (index) => {
     allTrans[index].date = e.target[4].value;
     saveTrans();
     console.log(allTrans[index]);
-    // totalTransUpdate();
-    // allTransUpdate();
+    totalTransUpdate();
+    allTransUpdate();
     formCard.reset();
     closeTransactionModal();
   });
