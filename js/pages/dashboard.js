@@ -22,17 +22,21 @@ export let dashboardTransUpd = ()=>{
 
 export let income;
 export let expense;
-export let netWorth
+export let netWorth;
+export let total;
 
 
 export const netWorthUpdate = ()=>{
     let netWorthCount = ()=>{
         netWorth = 0;
+        total = 0;
         allTrans.forEach((transaction, index)=>{
             if(transaction.type == "Income"){
                 netWorth += transaction.amount;
+                total += transaction.amount;
             }else{
                 netWorth -= transaction.amount;
+                total -= transaction.amount;
             }
         })
     }
