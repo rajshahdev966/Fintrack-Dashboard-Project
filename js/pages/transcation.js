@@ -67,3 +67,7 @@ export const delTrans = (index)=>{
     allTransUpdate();
 }
 window.delTrans = delTrans;
+
+export const editTrans = (index)=>{
+    
+}
