@@ -7,16 +7,15 @@ export const themeSwitch = ()=>{
   const switchLogo = document.querySelector("#switch-logo");
   const themeLogic = ()=>{
     if(darkOn){
-      document.body.classList.add(dark)
-      switchLogo.classList.replace(ri-moon-fill, ri-sun-fill);
+      document.body.classList.add("dark")
+      switchLogo.classList.replace("ri-moon-fill", "ri-sun-fill");
       
     }else{
-      switchLogo.classList.replace(ri-sun-fill, ri-moon-fill);
+      switchLogo.classList.replace("ri-sun-fill", "ri-moon-fill");
     }
   }
   switchBtn.addEventListener("click", ()=>{
     console.log("Theme Chnaged");
-    
     darkOn != darkOn;
     themeLogic();
   })
