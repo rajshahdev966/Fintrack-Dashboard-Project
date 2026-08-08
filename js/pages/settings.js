@@ -3,7 +3,7 @@ import { dashboardTransUpd } from "./dashboard.js";
 import { allTransUpdate } from "./transcation.js";
 
 export const themeLogic = ()=>{
-  console.log("darkon =" + darkOn);
+  console.log("darkon = " + darkOn);
   
   if(darkOn){
     console.log("Theme should be dark");
