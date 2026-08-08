@@ -51,18 +51,18 @@ export const openEditModal = (index) => {
   console.log("Edit Clicked", index);
   console.log(allTrans[index]);
   const formCard = document.querySelector("form");
+  const submit = document.querySelector("submit-btn")
   formCard[0].value = allTrans[index].type;
   formCard[1].value = allTrans[index].amount;
   formCard[2].value = allTrans[index].purpose;
   formCard[3].value = allTrans[index].category;
   formCard[4].value = allTrans[index].date;
-  formCard.addEventListener("submit", (e) => {
-    e.preventDefault();
-    allTrans[index].type = e.target[0].value;
-    allTrans[index].amount = Number(e.target[1].value);
-    allTrans[index].purpose = e.target[2].value;
-    allTrans[index].category = e.target[3].value;
-    allTrans[index].date = e.target[4].value;
+  submit.addEventListener("click", () => {
+    allTrans[index].type = formCard[0].value;
+    allTrans[index].amount = Number(formCard[1].value);
+    allTrans[index].purpose = formCard[2].value;
+    allTrans[index].category = formCard[3].value;
+    allTrans[index].date = formCard[4].value;
     saveTrans();
     console.log(allTrans[index]);
       // totalTransUpdate();
