@@ -61,10 +61,10 @@ export const openEditModal = (index) => {
     allTrans[index].purpose = e.target[2].value;
     allTrans[index].category = e.target[3].value;
     allTrans[index].date = e.target[4].value;
+    saveTrans();
+    totalTransUpdate();
+    allTransUpdate();
+    formCard.reset();
+    closeTransactionModal();
   });
-  saveTrans();
-  totalTransUpdate();
-  allTransUpdate();
-  formCard.reset();
-  closeTransactionModal();
 };
