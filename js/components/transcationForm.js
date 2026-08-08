@@ -48,6 +48,7 @@ export function transModalSubmit() {
 
 export const openEditModal = (index) => {
   openTransactionModal();
+  console.log("Edit Clicked", index);
   const formCard = document.querySelector("form");
   formCard[0].value = allTrans[index].type;
   formCard[1].value = allTrans[index].amount;
