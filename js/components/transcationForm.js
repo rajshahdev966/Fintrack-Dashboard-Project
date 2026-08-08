@@ -51,7 +51,7 @@ export const openEditModal = (index) => {
   console.log("Edit Clicked", index);
   console.log(allTrans[index]);
   const formCard = document.querySelector("form");
-  const submit = document.querySelector("submit-btn")
+  const submit = document.querySelector("#submit-btn")
   formCard[0].value = allTrans[index].type;
   formCard[1].value = allTrans[index].amount;
   formCard[2].value = allTrans[index].purpose;
