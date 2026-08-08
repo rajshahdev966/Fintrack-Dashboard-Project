@@ -1,21 +1,23 @@
 import { allTrans } from "../core/storage";
 
-export const transSort = ()=>{
-    const incSortBtn = document.querySelector("#inc-sort-btn");
-    const expSortBtn = document.querySelector("#exp-sort-btn");
-    let sortBy;
-    incSortBtn.addEventListener("click", ()=>{
-        sortBy = "Income";
-    })
-    expSortBtn.addEventListener("click", ()=>{
-        sortBy = "Expense";
-    })
-    const sortUpdate = ()=>{
-        const transTable = document.querySelector("#trans-table");
-    if(!transTable) return;
-    transTable.innerHTML = ``
-    allTrans.forEach((transcation, index)=>{
-        transTable.innerHTML += `<tr class="hover:bg-(--surface-bright) transition">
+export const transSort = () => {
+  const incSortBtn = document.querySelector("#inc-sort-btn");
+  const expSortBtn = document.querySelector("#exp-sort-btn");
+  let remove;
+  incSortBtn.addEventListener("click", () => {
+    remove = "Expense";
+    sortUpdate();
+  });
+  expSortBtn.addEventListener("click", () => {
+    remove = "Income";
+  });
+  const sortUpdate = () => {
+    const transTable = document.querySelector("#trans-table");
+    if (!transTable) return;
+    transTable.innerHTML = ``;
+    allTrans.forEach((transcation, index) => {
+        if(transcation.type == remove) return;
+      transTable.innerHTML += `<tr class="hover:bg-(--surface-bright) transition">
         
         <td class="px-6 py-6 font-medium">
         ${transcation.date}
@@ -42,9 +44,7 @@ export const transSort = ()=>{
         <span class="hover:text-(--danger) cursor-pointer" onclick="delTrans(${index})"><i class="ri-close-circle-fill"></i></span>
         <span class="hover:text-(--primary) cursor-pointer" onclick="editTrans(${index})"><i class="ri-pencil-fill"></i></span>
         </td>
-        </tr>`
-    })
-    
-
-
-}
+        </tr>`;
+    });
+  };
+};
