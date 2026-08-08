@@ -6,44 +6,70 @@
     <title>Document</title>
     <link rel="stylesheet" href="./styles/output.css" />
     <link rel="stylesheet" href="" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..800&display=swap"
-      rel="stylesheet"
-    />
+    <style>
+      :root {
+        --bg-primary: #eef1f6;
+        --bg-secondary: #ffffff;
+        --bg-tertiary: #e4e9f1;
+        --primary: #14544a;
+        --primary-hover: #0e3d35;
+        --secondary: #2f7d5c;
+        --danger: #b8433a;
+        --text-primary: #16211f;
+        --text-secondary: #33413e;
+        --text-muted: #8a94a3;
+        --border: #dbe2ec;
+        --border-light: #e6ebf2;
+        --surface: #ffffff;
+        --surface-dim: #edf1f6;
+        --radius-md: 1.1rem;
+        --shadow-md: 0 14px 34px -16px rgba(20, 84, 74, 0.28);
+        --font-mono: "JetBrains Mono", "Courier New", ui-monospace, monospace;
+        --text-xl: 1.125rem;
+      }
+      #settings-page { background-image: radial-gradient(var(--bg-tertiary) 1px, transparent 1px); background-size: 22px 22px; }
+      .ri-dashboard-fill::before { content: "▦"; }
+      .ri-cash-line::before { content: "◧"; }
+      .ri-settings-2-line::before { content: "⚙"; }
+      .upper-nav .logo-text { font-family: Georgia, serif; letter-spacing: -0.01em; }
+      #settings-page section h2 { font-family: Georgia, serif; }
+      @keyframes riseIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+      #settings-page section:nth-of-type(1) { animation: riseIn .5s ease-out both; }
+      #settings-page section:nth-of-type(2) { animation: riseIn .5s ease-out .06s both; }
+      #settings-page section:nth-of-type(3) { animation: riseIn .5s ease-out .12s both; }
+      #settings-page section:nth-of-type(4) { animation: riseIn .5s ease-out .18s both; }
+      #settings-page section > div { transition: box-shadow .2s ease; }
+      #settings-page section > div:hover { box-shadow: var(--shadow-md); }
+      .toggle-track { transition: background-color .2s ease; }
+      .toggle-knob { transition: transform .2s ease; }
+    </style>
   </head>
   <body class="bg-[var(--bg-primary)] font-[var(--font-mono)] text-nowrap flex" id="settings-page">
     <nav
-      class="bg-[var(--bg-secondary)] h-screen w-min flex flex-col justify-between p-5 shadow-(--shadow-md)"
+      class="bg-[var(--bg-secondary)] h-screen w-min flex flex-col justify-between p-5 shadow-(--shadow-md) border-r border-slate-200"
     >
       <div class="upper-nav flex flex-col gap-5">
         <div class="logo-text text-(--primary) text-4xl font-semibold">
           FinTrack Pro
         </div>
         <div class="nav-menu text-(length:--text-xl) flex flex-col gap-4">
-          <div class="dashboard-a flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) cursor-pointer text-(--text-primary)" href="./index.html">
+          <div class="dashboard-a flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) transition cursor-pointer text-(--text-primary)" href="./index.html">
             <i class="ri-dashboard-fill"></i> <a href="./index.html">Dashboard</a>
           </div>
-          <div class="transcations-a flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) cursor-pointer text-(--text-primary)">
+          <div class="transcations-a flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) transition cursor-pointer text-(--text-primary)">
             <i class="ri-cash-line"></i> <a href="./transcations.html">Transcations</a>
           </div>
           
-          <div class="settings-a flex gap-2 items-center p-4 rounded-[var(--radius-md)] bg-(--primary) cursor-pointer text-(--text-primary) ">
+          <div class="settings-a flex gap-2 items-center p-4 rounded-[var(--radius-md)] bg-(--primary) cursor-pointer text-white shadow-(--shadow-md)">
             <i class="ri-settings-2-line"></i> <a href="./settings.html">Settings</a>
           </div>
         </div>
       </div>
-      <div class="profile-section flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) cursor-pointer">
+      <div class="profile-section flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) transition cursor-pointer">
         <div class="profile-photo">
           <img
             src="https://plus.unsplash.com/premium_photo-1683121366070-5ceb7e007a97?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="user profile photo" class="h-[50px] w-[50px] rounded-[50%]"
+            alt="user profile photo" class="h-[50px] w-[50px] rounded-[50%] ring-2 ring-(--primary)/20"
           />
         </div>
         <div class="profile-name text-(--text-primary)"><span>ALEX MORGAN</span></div>
@@ -51,7 +77,7 @@
       </div>
     </nav>
     
-    <div class="max-w-5xl mx-auto space-y-10">
+    <div class="max-w-5xl mx-auto space-y-10 p-6 md:p-10 lg:p-16 w-full">
 
     <!-- ================= PROFILE ================= -->
     <section>
@@ -60,39 +86,39 @@
             Profile
         </h2>
 
-        <div class="rounded-2xl border border-(--border-light) bg-(--bg-tertiary) p-6 shadow-sm">
+        <div class="rounded-2xl border border-(--border-light) bg-(--bg-secondary) p-6 shadow-(--shadow-md)">
 
             <div class="flex flex-col md:flex-row gap-6 items-center">
 
                 <!-- Avatar -->
                 <div
-                    class="h-20 w-20 rounded-full bg-(--primary) flex items-center justify-center text-3xl font-bold text-slate-600">
+                    class="h-20 w-20 rounded-full bg-(--primary) flex items-center justify-center text-3xl font-bold text-white" style="font-family: Georgia, serif;">
                     JD
                 </div>
 
                 <!-- Form -->
-                <div class="flex-1 space-y-5">
+                <div class="flex-1 space-y-5 w-full">
 
                     <div>
-                        <label class="block text-xs font-semibold uppercase text-(--text-secondary) mb-2">
+                        <label class="block text-xs font-semibold uppercase text-(--text-secondary) mb-2 tracking-widest">
                             Full Name
                         </label>
 
                         <input
                             type="text"
                             value="Alexander Sterling"
-                            class="w-full rounded-lg border border-(--border-light) px-4 py-3 focus:outline-none focus:ring-2 focus:ring-(--primary) text-(--text-muted)">
+                            class="w-full rounded-lg border border-(--border-light) px-4 py-3 focus:outline-none focus:ring-2 focus:ring-(--primary) text-(--text-primary) transition">
                     </div>
 
                     <div>
-                        <label class="block text-xs font-semibold uppercase text-(--text-secondary) mb-2">
+                        <label class="block text-xs font-semibold uppercase text-(--text-secondary) mb-2 tracking-widest">
                             Email Address
                         </label>
 
                         <input
                             type="email"
                             value="alex.sterling@fintrack.pro"
-                            class="w-full rounded-lg border border-(--border-light) px-4 py-3 focus:outline-none focus:ring-2 focus:ring-(--primary) text-(--text-muted)">
+                            class="w-full rounded-lg border border-(--border-light) px-4 py-3 focus:outline-none focus:ring-2 focus:ring-(--primary) text-(--text-primary) transition">
                     </div>
 
                 </div>
@@ -106,17 +132,17 @@
     <!-- ================= PREFERENCES ================= -->
     <section>
 
-        <h2 class="text-2xl font-bold text-(--text-secondary) mb-5">
+        <h2 class="text-2xl font-bold text-(--text-primary) mb-5">
             Preferences
         </h2>
 
-        <div class="rounded-2xl border border-(--border-light) bg-(--bg-tertiary) shadow-sm divide-y">
+        <div class="rounded-2xl border border-(--border-light) bg-(--bg-secondary) shadow-(--shadow-md) divide-y divide-(--border-light)">
 
             <!-- Currency -->
             <div class="flex justify-between items-center p-6">
 
                 <div>
-                    <h3 class="font-semibold text-(--text-secondary)">
+                    <h3 class="font-semibold text-(--text-primary)">
                         Preferred Currency
                     </h3>
 
@@ -126,7 +152,7 @@
                 </div>
 
                 <select
-                    class="rounded-lg border border-(--border) px-4 py-2 bg-(--surface) text-(--text-muted) focus:ring-2 focus:ring-(--primary)">
+                    class="rounded-lg border border-(--border) px-4 py-2 bg-(--surface) text-(--text-primary) focus:ring-2 focus:ring-(--primary) focus:outline-none">
                     <option>USD ($)</option>
                     <option>EUR (€)</option>
                     <option>INR (₹)</option>
@@ -138,7 +164,7 @@
             <div class="flex justify-between items-center p-6">
 
                 <div>
-                    <h3 class="font-semibold text-(--text-secondary)">
+                    <h3 class="font-semibold text-(--text-primary)">
                         Appearance
                     </h3>
 
@@ -148,10 +174,10 @@
                 </div>
 
                 <button
-                    class="relative w-14 h-8 rounded-full bg-slate-300">
+                    class="toggle-track relative w-14 h-8 rounded-full bg-(--primary)">
 
                     <span
-                        class="absolute left-1 top-1 h-6 w-6 rounded-full bg-(--bg-tertiary) shadow"></span>
+                        class="toggle-knob absolute left-1 top-1 h-6 w-6 rounded-full bg-white shadow translate-x-6"></span>
 
                 </button>
 
@@ -161,7 +187,7 @@
             <div class="flex justify-between items-center p-6">
 
                 <div>
-                    <h3 class="font-semibold text-(--text-secondary)">
+                    <h3 class="font-semibold text-(--text-primary)">
                         Language
                     </h3>
 
@@ -170,7 +196,7 @@
                     </p>
                 </div>
 
-                <button class="text-slate-600 font-medium">
+                <button class="text-(--primary) font-medium hover:underline">
                     English (US) →
                 </button>
 
@@ -183,16 +209,16 @@
     <!-- ================= DATA ================= -->
     <section>
 
-        <h2 class="text-2xl font-bold text-(--text-secondary) mb-5">
+        <h2 class="text-2xl font-bold text-(--text-primary) mb-5">
             Data Management
         </h2>
 
         <div
-            class="rounded-2xl border border-(--border-light) bg-(--bg-tertiary) shadow-sm p-6">
+            class="rounded-2xl border border-(--border-light) bg-(--bg-secondary) shadow-(--shadow-md) p-6">
 
             <div class="flex gap-4">
 
-                <div class="text-xl">
+                <div class="text-xl text-(--danger)">
                     ⚠
                 </div>
 
@@ -216,7 +242,7 @@
             </div>
 
             <button
-                class="mt-6 w-full rounded-xl bg-(--danger) py-4 font-semibold text-(--text-secondary) hover:bg-red-600 transition">
+                class="mt-6 w-full rounded-xl bg-(--danger) py-4 font-semibold text-white hover:bg-red-700 transition hover:-translate-y-0.5">
                 🗑 Reset Account Data
             </button>
 
@@ -227,22 +253,22 @@
     <!-- ================= ABOUT ================= -->
     <section>
 
-        <h2 class="text-2xl font-bold text-(--text-secondary) mb-5">
+        <h2 class="text-2xl font-bold text-(--text-primary) mb-5">
             About FinTrack Pro
         </h2>
 
         <div
-            class="rounded-2xl border border-(--border-light) bg-(--bg-tertiary) shadow-sm p-6">
+            class="rounded-2xl border border-(--border-light) bg-(--bg-secondary) shadow-(--shadow-md) p-6">
 
             <div class="flex gap-4">
 
-                <div class="text-xl">
+                <div class="text-xl text-(--primary)">
                     🛡
                 </div>
 
                 <div>
 
-                    <h3 class="font-semibold text-(--text-secondary)">
+                    <h3 class="font-semibold text-(--text-primary)">
                         Privacy First Architecture
                     </h3>
 
