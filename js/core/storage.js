@@ -7,3 +7,6 @@ export function saveTrans (){
 export const saveTheme = ()=>{
     localStorage.setItem('dakrOn', JSON.stringify(darkOn))
 }
+export const toggleTheme = ()=>{
+    darkOn = !darkOn;
+}

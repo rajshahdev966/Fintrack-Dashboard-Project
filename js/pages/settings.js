@@ -1,4 +1,4 @@
-import { allTrans, darkOn, saveTheme } from "../core/storage.js";
+import { allTrans, darkOn, saveTheme, toggleTheme } from "../core/storage.js";
 import { dashboardTransUpd } from "./dashboard.js";
 import { allTransUpdate } from "./transcation.js";
 
@@ -21,7 +21,7 @@ export const themeSwitch = ()=>{
   }
   switchBtn.addEventListener("click", ()=>{
     console.log("Theme Chnaged");
-    darkOn = !darkOn;
+    toggleTheme();
     themeLogic();
     saveTheme();
   })
