@@ -19,9 +19,12 @@ export function closeTransactionModal() {
   form.classList.add("hidden");
 }
 
+export let formEdit = false;
+
 export function transModalSubmit() {
   let form = document.querySelector("form");
   form.addEventListener("submit", (e) => {
+    if(formEdit) return;
     e.preventDefault();
     let transcation = {
       type: e.target[0].value,
@@ -48,7 +51,6 @@ export function transModalSubmit() {
 
 export const openEditModal = (index) => {
   openTransactionModal();
-  
   console.log("Edit Clicked", index);
   console.log(allTrans[index]);
   const formCard = document.querySelector("form");
@@ -59,6 +61,8 @@ export const openEditModal = (index) => {
   formCard[3].value = allTrans[index].category;
   formCard[4].value = allTrans[index].date;
   submit.addEventListener("click", () => {
+    formEdit = true;  
+    if(!formEdit) return; 
     allTrans[index].type = formCard[0].value;
     allTrans[index].amount = Number(formCard[1].value);
     allTrans[index].purpose = formCard[2].value;
@@ -70,5 +74,6 @@ export const openEditModal = (index) => {
       allTransUpdate();
     formCard.reset();
     closeTransactionModal();
+    formEdit = false;
   });
 };
