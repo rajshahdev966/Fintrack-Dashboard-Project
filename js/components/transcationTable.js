@@ -10,9 +10,7 @@ export const transSort = ()=>{
     expSortBtn.addEventListener("click", ()=>{
         sortBy = "Expense";
     })
-    allTrans.forEach(element => {
-        
-    });
+    
 
 
 
