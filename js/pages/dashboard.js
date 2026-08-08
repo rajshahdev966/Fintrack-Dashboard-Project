@@ -1,3 +1,4 @@
+import { updateGraph } from "../components/charts.js";
 import { closeTransactionModal, openTransactionModal, transModalSubmit } from "../components/transcationForm.js";
 import { allTrans } from "../core/storage.js";
 
@@ -18,8 +19,13 @@ export let dashboardTransUpd = ()=>{
     
 }
 
+
+export let income;
+export let expense;
+export let netWorth
+
+
 export const netWorthUpdate = ()=>{
-    let netWorth;
     let netWorthCount = ()=>{
         netWorth = 0;
         allTrans.forEach((transaction, index)=>{
@@ -35,8 +41,6 @@ export const netWorthUpdate = ()=>{
     netWorthDisplay.textContent = netWorth;    
 }
 export const expenseUpdate = ()=>{
-    let expense;
-    let income;
     let expenseCount = ()=>{
         expense = 0;
         income = 0;

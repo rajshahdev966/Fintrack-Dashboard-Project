@@ -1,5 +1,5 @@
 import { allTrans, saveTrans } from "../core/storage.js";
-import { allAmountUpdate, dashboardTransUpd } from "../pages/dashboard.js";
+import { allAmountUpdate, dashboardTransUpd, netWorth, income, expense } from "../pages/dashboard.js";
 import { allTransUpdate, totalTransUpdate } from "../pages/transcation.js";
 import { updateGraph } from "./charts.js";
 
@@ -29,7 +29,7 @@ export function transModalSubmit() {
     if (document.body.id == "dashboard-page") {
       allAmountUpdate();
       dashboardTransUpd();
-      updateGraph();
+      updateGraph(income, expense, netWorth);
     }
     if (document.body.id == "transactions-page") {
       totalTransUpdate();
