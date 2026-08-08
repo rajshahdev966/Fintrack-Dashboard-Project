@@ -3,7 +3,8 @@ import { dashboardTransUpd } from "./dashboard.js";
 import { allTransUpdate } from "./transcation.js";
 
 export const themeSwitch = ()=>{
-  const switchBtn = document.querySelector("theme-switch-btn");
+  const switchBtn = document.querySelector("switch-btn");
+  const switchLogo = document.querySelector("switch-btn");
   switchBtn.addEventListener("click", ()=>{
     
   })
