@@ -39,3 +39,9 @@ export function transModalSubmit() {
     closeTransactionModal();    
   });
 }
+
+export const openEditModal = (index)=>{
+  openTransactionModal();
+  let form = document.querySelector("form");
+  
+}
