@@ -60,9 +60,8 @@ export const openEditModal = (index) => {
   formCard[2].value = allTrans[index].purpose;
   formCard[3].value = allTrans[index].category;
   formCard[4].value = allTrans[index].date;
-  submit.addEventListener("click", () => {
-    formEdit = true;  
-    if(!formEdit) return;   
+  submit.addEventListener("click", (e) => {
+      e.preventDefault();
     allTrans[index].type = formCard[0].value;
     allTrans[index].amount = Number(formCard[1].value);
     allTrans[index].purpose = formCard[2].value;
