@@ -1,5 +1,10 @@
 import { closeTransactionModal, openTransactionModal, transModalSubmit } from "../components/transcationForm.js";
 import { allTrans, saveTrans } from "../core/storage.js";
+export const delTrans = (index)=>{
+    allTrans.splice(index , 1);
+    saveTrans();
+    allTransUpdate();
+}
 
 export let allTransUpdate = ()=>{
     console.log("all Trans Update working");
@@ -56,11 +61,5 @@ export function initTransPage(){
     
     transModalSubmit();
     totalTransUpdate();
-    allTransUpdate();
-}
-
-export const delTrans = (index)=>{
-    allTrans.splice(index , 1);
-    saveTrans();
     allTransUpdate();
 }
