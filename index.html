@@ -6,262 +6,750 @@
     <title>Document</title>
     <link rel="stylesheet" href="./styles/output.css" />
     <link rel="stylesheet" href="" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
+
+    <!-- Local fonts: point these at your locally-hosted Inter / JetBrains Mono / Fraunces
+         font files. Google Fonts link kept only as a fallback reference — replace
+         with local @font-face rules if you've already vendored the font files. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <style>
+      /* ============================================================
+         DESIGN TOKENS
+         Ledger & Ink — a fintech dashboard that reads like a
+         well-kept paper ledger reborn in pixels: warm paper canvas,
+         deep ink-green trust color, brass accent for the one
+         signature moment (the net worth "tape").
+      ============================================================ */
+      :root {
+        --bg-primary: #f6f3ec;       /* warm paper canvas */
+        --bg-secondary: #ffffff;     /* card surface */
+        --bg-tertiary: #ece7db;      /* hover / recessed */
+        --line: #e2dccb;             /* hairline rule */
+
+        --primary: #123328;          /* deep ledger green */
+        --primary-hover: #1c4a3a;
+        --primary-tint: #dce8e2;
+
+        --secondary: #0f7a5c;        /* income green */
+        --danger: #b3452f;           /* expense brick */
+        --brass: #b8863b;            /* signature accent */
+
+        --text-primary: #16201b;
+        --text-secondary: #6c7568;
+        --text-on-primary: #f3efe3;
+
+        --radius-md: 14px;
+        --radius-lg: 22px;
+        --shadow-sm: 0 1px 2px rgba(18, 51, 40, 0.06);
+        --shadow-md: 0 12px 30px -12px rgba(18, 51, 40, 0.18);
+        --shadow-lg: 0 24px 60px -20px rgba(18, 51, 40, 0.28);
+
+        --font-display: "Fraunces", Georgia, serif;
+        --font-body: "Inter", -apple-system, sans-serif;
+        --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+        --text-xl: 1.05rem;
+      }
+
+      * { box-sizing: border-box; }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        margin: 0;
+        background: var(--bg-primary);
+        font-family: var(--font-body);
+        color: var(--text-primary);
+        min-height: 100vh;
+        display: flex;
+        position: relative;
+        background-image:
+          radial-gradient(circle at 100% 0%, rgba(18,51,40,0.05), transparent 45%),
+          repeating-linear-gradient(0deg, transparent, transparent 39px, var(--line) 40px);
+      }
+
+      a { color: inherit; text-decoration: none; }
+      button { font-family: inherit; }
+
+      ::selection { background: var(--brass); color: var(--text-on-primary); }
+
+      /* Visible keyboard focus */
+      button:focus-visible,
+      select:focus-visible,
+      input:focus-visible,
+      a:focus-visible {
+        outline: 2px solid var(--brass);
+        outline-offset: 2px;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+          animation-duration: 0.001ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.001ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+
+      /* ============================================================
+         SIDEBAR NAV
+      ============================================================ */
+      .sidebar {
+        background: var(--primary);
+        height: 100vh;
+        position: sticky;
+        top: 0;
+        width: 250px;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 28px 20px;
+        box-shadow: var(--shadow-md);
+        z-index: 20;
+      }
+
+      .sidebar-top { display: flex; flex-direction: column; gap: 34px; }
+
+      .logo-text {
+        color: var(--text-on-primary);
+        font-family: var(--font-display);
+        font-size: 1.7rem;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        display: flex;
+        align-items: baseline;
+        gap: 2px;
+      }
+      .logo-text .logo-mark {
+        color: var(--brass);
+        font-style: italic;
+      }
+
+      .nav-menu {
+        font-size: var(--text-xl);
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .nav-item {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        padding: 13px 14px;
+        border-radius: var(--radius-md);
+        cursor: pointer;
+        color: rgba(243, 239, 227, 0.68);
+        transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+        border: 1px solid transparent;
+      }
+      .nav-item:hover {
+        background: rgba(243, 239, 227, 0.08);
+        color: var(--text-on-primary);
+        transform: translateX(2px);
+      }
+      .nav-item.active {
+        background: rgba(243, 239, 227, 0.12);
+        color: var(--text-on-primary);
+        border-color: rgba(184, 134, 59, 0.4);
+      }
+      .nav-item .icon { width: 18px; text-align: center; flex-shrink: 0; }
+
+      .profile-section {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        padding: 12px;
+        border-radius: var(--radius-md);
+        cursor: pointer;
+        transition: background 0.18s ease;
+      }
+      .profile-section:hover { background: rgba(243, 239, 227, 0.08); }
+      .profile-photo img {
+        height: 44px;
+        width: 44px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid var(--brass);
+      }
+      .profile-name {
+        color: var(--text-on-primary);
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+      }
+
+      /* ============================================================
+         MAIN LAYOUT
+      ============================================================ */
+      .main-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 40px clamp(20px, 4vw, 56px);
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        align-items: start;
+      }
+
+      @media (min-width: 1024px) {
+        .main-grid { grid-template-columns: 2fr 1fr; }
+      }
+
+      .left-col { display: flex; flex-direction: column; gap: 24px; min-width: 0; }
+
+      /* ============================================================
+         TOP CARDS
+      ============================================================ */
+      .top-cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      @media (min-width: 640px) {
+        .top-cards { grid-template-columns: 1.6fr 1fr; }
+      }
+
+      /* Net worth — the signature element: a "ledger tape" card with
+         a running ticker line etched behind the number, and a
+         brass-stitched border like a bound ledger's edge. */
+      .networth-card {
+        grid-column: span 1;
+        border-radius: var(--radius-lg);
+        background:
+          linear-gradient(160deg, var(--primary) 0%, #0d2a20 100%);
+        color: var(--text-on-primary);
+        padding: 34px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 28px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+        border: 1px solid rgba(184, 134, 59, 0.35);
+      }
+      .networth-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: repeating-linear-gradient(
+          90deg, rgba(243,239,227,0.05) 0 1px, transparent 1px 28px
+        );
+        pointer-events: none;
+      }
+      .networth-card .ticker-line {
+        position: absolute;
+        left: -5%;
+        right: -5%;
+        bottom: 18px;
+        height: 60px;
+        opacity: 0.55;
+        pointer-events: none;
+      }
+      .networth-card .ticker-line path {
+        stroke: var(--brass);
+        stroke-width: 2;
+        fill: none;
+        stroke-dasharray: 500;
+        stroke-dashoffset: 500;
+        animation: draw-tape 2.4s ease-out 0.3s forwards;
+      }
+      @keyframes draw-tape {
+        to { stroke-dashoffset: 0; }
+      }
+
+      .networth-heading {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .networth-eyebrow {
+        font-size: 0.72rem;
+        letter-spacing: 0.16em;
+        font-weight: 600;
+        color: rgba(243, 239, 227, 0.6);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .networth-eyebrow::before {
+        content: "";
+        width: 7px; height: 7px;
+        border-radius: 50%;
+        background: var(--secondary);
+        box-shadow: 0 0 0 3px rgba(15, 122, 92, 0.25);
+      }
+
+      #net-worth {
+        font-family: var(--font-mono);
+        font-size: clamp(2.1rem, 4.6vw, 3rem);
+        font-weight: 700;
+        margin: 0;
+        letter-spacing: -0.01em;
+        position: relative;
+        min-height: 1.2em;
+      }
+
+      .networth-actions { display: flex; gap: 14px; position: relative; z-index: 1; }
+
+      #quickAddBtn {
+        background: var(--brass);
+        color: #1c1305;
+        font-weight: 700;
+        font-size: 0.92rem;
+        padding: 14px 24px;
+        border-radius: 12px;
+        border: none;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+        box-shadow: 0 8px 20px -8px rgba(184, 134, 59, 0.7);
+      }
+      #quickAddBtn:hover { transform: translateY(-2px); background: #caa15c; }
+      #quickAddBtn:active { transform: translateY(0); }
+      #quickAddBtn svg { width: 16px; height: 16px; }
+
+      /* Right stat stack */
+      .stat-stack { display: flex; flex-direction: column; gap: 20px; }
+
+      .stat-card {
+        background: var(--bg-secondary);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-sm);
+        border: 1px solid var(--line);
+        padding: 22px 24px;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        transition: box-shadow 0.2s ease, transform 0.2s ease;
+      }
+      .stat-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+
+      .stat-icon {
+        height: 52px; width: 52px;
+        border-radius: 16px;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 1.3rem;
+        flex-shrink: 0;
+      }
+      .stat-icon.income { background: var(--primary-tint); color: var(--secondary); }
+      .stat-icon.expense { background: #f4e2dc; color: var(--danger); }
+
+      .stat-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-weight: 700;
+        color: var(--text-secondary);
+        margin: 0 0 4px;
+      }
+
+      #income-display, #expense-display {
+        font-family: var(--font-mono);
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin: 0;
+      }
+      #income-display { color: var(--secondary); }
+      #expense-display { color: var(--danger); }
+
+      /* ============================================================
+         CASH FLOW CARD
+      ============================================================ */
+      .flow-card {
+        background: var(--bg-secondary);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-sm);
+        border: 1px solid var(--line);
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .flow-header { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+
+      .section-title {
+        font-family: var(--font-display);
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin: 0;
+      }
+
+      .flow-chart-placeholder {
+        min-height: 240px;
+        border-radius: 16px;
+        border: 1.5px dashed var(--line);
+        background:
+          repeating-linear-gradient(
+            to top, transparent, transparent 39px, var(--line) 40px
+          ),
+          linear-gradient(180deg, var(--bg-tertiary) 0%, transparent 70%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        font-style: italic;
+        font-family: var(--font-display);
+      }
+
+      /* ============================================================
+         RECENT PANEL
+      ============================================================ */
+      .recent-panel {
+        background: var(--bg-secondary);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-sm);
+        border: 1px solid var(--line);
+        padding: 28px 26px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        width: 100%;
+        height: fit-content;
+      }
+
+      .recent-header { display: flex; justify-content: space-between; align-items: center; }
+
+      .view-all-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--primary-hover);
+        font-weight: 700;
+        font-size: 0.72rem;
+        letter-spacing: 0.08em;
+        padding: 8px 4px;
+        border-bottom: 1.5px solid transparent;
+        transition: border-color 0.18s ease;
+      }
+      .view-all-btn:hover { border-color: var(--brass); }
+
+      #recent-trans-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        color: var(--text-secondary);
+        font-size: 0.92rem;
+        text-align: center;
+        padding: 34px 12px;
+        border: 1.5px dashed var(--line);
+        border-radius: 14px;
+        background: var(--bg-tertiary);
+      }
+
+      /* ============================================================
+         QUICK-ADD MODAL
+      ============================================================ */
+      #transFormCard {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(15, 27, 22, 0.55);
+        backdrop-filter: blur(6px);
+        z-index: 50;
+        padding: 20px;
+      }
+      #transFormCard.hidden { display: none; }
+
+      .modal-card {
+        width: min(440px, 100%);
+        background: var(--bg-secondary);
+        border-radius: var(--radius-lg);
+        padding: 34px 32px;
+        box-shadow: var(--shadow-lg);
+        border-top: 4px solid var(--brass);
+        animation: modal-in 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+        max-height: 90vh;
+        overflow-y: auto;
+      }
+      @keyframes modal-in {
+        from { opacity: 0; transform: translateY(14px) scale(0.98); }
+        to { opacity: 1; transform: translateY(0) scale(1); }
+      }
+
+      .modal-header h2 {
+        font-family: var(--font-display);
+        font-size: 1.7rem;
+        margin: 0;
+        color: var(--text-primary);
+      }
+      .modal-header p {
+        margin: 8px 0 0;
+        font-size: 0.88rem;
+        color: var(--text-secondary);
+      }
+
+      .field-group { margin-top: 22px; display: flex; flex-direction: column; gap: 20px; }
+      .field label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 0.78rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        letter-spacing: 0.02em;
+      }
+      .field select,
+      .field input {
+        width: 100%;
+        border: 1.5px solid var(--line);
+        background: var(--bg-primary);
+        border-radius: 11px;
+        padding: 12px 14px;
+        font-size: 0.95rem;
+        font-family: inherit;
+        color: var(--text-primary);
+        outline: none;
+        transition: border-color 0.16s ease, box-shadow 0.16s ease;
+      }
+      .field select:focus,
+      .field input:focus {
+        border-color: var(--secondary);
+        box-shadow: 0 0 0 4px var(--primary-tint);
+      }
+
+      .modal-actions { display: flex; justify-content: flex-end; gap: 14px; padding-top: 28px; }
+
+      #cancelBtn {
+        border: 1.5px solid var(--line);
+        background: transparent;
+        padding: 12px 22px;
+        border-radius: 11px;
+        font-weight: 700;
+        color: var(--text-secondary);
+        cursor: pointer;
+        transition: background 0.16s ease;
+      }
+      #cancelBtn:hover { background: var(--bg-tertiary); }
+
+      #submitBtn {
+        border: none;
+        background: var(--primary);
+        color: var(--text-on-primary);
+        padding: 12px 24px;
+        border-radius: 11px;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 8px 20px -10px rgba(18, 51, 40, 0.6);
+        transition: transform 0.16s ease, background 0.16s ease;
+      }
+      #submitBtn:hover { transform: translateY(-1px); background: var(--primary-hover); }
+
+      /* ============================================================
+         RESPONSIVE
+      ============================================================ */
+      @media (max-width: 900px) {
+        body { flex-direction: column; }
+        .sidebar {
+          position: sticky;
+          top: 0;
+          width: 100%;
+          height: auto;
+          flex-direction: row;
+          align-items: center;
+          padding: 14px 18px;
+          z-index: 30;
+        }
+        .sidebar-top { flex-direction: row; align-items: center; gap: 22px; }
+        .logo-text { font-size: 1.25rem; }
+        .nav-menu { flex-direction: row; gap: 4px; font-size: 0.85rem; }
+        .nav-item span { display: none; }
+        .nav-item { padding: 10px; }
+        .profile-name { display: none; }
+        .main-grid { padding: 24px 16px; gap: 18px; }
+      }
+
+      @media (max-width: 480px) {
+        .networth-card { padding: 26px 20px; }
+        #net-worth { font-size: 2rem; }
+        .flow-card, .recent-panel { padding: 20px; }
+        .modal-card { padding: 26px 20px; }
+      }
+    </style>
   </head>
-  <body class="bg-[var(--bg-primary)] font-[var(--font-mono)] text-nowrap flex relative" id="dashboard-page">
-
-
-
-    <div class="w-full h-full rounded-2xl border border-slate-200 bg-transparent p-8 shadow-sm absolute backdrop-blur-sm flex justify-center items-center hidden" id="transFormCard">
-
-    <div class="w-max h-max bg-white rounded-2xl border-slate-200 p-8 shadow-sm ">
-        <!-- Header -->
-        <div class="mb-8">
-            <h2 class="text-3xl font-bold text-slate-800">
-                Add Transaction
-            </h2>
-            <p class="mt-2 text-sm text-slate-500">
-                Record a new income or expense.
-            </p>
+  <body id="dashboard-page">
+    <!-- QUICK ADD MODAL -->
+    <div class="hidden" id="transFormCard">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h2>Add Transaction</h2>
+          <p>Record a new income or expense.</p>
         </div>
-        <form class="space-y-6">
-            <!-- Type -->
-            <div>
-                <label class="mb-3 block text-sm font-semibold text-slate-700">
-                    Transaction Type
-                </label>
-                <select
-                    class="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-sky-500 focus:ring-4 focus:ring-sky-100" id="trans-type">
-                    <option>Income</option>
-                    <option>Expense</option>
-                </select>
-            </div>
-            <!-- Amount -->
-            <div>
-                <label class="mb-2 block text-sm font-semibold text-slate-700">
-                    Amount
-                </label>
-                <input
-                    type="number"
-                    placeholder="₹0.00"
-                    class="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-sky-500 focus:ring-4 focus:ring-sky-100">
-            </div>
-            <!-- Purpose  -->
-            <div>
-                <label class="mb-2 block text-sm font-semibold text-slate-700">
-                    Purpose
-                </label>
-                <input
-                    type="text"
-                    placeholder="Amazon"
-                    class="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-sky-500 focus:ring-4 focus:ring-sky-100">
-            </div>
-            <!-- Category -->
-            <div>
-                <label class="mb-2 block text-sm font-semibold text-slate-700">
-                    Category
-                </label>
-                <select
-                    class="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-sky-500 focus:ring-4 focus:ring-sky-100">
-                    <option>Food</option>
-                    <option>Shopping</option>
-                    <option>Travel</option>
-                    <option>Salary</option>
-                    <option>Investment</option>
-                    <option>Utilities</option>
-                </select>
-            </div>
-            <!-- Date -->
-            <div>
-                <label class="mb-2 block text-sm font-semibold text-slate-700">
-                    Date
-                </label>
-                <input
-                    type="date"
-                    class="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-sky-500 focus:ring-4 focus:ring-sky-100">
-            </div>
-            <!-- Buttons -->
-            <div class="flex justify-end gap-4 pt-4">
-                <button
-                    type="button"
-                    class="rounded-xl border border-slate-300 px-6 py-3 font-semibold text-slate-600 transition hover:bg-slate-100" id="cancelBtn">
-                    Cancel
-                </button>
-                <button
-                    type="submit"
-                    class="rounded-xl bg-sky-500 px-6 py-3 font-semibold text-white shadow transition hover:bg-sky-600" id="submitBtn">
-                    Save Transaction
-                </button>
-            </div>
+        <form class="field-group">
+          <!-- Type -->
+          <div class="field">
+            <label for="trans-type">Transaction Type</label>
+            <select id="trans-type">
+              <option>Income</option>
+              <option>Expense</option>
+            </select>
+          </div>
+          <!-- Amount -->
+          <div class="field">
+            <label>Amount</label>
+            <input type="number" placeholder="₹0.00" />
+          </div>
+          <!-- Purpose -->
+          <div class="field">
+            <label>Purpose</label>
+            <input type="text" placeholder="Amazon" />
+          </div>
+          <!-- Category -->
+          <div class="field">
+            <label>Category</label>
+            <select>
+              <option>Food</option>
+              <option>Shopping</option>
+              <option>Travel</option>
+              <option>Salary</option>
+              <option>Investment</option>
+              <option>Utilities</option>
+            </select>
+          </div>
+          <!-- Date -->
+          <div class="field">
+            <label>Date</label>
+            <input type="date" />
+          </div>
+          <!-- Buttons -->
+          <div class="modal-actions">
+            <button type="button" id="cancelBtn">Cancel</button>
+            <button type="submit" id="submitBtn">Save Transaction</button>
+          </div>
         </form>
+      </div>
     </div>
 
-</div>
-
-    <nav
-      class="bg-[var(--bg-secondary)] h-screen w-min flex flex-col justify-between p-5 shadow-(--shadow-md)"
-    >
-      <div class="upper-nav flex flex-col gap-5">
-        <div class="logo-text text-(--primary) text-4xl font-semibold">
-          FinTrack Pro
-        </div>
-        <div class="nav-menu text-(length:--text-xl) flex flex-col gap-4">
-          <div class="dashboard-a flex gap-2 items-center p-4 rounded-[var(--radius-md)] bg-(--primary) cursor-pointer text-(--text-primary)">
-            <i class="ri-dashboard-fill"></i> <a href="./index.html">Dashboard</a>
+    <!-- SIDEBAR -->
+    <nav class="sidebar">
+      <div class="sidebar-top">
+        <div class="logo-text">Fin<span class="logo-mark">Track</span> Pro</div>
+        <div class="nav-menu">
+          <div class="nav-item active dashboard-a">
+            <span class="icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="8" height="8" rx="1.5" fill="currentColor"/><rect x="13" y="3" width="8" height="5" rx="1.5" fill="currentColor" opacity="0.6"/><rect x="13" y="10" width="8" height="11" rx="1.5" fill="currentColor" opacity="0.6"/><rect x="3" y="13" width="8" height="8" rx="1.5" fill="currentColor" opacity="0.6"/></svg>
+            </span>
+            <a href="./index.html">Dashboard</a>
           </div>
-          <div class="transcations-a flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) cursor-pointer text-(--text-primary)">
-            <i class="ri-cash-line"></i> <a href="./transcations.html">Transcations</a>
+          <div class="nav-item transcations-a">
+            <span class="icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="6" width="20" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg>
+            </span>
+            <a href="./transcations.html">Transcations</a>
           </div>
-          
-          <div class="settings-a flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) cursor-pointer text-(--text-primary)">
-            <i class="ri-settings-2-line"></i> <a href="./settings.html">Settings</a>
+          <div class="nav-item settings-a">
+            <span class="icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M19.4 13.5a1.7 1.7 0 0 0 .34 1.87l.06.06a2.06 2.06 0 1 1-2.9 2.9l-.06-.06a1.7 1.7 0 0 0-1.87-.34 1.7 1.7 0 0 0-1.03 1.56V19.6a2.06 2.06 0 0 1-4.12 0v-.09a1.7 1.7 0 0 0-1.11-1.56 1.7 1.7 0 0 0-1.87.34l-.06.06a2.06 2.06 0 1 1-2.9-2.9l.06-.06a1.7 1.7 0 0 0 .34-1.87 1.7 1.7 0 0 0-1.56-1.03H4.4a2.06 2.06 0 0 1 0-4.12h.09a1.7 1.7 0 0 0 1.56-1.11 1.7 1.7 0 0 0-.34-1.87l-.06-.06a2.06 2.06 0 1 1 2.9-2.9l.06.06a1.7 1.7 0 0 0 1.87.34H10.5a1.7 1.7 0 0 0 1.03-1.56V4.4a2.06 2.06 0 0 1 4.12 0v.09a1.7 1.7 0 0 0 1.03 1.56 1.7 1.7 0 0 0 1.87-.34l.06-.06a2.06 2.06 0 1 1 2.9 2.9l-.06.06a1.7 1.7 0 0 0-.34 1.87v.02a1.7 1.7 0 0 0 1.56 1.03h.09a2.06 2.06 0 0 1 0 4.12h-.09a1.7 1.7 0 0 0-1.56 1.03z" stroke="currentColor" stroke-width="1.3"/></svg>
+            </span>
+            <a href="./settings.html">Settings</a>
           </div>
         </div>
       </div>
-      <div class="profile-section flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) cursor-pointer">
+      <div class="profile-section">
         <div class="profile-photo">
           <img
             src="https://plus.unsplash.com/premium_photo-1683121366070-5ceb7e007a97?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="user profile photo" class="h-[50px] w-[50px] rounded-[50%]"
+            alt="user profile photo"
           />
         </div>
-        <div class="profile-name text-(--text-primary)"><span>ALEX MORGAN</span></div>
-        </div>
+        <div class="profile-name"><span>ALEX MORGAN</span></div>
       </div>
     </nav>
-    
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 p-20 b">
 
-        <!-- LEFT SIDE -->
-        <div class="lg:col-span-2">
-
-            <!-- TOP CARDS -->
-            <div class="grid md:grid-cols-3 gap-6">
-
-                <!-- Net Worth -->
-                <div class="md:col-span-2 rounded-3xl bg-(--primary) text-white p-8 flex flex-col justify-between">
-
-                    <div class="flex flex-col gap-3">
-                        <p class="text-sm">
-                            TOTAL NET WORTH
-                        </p>
-
-                        <h1 class="text-5xl font-bold" id="net-worth">
-                        </h1>
-                    </div>
-
-                    <div class="flex gap-4 mt-8">
-
-                        <button
-                            class="bg-white text-(--primary) font-semibold px-6 py-4 rounded-2xl cursor-pointer" id="quickAddBtn">
-                            <i class="ri-add-large-line"></i> Quick Add
-                        </button>
-                    </div>
-
-                </div>
-
-                <!-- Right Stats -->
-                <div class="space-y-6">
-
-                    <div
-                        class="bg-(--bg-secondary) rounded-3xl shadow p-6 flex items-center gap-5">
-
-                        <div
-                            class="h-14 w-14 rounded-2xl bg-emerald-100 flex items-center justify-center text-2xl">
-                            ↑
-                        </div>
-
-                        <div>
-                            <p class="text-xs uppercase font-semibold text-(--text-secondary)">
-                                Income
-                            </p>
-
-                            <h3 class="text-3xl font-bold text-(--secondary)" id="income-display">
-                                
-                            </h3>
-                        </div>
-
-                    </div>
-
-                    <div
-                        class="bg-(--bg-secondary) rounded-3xl shadow p-6 flex items-center gap-5">
-
-                        <div
-                            class="h-14 w-14 rounded-2xl bg-red-100 flex items-center justify-center text-2xl">
-                            ↓
-                        </div>
-
-                        <div>
-                            <p class="text-xs uppercase font-semibold text-(--text-secondary)">
-                                Expenses
-                            </p>
-
-                            <h3 class="text-3xl font-bold text-(--danger)" id="expense-display">
-                                
-                            </h3>
-                        </div>
-
-                    </div>
-
-                </div>
-
+    <!-- MAIN GRID -->
+    <div class="main-grid">
+      <!-- LEFT SIDE -->
+      <div class="left-col">
+        <!-- TOP CARDS -->
+        <div class="top-cards">
+          <!-- Net Worth -->
+          <div class="networth-card">
+            <div class="networth-heading">
+              <p class="networth-eyebrow">TOTAL NET WORTH</p>
+              <h1 id="net-worth">₹0.00</h1>
             </div>
-
-            <!-- Cash Flow -->
-            <div class="bg-(--bg-secondary) rounded-3xl shadow p-8 flex flex-col gap-5">
-
-                <div class="flex justify-between items-center">
-
-                    <h2 class="text-3xl font-bold text-(--text-primary)">
-                        Cash Flow Trends
-                    </h2>
-
-                </div>
-
-                <!-- Placeholder Chart -->
-                <div
-                    class="h-max rounded-2xl border-2 border-dashed border-slate-300 flex items-center justify-center text-slate-400">
-                    Chart goes here
-                </div>
-
+            <svg class="ticker-line" viewBox="0 0 400 60" preserveAspectRatio="none">
+              <path d="M0,40 L30,42 L60,25 L90,30 L120,15 L150,20 L180,8 L210,18 L240,12 L270,26 L300,10 L330,22 L360,6 L400,14" />
+            </svg>
+            <div class="networth-actions">
+              <button id="quickAddBtn">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+                Quick Add
+              </button>
             </div>
+          </div>
 
+          <!-- Right Stats -->
+          <div class="stat-stack">
+            <div class="stat-card">
+              <div class="stat-icon income">↑</div>
+              <div>
+                <p class="stat-label">Income</p>
+                <h3 id="income-display"></h3>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon expense">↓</div>
+              <div>
+                <p class="stat-label">Expenses</p>
+                <h3 id="expense-display"></h3>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- RIGHT PANEL -->
-        <div class="bg-(--bg-secondary) rounded-3xl shadow p-6 flex flex-col gap-4 w-full">
-
-            <div class="flex justify-between items-center">
-
-                <h2 class="text-3xl font-bold text-(--text-primary)">
-                    Recent
-                </h2>
-
-                <button class="text-(--primary-hover) font-semibold cursor-pointer">
-                    VIEW ALL
-                </button>
-
-            </div>
-
-            <div class="flex flex-col gap-3" id="recent-trans-list">
-                No transcation added yet
-            </div>
-
+        <!-- Cash Flow -->
+        <div class="flow-card">
+          <div class="flow-header">
+            <h2 class="section-title">Cash Flow Trends</h2>
+          </div>
+          <div class="flow-chart-placeholder">Chart goes here</div>
         </div>
+      </div>
 
+      <!-- RIGHT PANEL -->
+      <div class="recent-panel">
+        <div class="recent-header">
+          <h2 class="section-title">Recent</h2>
+          <button class="view-all-btn">VIEW ALL</button>
+        </div>
+        <div id="recent-trans-list">No transcation added yet</div>
+      </div>
     </div>
-    
-    <script type="module" src="./js/main.js"></script>
 
+    <script type="module" src="./js/main.js"></script>
+    <script>
+      // Presentational-only helpers (kept out of main.js so it stays untouched):
+      // toggling the quick-add modal, since the original relied on external JS.
+      document.addEventListener("DOMContentLoaded", () => {
+        const modal = document.getElementById("transFormCard");
+        const openBtn = document.getElementById("quickAddBtn");
+        const cancelBtn = document.getElementById("cancelBtn");
+
+        openBtn?.addEventListener("click", () => modal.classList.remove("hidden"));
+        cancelBtn?.addEventListener("click", (e) => {
+          e.preventDefault();
+          modal.classList.add("hidden");
+        });
+        modal?.addEventListener("click", (e) => {
+          if (e.target === modal) modal.classList.add("hidden");
+        });
+      });
+    </script>
   </body>
 </html>
