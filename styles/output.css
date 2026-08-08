@@ -277,6 +277,9 @@
   .table {
     display: table;
   }
+  .h-1 {
+    height: var(--spacing);
+  }
   .h-6 {
     height: calc(var(--spacing) * 6);
   }
@@ -298,6 +301,9 @@
   .h-80 {
     height: calc(var(--spacing) * 80);
   }
+  .h-100 {
+    height: calc(var(--spacing) * 100);
+  }
   .h-\[50px\] {
     height: 50px;
   }
@@ -306,6 +312,9 @@
   }
   .h-max {
     height: max-content;
+  }
+  .h-min {
+    height: min-content;
   }
   .h-screen {
     height: 100vh;
