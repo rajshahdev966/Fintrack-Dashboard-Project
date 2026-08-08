@@ -6,578 +6,273 @@
     <title>Document</title>
     <link rel="stylesheet" href="./styles/output.css" />
     <link rel="stylesheet" href="" />
-
-    <!-- Local fonts: point at your locally-hosted Inter / JetBrains Mono / Fraunces
-         files. Google Fonts link kept only as fallback reference, same as the
-         other two pages. -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <style>
-      /* ============================================================
-         DESIGN TOKENS — identical system to index.html / transcations.html
-      ============================================================ */
-      :root {
-        --bg-primary: #f6f3ec;
-        --bg-secondary: #ffffff;
-        --bg-tertiary: #ece7db;
-        --line: #e2dccb;
-
-        --primary: #123328;
-        --primary-hover: #1c4a3a;
-        --primary-tint: #dce8e2;
-
-        --secondary: #0f7a5c;
-        --danger: #b3452f;
-        --danger-hover: #983a27;
-        --brass: #b8863b;
-
-        --text-primary: #16201b;
-        --text-secondary: #6c7568;
-        --text-muted: #8b9184;
-        --text-on-primary: #f3efe3;
-
-        --radius-md: 14px;
-        --radius-lg: 22px;
-        --shadow-sm: 0 1px 2px rgba(18, 51, 40, 0.06);
-        --shadow-md: 0 12px 30px -12px rgba(18, 51, 40, 0.18);
-        --shadow-lg: 0 24px 60px -20px rgba(18, 51, 40, 0.28);
-
-        --font-display: "Fraunces", Georgia, serif;
-        --font-body: "Inter", -apple-system, sans-serif;
-        --font-mono: "JetBrains Mono", ui-monospace, monospace;
-
-        --text-xl: 1.05rem;
-      }
-
-      * { box-sizing: border-box; }
-      html { scroll-behavior: smooth; }
-
-      body {
-        margin: 0;
-        background: var(--bg-primary);
-        font-family: var(--font-body);
-        color: var(--text-primary);
-        min-height: 100vh;
-        display: flex;
-        position: relative;
-        background-image:
-          radial-gradient(circle at 100% 0%, rgba(18,51,40,0.05), transparent 45%),
-          repeating-linear-gradient(0deg, transparent, transparent 39px, var(--line) 40px);
-      }
-
-      a { color: inherit; text-decoration: none; }
-      button { font-family: inherit; }
-      ::selection { background: var(--brass); color: var(--text-on-primary); }
-
-      button:focus-visible,
-      select:focus-visible,
-      input:focus-visible,
-      a:focus-visible {
-        outline: 2px solid var(--brass);
-        outline-offset: 2px;
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        *, *::before, *::after {
-          animation-duration: 0.001ms !important;
-          animation-iteration-count: 1 !important;
-          transition-duration: 0.001ms !important;
-          scroll-behavior: auto !important;
-        }
-      }
-
-      /* ============================================================
-         SIDEBAR (shared)
-      ============================================================ */
-      .sidebar {
-        background: var(--primary);
-        height: 100vh;
-        position: sticky;
-        top: 0;
-        width: 250px;
-        flex-shrink: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 28px 20px;
-        box-shadow: var(--shadow-md);
-        z-index: 20;
-      }
-      .sidebar-top { display: flex; flex-direction: column; gap: 34px; }
-      .logo-text {
-        color: var(--text-on-primary);
-        font-family: var(--font-display);
-        font-size: 1.7rem;
-        font-weight: 600;
-        display: flex;
-        align-items: baseline;
-        gap: 2px;
-      }
-      .logo-text .logo-mark { color: var(--brass); font-style: italic; }
-      .nav-menu { font-size: var(--text-xl); display: flex; flex-direction: column; gap: 6px; }
-      .nav-item {
-        display: flex; gap: 12px; align-items: center;
-        padding: 13px 14px; border-radius: var(--radius-md);
-        cursor: pointer; color: rgba(243, 239, 227, 0.68);
-        transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
-        border: 1px solid transparent;
-      }
-      .nav-item:hover { background: rgba(243, 239, 227, 0.08); color: var(--text-on-primary); transform: translateX(2px); }
-      .nav-item.active { background: rgba(243, 239, 227, 0.12); color: var(--text-on-primary); border-color: rgba(184, 134, 59, 0.4); }
-      .nav-item .icon { width: 18px; text-align: center; flex-shrink: 0; }
-      .profile-section {
-        display: flex; gap: 12px; align-items: center;
-        padding: 12px; border-radius: var(--radius-md);
-        cursor: pointer; transition: background 0.18s ease;
-      }
-      .profile-section:hover { background: rgba(243, 239, 227, 0.08); }
-      .profile-photo img { height: 44px; width: 44px; border-radius: 50%; object-fit: cover; border: 2px solid var(--brass); }
-      .profile-name { color: var(--text-on-primary); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.04em; }
-
-      /* ============================================================
-         SETTINGS CONTENT
-      ============================================================ */
-      .settings-wrap {
-        width: 100%;
-        max-width: 760px;
-        margin: 0 auto;
-        padding: 48px clamp(20px, 4vw, 40px) 80px;
-        display: flex;
-        flex-direction: column;
-        gap: 44px;
-      }
-
-      .settings-section-title {
-        font-family: var(--font-display);
-        font-size: 1.55rem;
-        font-weight: 600;
-        color: var(--text-primary);
-        margin: 0 0 18px;
-      }
-
-      .settings-panel {
-        border-radius: var(--radius-lg);
-        border: 1px solid var(--line);
-        background: var(--bg-secondary);
-        box-shadow: var(--shadow-sm);
-      }
-
-      /* --- Profile --- */
-      .profile-panel { padding: 28px; }
-      .profile-row {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-        align-items: center;
-      }
-      @media (min-width: 640px) {
-        .profile-row { flex-direction: row; align-items: center; }
-      }
-
-      .avatar-circle {
-        height: 84px;
-        width: 84px;
-        flex-shrink: 0;
-        border-radius: 50%;
-        background: var(--primary);
-        color: var(--text-on-primary);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: var(--font-display);
-        font-size: 1.9rem;
-        font-weight: 600;
-        border: 3px solid var(--brass);
-      }
-
-      .profile-form { flex: 1; width: 100%; display: flex; flex-direction: column; gap: 20px; }
-      .form-field label {
-        display: block;
-        font-size: 0.68rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        color: var(--text-secondary);
-        margin-bottom: 8px;
-      }
-      .form-field input {
-        width: 100%;
-        border-radius: 11px;
-        border: 1.5px solid var(--line);
-        padding: 12px 16px;
-        font-family: inherit;
-        font-size: 0.95rem;
-        color: var(--text-primary);
-        background: var(--bg-primary);
-        outline: none;
-        transition: border-color 0.16s ease, box-shadow 0.16s ease;
-      }
-      .form-field input:focus {
-        border-color: var(--secondary);
-        box-shadow: 0 0 0 4px var(--primary-tint);
-      }
-
-      /* --- Preferences list --- */
-      .pref-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 20px;
-        padding: 24px 28px;
-        border-bottom: 1px solid var(--line);
-      }
-      .pref-row:last-child { border-bottom: none; }
-      .pref-row h3 {
-        margin: 0;
-        font-size: 1rem;
-        font-weight: 600;
-        color: var(--text-primary);
-      }
-      .pref-row p {
-        margin: 5px 0 0;
-        font-size: 0.85rem;
-        color: var(--text-muted);
-      }
-
-      .pref-select {
-        border-radius: 10px;
-        border: 1.5px solid var(--line);
-        padding: 10px 16px;
-        background: var(--bg-primary);
-        color: var(--text-primary);
-        font-family: inherit;
-        font-size: 0.9rem;
-        outline: none;
-        cursor: pointer;
-        transition: border-color 0.16s ease, box-shadow 0.16s ease;
-        flex-shrink: 0;
-      }
-      .pref-select:focus { border-color: var(--secondary); box-shadow: 0 0 0 4px var(--primary-tint); }
-
-      .toggle-switch {
-        position: relative;
-        width: 52px;
-        height: 30px;
-        border-radius: 999px;
-        background: var(--line);
-        border: none;
-        cursor: pointer;
-        flex-shrink: 0;
-        transition: background 0.2s ease;
-      }
-      .toggle-switch .knob {
-        position: absolute;
-        top: 3px;
-        left: 3px;
-        height: 24px;
-        width: 24px;
-        border-radius: 50%;
-        background: var(--bg-secondary);
-        box-shadow: var(--shadow-sm);
-        transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
-      }
-      .toggle-switch.on { background: var(--secondary); }
-      .toggle-switch.on .knob { transform: translateX(22px); }
-
-      .lang-link {
-        border: none;
-        background: none;
-        cursor: pointer;
-        color: var(--primary-hover);
-        font-weight: 600;
-        font-size: 0.9rem;
-        flex-shrink: 0;
-        transition: color 0.16s ease;
-      }
-      .lang-link:hover { color: var(--brass); }
-
-      /* --- Data management (danger) --- */
-      .danger-panel { padding: 28px; border-color: rgba(179, 69, 47, 0.3); }
-      .danger-row { display: flex; gap: 16px; }
-      .danger-icon {
-        font-size: 1.3rem;
-        color: var(--danger);
-        flex-shrink: 0;
-        height: 40px;
-        width: 40px;
-        border-radius: 12px;
-        background: #f4e2dc;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      #all-clear-btn {
-        margin: 0;
-        font-size: 1.05rem;
-        font-weight: 700;
-        color: var(--danger);
-      }
-      .danger-row p {
-        margin: 10px 0 0;
-        font-size: 0.88rem;
-        color: var(--text-muted);
-        line-height: 1.55;
-      }
-
-      .reset-btn {
-        margin-top: 24px;
-        width: 100%;
-        border-radius: var(--radius-md);
-        border: none;
-        background: var(--danger);
-        color: var(--text-on-primary);
-        padding: 15px;
-        font-weight: 700;
-        cursor: pointer;
-        transition: background 0.18s ease, transform 0.18s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-      }
-      .reset-btn:hover { background: var(--danger-hover); transform: translateY(-1px); }
-
-      /* --- About --- */
-      .about-panel { padding: 28px; }
-      .about-row { display: flex; gap: 16px; }
-      .about-icon {
-        font-size: 1.2rem;
-        flex-shrink: 0;
-        height: 40px;
-        width: 40px;
-        border-radius: 12px;
-        background: var(--primary-tint);
-        color: var(--secondary);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .about-row h3 { margin: 0; font-size: 1rem; font-weight: 600; color: var(--text-primary); }
-      .about-row p {
-        margin: 10px 0 0;
-        font-size: 0.88rem;
-        line-height: 1.65;
-        color: var(--text-muted);
-      }
-
-      .about-footer {
-        margin-top: 24px;
-        border-top: 1px solid var(--line);
-        padding-top: 18px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 0.82rem;
-        color: var(--text-muted);
-        font-family: var(--font-mono);
-      }
-      .privacy-link {
-        border: none;
-        background: none;
-        cursor: pointer;
-        color: var(--primary-hover);
-        font-family: var(--font-body);
-        font-weight: 600;
-        font-size: 0.85rem;
-      }
-      .privacy-link:hover { text-decoration: underline; text-decoration-color: var(--brass); }
-
-      /* ============================================================
-         RESPONSIVE
-      ============================================================ */
-      @media (max-width: 900px) {
-        body { flex-direction: column; }
-        .sidebar {
-          position: sticky; top: 0; width: 100%; height: auto;
-          flex-direction: row; align-items: center; padding: 14px 18px; z-index: 30;
-        }
-        .sidebar-top { flex-direction: row; align-items: center; gap: 22px; }
-        .logo-text { font-size: 1.25rem; }
-        .nav-menu { flex-direction: row; gap: 4px; font-size: 0.85rem; }
-        .nav-item span:not(.icon) { display: none; }
-        .nav-item { padding: 10px; }
-        .profile-name { display: none; }
-        .settings-wrap { padding-left: 18px; padding-right: 18px; }
-      }
-
-      @media (max-width: 480px) {
-        .pref-row { flex-direction: column; align-items: flex-start; gap: 12px; }
-        .pref-select, .toggle-switch, .lang-link { align-self: flex-start; }
-      }
-    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body id="settings-page">
-    <!-- SIDEBAR -->
-    <nav class="sidebar">
-      <div class="sidebar-top">
-        <div class="logo-text">Fin<span class="logo-mark">Track</span> Pro</div>
-        <div class="nav-menu">
-          <div class="nav-item dashboard-a" href="./index.html">
-            <span class="icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="8" height="8" rx="1.5" fill="currentColor"/><rect x="13" y="3" width="8" height="5" rx="1.5" fill="currentColor" opacity="0.6"/><rect x="13" y="10" width="8" height="11" rx="1.5" fill="currentColor" opacity="0.6"/><rect x="3" y="13" width="8" height="8" rx="1.5" fill="currentColor" opacity="0.6"/></svg>
-            </span>
-            <a href="./index.html">Dashboard</a>
+  <body class="bg-[var(--bg-primary)] font-[var(--font-mono)] text-nowrap flex" id="settings-page">
+    <nav
+      class="bg-[var(--bg-secondary)] h-screen w-min flex flex-col justify-between p-5 shadow-(--shadow-md)"
+    >
+      <div class="upper-nav flex flex-col gap-5">
+        <div class="logo-text text-(--primary) text-4xl font-semibold">
+          FinTrack Pro
+        </div>
+        <div class="nav-menu text-(length:--text-xl) flex flex-col gap-4">
+          <div class="dashboard-a flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) cursor-pointer text-(--text-primary)" href="./index.html">
+            <i class="ri-dashboard-fill"></i> <a href="./index.html">Dashboard</a>
           </div>
-          <div class="nav-item transcations-a">
-            <span class="icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="6" width="20" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg>
-            </span>
-            <a href="./transcations.html">Transcations</a>
+          <div class="transcations-a flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) cursor-pointer text-(--text-primary)">
+            <i class="ri-cash-line"></i> <a href="./transcations.html">Transcations</a>
           </div>
-          <div class="nav-item active settings-a">
-            <span class="icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M19.4 13.5a1.7 1.7 0 0 0 .34 1.87l.06.06a2.06 2.06 0 1 1-2.9 2.9l-.06-.06a1.7 1.7 0 0 0-1.87-.34 1.7 1.7 0 0 0-1.03 1.56V19.6a2.06 2.06 0 0 1-4.12 0v-.09a1.7 1.7 0 0 0-1.11-1.56 1.7 1.7 0 0 0-1.87.34l-.06.06a2.06 2.06 0 1 1-2.9-2.9l.06-.06a1.7 1.7 0 0 0 .34-1.87 1.7 1.7 0 0 0-1.56-1.03H4.4a2.06 2.06 0 0 1 0-4.12h.09a1.7 1.7 0 0 0 1.56-1.11 1.7 1.7 0 0 0-.34-1.87l-.06-.06a2.06 2.06 0 1 1 2.9-2.9l.06.06a1.7 1.7 0 0 0 1.87.34H10.5a1.7 1.7 0 0 0 1.03-1.56V4.4a2.06 2.06 0 0 1 4.12 0v.09a1.7 1.7 0 0 0 1.03 1.56 1.7 1.7 0 0 0 1.87-.34l.06-.06a2.06 2.06 0 1 1 2.9 2.9l-.06.06a1.7 1.7 0 0 0-.34 1.87v.02a1.7 1.7 0 0 0 1.56 1.03h.09a2.06 2.06 0 0 1 0 4.12h-.09a1.7 1.7 0 0 0-1.56 1.03z" stroke="currentColor" stroke-width="1.3"/></svg>
-            </span>
-            <a href="./settings.html">Settings</a>
+          
+          <div class="settings-a flex gap-2 items-center p-4 rounded-[var(--radius-md)] bg-(--primary) cursor-pointer text-(--text-primary) ">
+            <i class="ri-settings-2-line"></i> <a href="./settings.html">Settings</a>
           </div>
         </div>
       </div>
-      <div class="profile-section">
+      <div class="profile-section flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) cursor-pointer">
         <div class="profile-photo">
           <img
             src="https://plus.unsplash.com/premium_photo-1683121366070-5ceb7e007a97?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="user profile photo"
+            alt="user profile photo" class="h-[50px] w-[50px] rounded-[50%]"
           />
         </div>
-        <div class="profile-name"><span>ALEX MORGAN</span></div>
+        <div class="profile-name text-(--text-primary)"><span>ALEX MORGAN</span></div>
+        </div>
       </div>
     </nav>
+    
+    <div class="max-w-5xl mx-auto space-y-10">
 
-    <!-- SETTINGS CONTENT -->
-    <div class="settings-wrap">
-      <!-- ================= PROFILE ================= -->
-      <section>
-        <h2 class="settings-section-title">Profile</h2>
+    <!-- ================= PROFILE ================= -->
+    <section>
 
-        <div class="settings-panel profile-panel">
-          <div class="profile-row">
-            <!-- Avatar -->
-            <div class="avatar-circle">JD</div>
+        <h2 class="text-2xl font-bold text-(--text-primary) mb-5">
+            Profile
+        </h2>
 
-            <!-- Form -->
-            <div class="profile-form">
-              <div class="form-field">
-                <label>Full Name</label>
-                <input type="text" value="Alexander Sterling" />
-              </div>
+        <div class="rounded-2xl border border-(--border-light) bg-(--bg-tertiary) p-6 shadow-sm">
 
-              <div class="form-field">
-                <label>Email Address</label>
-                <input type="email" value="alex.sterling@fintrack.pro" />
-              </div>
+            <div class="flex flex-col md:flex-row gap-6 items-center">
+
+                <!-- Avatar -->
+                <div
+                    class="h-20 w-20 rounded-full bg-(--primary) flex items-center justify-center text-3xl font-bold text-slate-600">
+                    JD
+                </div>
+
+                <!-- Form -->
+                <div class="flex-1 space-y-5">
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-(--text-secondary) mb-2">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            value="Alexander Sterling"
+                            class="w-full rounded-lg border border-(--border-light) px-4 py-3 focus:outline-none focus:ring-2 focus:ring-(--primary) text-(--text-muted)">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-(--text-secondary) mb-2">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            value="alex.sterling@fintrack.pro"
+                            class="w-full rounded-lg border border-(--border-light) px-4 py-3 focus:outline-none focus:ring-2 focus:ring-(--primary) text-(--text-muted)">
+                    </div>
+
+                </div>
+
             </div>
-          </div>
+
         </div>
-      </section>
 
-      <!-- ================= PREFERENCES ================= -->
-      <section>
-        <h2 class="settings-section-title">Preferences</h2>
+    </section>
 
-        <div class="settings-panel">
-          <!-- Currency -->
-          <div class="pref-row">
-            <div>
-              <h3>Preferred Currency</h3>
-              <p>Default currency for summaries</p>
+    <!-- ================= PREFERENCES ================= -->
+    <section>
+
+        <h2 class="text-2xl font-bold text-(--text-secondary) mb-5">
+            Preferences
+        </h2>
+
+        <div class="rounded-2xl border border-(--border-light) bg-(--bg-tertiary) shadow-sm divide-y">
+
+            <!-- Currency -->
+            <div class="flex justify-between items-center p-6">
+
+                <div>
+                    <h3 class="font-semibold text-(--text-secondary)">
+                        Preferred Currency
+                    </h3>
+
+                    <p class="text-sm text-(--text-muted)">
+                        Default currency for summaries
+                    </p>
+                </div>
+
+                <select
+                    class="rounded-lg border border-(--border) px-4 py-2 bg-(--surface) text-(--text-muted) focus:ring-2 focus:ring-(--primary)">
+                    <option>USD ($)</option>
+                    <option>EUR (€)</option>
+                    <option>INR (₹)</option>
+                </select>
+
             </div>
 
-            <select class="pref-select">
-              <option>USD ($)</option>
-              <option>EUR (€)</option>
-              <option>INR (₹)</option>
-            </select>
-          </div>
+            <!-- Dark Mode -->
+            <div class="flex justify-between items-center p-6">
 
-          <!-- Dark Mode -->
-          <div class="pref-row">
-            <div>
-              <h3>Appearance</h3>
-              <p>Switch between Light and Dark mode</p>
+                <div>
+                    <h3 class="font-semibold text-(--text-secondary)">
+                        Appearance
+                    </h3>
+
+                    <p class="text-sm text-(--text-muted)">
+                        Switch between Light and Dark mode
+                    </p>
+                </div>
+
+                <button
+                    class="relative w-14 h-8 rounded-full bg-slate-300">
+
+                    <span
+                        class="absolute left-1 top-1 h-6 w-6 rounded-full bg-(--bg-tertiary) shadow"></span>
+
+                </button>
+
             </div>
 
-            <button class="toggle-switch" id="dark-mode-toggle">
-              <span class="knob"></span>
+            <!-- Language -->
+            <div class="flex justify-between items-center p-6">
+
+                <div>
+                    <h3 class="font-semibold text-(--text-secondary)">
+                        Language
+                    </h3>
+
+                    <p class="text-sm text-(--text-muted)">
+                        Regional formatting and display
+                    </p>
+                </div>
+
+                <button class="text-slate-600 font-medium">
+                    English (US) →
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= DATA ================= -->
+    <section>
+
+        <h2 class="text-2xl font-bold text-(--text-secondary) mb-5">
+            Data Management
+        </h2>
+
+        <div
+            class="rounded-2xl border border-(--border-light) bg-(--bg-tertiary) shadow-sm p-6">
+
+            <div class="flex gap-4">
+
+                <div class="text-xl">
+                    ⚠
+                </div>
+
+                <div>
+
+                    <h3 class="font-semibold text-(--danger)" id="all-clear-btn">
+                        Reset All Data
+                    </h3>
+
+                    <p class="mt-2 text-sm text-(--text-muted)">
+                        This action permanently deletes your financial history,
+                        categories and settings stored in this browser.
+                    </p>
+
+                    <p class="text-sm text-(--text-muted)">
+                        This cannot be undone.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <button
+                class="mt-6 w-full rounded-xl bg-(--danger) py-4 font-semibold text-(--text-secondary) hover:bg-red-600 transition">
+                🗑 Reset Account Data
             </button>
-          </div>
 
-          <!-- Language -->
-          <div class="pref-row">
-            <div>
-              <h3>Language</h3>
-              <p>Regional formatting and display</p>
+        </div>
+
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section>
+
+        <h2 class="text-2xl font-bold text-(--text-secondary) mb-5">
+            About FinTrack Pro
+        </h2>
+
+        <div
+            class="rounded-2xl border border-(--border-light) bg-(--bg-tertiary) shadow-sm p-6">
+
+            <div class="flex gap-4">
+
+                <div class="text-xl">
+                    🛡
+                </div>
+
+                <div>
+
+                    <h3 class="font-semibold text-(--text-secondary)">
+                        Privacy First Architecture
+                    </h3>
+
+                    <p class="mt-2 text-sm leading-6 text-(--text-muted) text-wrap">
+                        FinTrack Pro is built on a Local-Only principle.
+                        Your financial data is stored using browser Local Storage.
+                        No transaction data, account balances or personal
+                        identifiers ever leave your device.
+                    </p>
+
+                </div>
+
             </div>
 
-            <button class="lang-link">English (US) →</button>
-          </div>
-        </div>
-      </section>
+            <div
+                class="mt-6 flex justify-between border-t border-(--border-light) pt-5 text-sm text-(--text-muted)">
 
-      <!-- ================= DATA ================= -->
-      <section>
-        <h2 class="settings-section-title">Data Management</h2>
+                <span>Version 2.4.0 (Corporate Build)</span>
 
-        <div class="settings-panel danger-panel">
-          <div class="danger-row">
-            <div class="danger-icon">⚠</div>
+                <button class="text-(--primary) hover:underline">
+                    Privacy Policy
+                </button>
 
-            <div>
-              <h3 id="all-clear-btn">Reset All Data</h3>
-
-              <p>
-                This action permanently deletes your financial history,
-                categories and settings stored in this browser.
-              </p>
-
-              <p>This cannot be undone.</p>
             </div>
-          </div>
 
-          <button class="reset-btn">🗑 Reset Account Data</button>
         </div>
-      </section>
 
-      <!-- ================= ABOUT ================= -->
-      <section>
-        <h2 class="settings-section-title">About FinTrack Pro</h2>
+    </section>
 
-        <div class="settings-panel about-panel">
-          <div class="about-row">
-            <div class="about-icon">🛡</div>
-
-            <div>
-              <h3>Privacy First Architecture</h3>
-
-              <p>
-                FinTrack Pro is built on a Local-Only principle.
-                Your financial data is stored using browser Local Storage.
-                No transaction data, account balances or personal
-                identifiers ever leave your device.
-              </p>
-            </div>
-          </div>
-
-          <div class="about-footer">
-            <span>Version 2.4.0 (Corporate Build)</span>
-            <button class="privacy-link">Privacy Policy</button>
-          </div>
-        </div>
-      </section>
-    </div>
-
+</div>
     <script type="module" src="./js/main.js"></script>
-    <script>
-      // Presentational-only helper: dark-mode toggle visual state.
-      document.addEventListener("DOMContentLoaded", () => {
-        document.getElementById("dark-mode-toggle")?.addEventListener("click", (e) => {
-          e.currentTarget.classList.toggle("on");
-        });
-      });
-    </script>
   </body>
 </html>

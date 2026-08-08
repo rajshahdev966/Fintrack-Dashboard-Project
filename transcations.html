@@ -6,580 +6,246 @@
     <title>Document</title>
     <link rel="stylesheet" href="./styles/output.css" />
     <link rel="stylesheet" href="" />
-
-    <!-- Local fonts: point at your locally-hosted Inter / JetBrains Mono / Fraunces
-         files. Google Fonts link kept only as fallback reference — replace with
-         local @font-face rules if already vendored, same as index.html. -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <style>
-      /* ============================================================
-         DESIGN TOKENS — identical system to index.html (Ledger & Ink)
-      ============================================================ */
-      :root {
-        --bg-primary: #f6f3ec;
-        --bg-secondary: #ffffff;
-        --bg-tertiary: #ece7db;
-        --line: #e2dccb;
-
-        --primary: #123328;
-        --primary-hover: #1c4a3a;
-        --primary-tint: #dce8e2;
-
-        --secondary: #0f7a5c;
-        --danger: #b3452f;
-        --brass: #b8863b;
-
-        --text-primary: #16201b;
-        --text-secondary: #6c7568;
-        --text-muted: #8b9184;
-        --text-on-primary: #f3efe3;
-
-        --radius-md: 14px;
-        --radius-lg: 22px;
-        --shadow-sm: 0 1px 2px rgba(18, 51, 40, 0.06);
-        --shadow-md: 0 12px 30px -12px rgba(18, 51, 40, 0.18);
-        --shadow-lg: 0 24px 60px -20px rgba(18, 51, 40, 0.28);
-
-        --font-display: "Fraunces", Georgia, serif;
-        --font-body: "Inter", -apple-system, sans-serif;
-        --font-mono: "JetBrains Mono", ui-monospace, monospace;
-
-        --text-xl: 1.05rem;
-      }
-
-      * { box-sizing: border-box; }
-      html { scroll-behavior: smooth; }
-
-      body {
-        margin: 0;
-        background: var(--bg-primary);
-        font-family: var(--font-body);
-        color: var(--text-primary);
-        min-height: 100vh;
-        display: flex;
-        position: relative;
-        background-image:
-          radial-gradient(circle at 100% 0%, rgba(18,51,40,0.05), transparent 45%),
-          repeating-linear-gradient(0deg, transparent, transparent 39px, var(--line) 40px);
-      }
-
-      a { color: inherit; text-decoration: none; }
-      button { font-family: inherit; }
-      ::selection { background: var(--brass); color: var(--text-on-primary); }
-
-      button:focus-visible,
-      select:focus-visible,
-      input:focus-visible,
-      a:focus-visible {
-        outline: 2px solid var(--brass);
-        outline-offset: 2px;
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        *, *::before, *::after {
-          animation-duration: 0.001ms !important;
-          animation-iteration-count: 1 !important;
-          transition-duration: 0.001ms !important;
-          scroll-behavior: auto !important;
-        }
-      }
-
-      /* ============================================================
-         SIDEBAR (shared)
-      ============================================================ */
-      .sidebar {
-        background: var(--primary);
-        height: 100vh;
-        position: sticky;
-        top: 0;
-        width: 250px;
-        flex-shrink: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 28px 20px;
-        box-shadow: var(--shadow-md);
-        z-index: 20;
-      }
-      .sidebar-top { display: flex; flex-direction: column; gap: 34px; }
-      .logo-text {
-        color: var(--text-on-primary);
-        font-family: var(--font-display);
-        font-size: 1.7rem;
-        font-weight: 600;
-        display: flex;
-        align-items: baseline;
-        gap: 2px;
-      }
-      .logo-text .logo-mark { color: var(--brass); font-style: italic; }
-      .nav-menu { font-size: var(--text-xl); display: flex; flex-direction: column; gap: 6px; }
-      .nav-item {
-        display: flex; gap: 12px; align-items: center;
-        padding: 13px 14px; border-radius: var(--radius-md);
-        cursor: pointer; color: rgba(243, 239, 227, 0.68);
-        transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
-        border: 1px solid transparent;
-      }
-      .nav-item:hover { background: rgba(243, 239, 227, 0.08); color: var(--text-on-primary); transform: translateX(2px); }
-      .nav-item.active { background: rgba(243, 239, 227, 0.12); color: var(--text-on-primary); border-color: rgba(184, 134, 59, 0.4); }
-      .nav-item .icon { width: 18px; text-align: center; flex-shrink: 0; }
-      .profile-section {
-        display: flex; gap: 12px; align-items: center;
-        padding: 12px; border-radius: var(--radius-md);
-        cursor: pointer; transition: background 0.18s ease;
-      }
-      .profile-section:hover { background: rgba(243, 239, 227, 0.08); }
-      .profile-photo img { height: 44px; width: 44px; border-radius: 50%; object-fit: cover; border: 2px solid var(--brass); }
-      .profile-name { color: var(--text-on-primary); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.04em; }
-
-      /* ============================================================
-         MAIN CONTENT
-      ============================================================ */
-      .content {
-        width: 100%;
-        background: var(--bg-primary);
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-        min-width: 0;
-      }
-
-      /* Header */
-      .page-header {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        padding: 40px clamp(20px, 4vw, 48px) 20px;
-      }
-      @media (min-width: 1024px) {
-        .page-header { flex-direction: row; align-items: center; justify-content: space-between; }
-      }
-      .page-title {
-        font-family: var(--font-display);
-        font-size: 2.1rem;
-        font-weight: 600;
-        margin: 0;
-        color: var(--text-primary);
-      }
-      .page-subtitle { margin: 8px 0 0; color: var(--text-muted); font-size: 0.95rem; }
-
-      .header-actions { display: flex; gap: 16px; align-items: stretch; flex-wrap: wrap; }
-
-      .total-items-card {
-        border-radius: var(--radius-md);
-        border: 1px solid var(--line);
-        padding: 12px 22px;
-        background: var(--bg-tertiary);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 4px;
-      }
-      .total-items-label {
-        font-size: 0.68rem;
-        text-transform: uppercase;
-        letter-spacing: 0.14em;
-        color: var(--text-secondary);
-        font-weight: 700;
-        margin: 0;
-      }
-      #total-trans {
-        font-family: var(--font-mono);
-        font-size: 1.6rem;
-        font-weight: 700;
-        color: var(--primary);
-        margin: 0;
-      }
-
-      #add-new-btn {
-        border-radius: var(--radius-md);
-        background: var(--primary);
-        border: none;
-        padding: 14px 26px;
-        font-weight: 700;
-        color: var(--text-on-primary);
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: var(--text-xl);
-        cursor: pointer;
-        transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
-        box-shadow: 0 10px 24px -12px rgba(18, 51, 40, 0.55);
-      }
-      #add-new-btn:hover { background: var(--primary-hover); transform: translateY(-2px); }
-      #add-new-btn svg { width: 17px; height: 17px; }
-
-      /* Filters bar */
-      .filters-bar {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        padding: 16px clamp(20px, 4vw, 48px);
-        background: var(--bg-tertiary);
-        border-top: 1px solid var(--line);
-        border-bottom: 1px solid var(--line);
-      }
-      @media (min-width: 1024px) {
-        .filters-bar { flex-direction: row; justify-content: space-between; align-items: center; }
-      }
-
-      .filter-toggle-group {
-        display: inline-flex;
-        border-radius: var(--radius-md);
-        background: var(--bg-secondary);
-        padding: 6px;
-        gap: 4px;
-        border: 1px solid var(--line);
-        width: fit-content;
-      }
-      .filter-toggle {
-        border: none;
-        background: transparent;
-        border-radius: 9px;
-        padding: 10px 22px;
-        font-weight: 600;
-        color: var(--text-secondary);
-        cursor: pointer;
-        transition: background 0.16s ease, color 0.16s ease;
-        font-size: 0.9rem;
-      }
-      .filter-toggle:hover { background: var(--primary-tint); color: var(--primary-hover); }
-      .filter-toggle.active {
-        background: var(--primary);
-        color: var(--text-on-primary);
-      }
-
-      .filter-right { display: flex; gap: 12px; flex-wrap: wrap; }
-      .filter-pill {
-        border-radius: var(--radius-md);
-        border: 1px solid var(--line);
-        background: var(--bg-secondary);
-        padding: 10px 18px;
-        color: var(--text-secondary);
-        font-size: 0.88rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: border-color 0.16s ease, color 0.16s ease;
-      }
-      .filter-pill:hover { border-color: var(--brass); color: var(--text-primary); }
-
-      /* Table */
-      .table-wrap { padding: 24px clamp(20px, 4vw, 48px) 48px; }
-
-      .table-card {
-        overflow-x: auto;
-        border-radius: var(--radius-lg);
-        border: 1px solid var(--line);
-        background: var(--bg-secondary);
-        box-shadow: var(--shadow-sm);
-      }
-
-      table { width: 100%; border-collapse: collapse; min-width: 640px; }
-
-      thead { background: var(--bg-secondary); }
-      thead tr {
-        text-align: left;
-        font-size: 0.68rem;
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        color: var(--text-muted);
-      }
-      thead th {
-        padding: 20px 24px;
-        border-bottom: 1.5px solid var(--line);
-        font-weight: 700;
-      }
-      thead th:last-child { text-align: center; }
-      thead th:nth-child(4) { text-align: right; }
-
-      tbody {
-        background: var(--bg-tertiary);
-      }
-      tbody tr { border-bottom: 1px solid var(--line); transition: background 0.14s ease; }
-      tbody tr:last-child { border-bottom: none; }
-      tbody tr:hover { background: var(--primary-tint); }
-      tbody td { padding: 18px 24px; color: var(--text-secondary); font-size: 0.92rem; }
-
-      /* Empty-state row used by JS when no data yet, styled to match rest */
-      .table-empty-note {
-        text-align: center;
-        padding: 44px 20px;
-        color: var(--text-muted);
-        font-style: italic;
-        font-family: var(--font-display);
-      }
-
-      /* ============================================================
-         QUICK-ADD MODAL (shared with index.html)
-      ============================================================ */
-      #transFormCard {
-        position: fixed;
-        inset: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(15, 27, 22, 0.55);
-        backdrop-filter: blur(6px);
-        z-index: 50;
-        padding: 20px;
-      }
-      #transFormCard.hidden { display: none; }
-
-      .modal-card {
-        width: min(440px, 100%);
-        background: var(--bg-secondary);
-        border-radius: var(--radius-lg);
-        padding: 34px 32px;
-        box-shadow: var(--shadow-lg);
-        border-top: 4px solid var(--brass);
-        animation: modal-in 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
-        max-height: 90vh;
-        overflow-y: auto;
-      }
-      @keyframes modal-in {
-        from { opacity: 0; transform: translateY(14px) scale(0.98); }
-        to { opacity: 1; transform: translateY(0) scale(1); }
-      }
-      .modal-header h2 {
-        font-family: var(--font-display);
-        font-size: 1.7rem;
-        margin: 0;
-        color: var(--text-primary);
-      }
-      .modal-header p { margin: 8px 0 0; font-size: 0.88rem; color: var(--text-secondary); }
-      .field-group { margin-top: 22px; display: flex; flex-direction: column; gap: 20px; }
-      .field label {
-        display: block; margin-bottom: 8px; font-size: 0.78rem;
-        font-weight: 700; color: var(--text-primary); letter-spacing: 0.02em;
-      }
-      .field select, .field input {
-        width: 100%; border: 1.5px solid var(--line);
-        background: var(--bg-primary); border-radius: 11px;
-        padding: 12px 14px; font-size: 0.95rem; font-family: inherit;
-        color: var(--text-primary); outline: none;
-        transition: border-color 0.16s ease, box-shadow 0.16s ease;
-      }
-      .field select:focus, .field input:focus {
-        border-color: var(--secondary);
-        box-shadow: 0 0 0 4px var(--primary-tint);
-      }
-      .modal-actions { display: flex; justify-content: flex-end; gap: 14px; padding-top: 28px; }
-      #cancelBtn {
-        border: 1.5px solid var(--line); background: transparent;
-        padding: 12px 22px; border-radius: 11px; font-weight: 700;
-        color: var(--text-secondary); cursor: pointer;
-        transition: background 0.16s ease;
-      }
-      #cancelBtn:hover { background: var(--bg-tertiary); }
-      #submitBtn {
-        border: none; background: var(--primary); color: var(--text-on-primary);
-        padding: 12px 24px; border-radius: 11px; font-weight: 700; cursor: pointer;
-        box-shadow: 0 8px 20px -10px rgba(18, 51, 40, 0.6);
-        transition: transform 0.16s ease, background 0.16s ease;
-      }
-      #submitBtn:hover { transform: translateY(-1px); background: var(--primary-hover); }
-
-      /* ============================================================
-         RESPONSIVE
-      ============================================================ */
-      @media (max-width: 900px) {
-        body { flex-direction: column; }
-        .sidebar {
-          position: sticky; top: 0; width: 100%; height: auto;
-          flex-direction: row; align-items: center; padding: 14px 18px; z-index: 30;
-        }
-        .sidebar-top { flex-direction: row; align-items: center; gap: 22px; }
-        .logo-text { font-size: 1.25rem; }
-        .nav-menu { flex-direction: row; gap: 4px; font-size: 0.85rem; }
-        .nav-item span:not(.icon) { display: none; }
-        .nav-item { padding: 10px; }
-        .profile-name { display: none; }
-        .page-header, .filters-bar, .table-wrap { padding-left: 18px; padding-right: 18px; }
-      }
-
-      @media (max-width: 480px) {
-        .page-title { font-size: 1.6rem; }
-        .header-actions { width: 100%; }
-        #add-new-btn { flex: 1; justify-content: center; }
-        .total-items-card { flex: 1; }
-      }
-    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body id="transactions-page">
-    <!-- QUICK ADD MODAL -->
-    <div class="hidden" id="transFormCard">
-      <div class="modal-card">
-        <div class="modal-header">
-          <h2>Add Transaction</h2>
-          <p>Record a new income or expense.</p>
+  <body class="bg-[var(--bg-primary)] font-[var(--font-mono)] text-nowrap flex" id="transactions-page"> 
+
+    <div class="w-full h-full rounded-2xl border border-slate-200 bg-transparent p-8 shadow-sm absolute backdrop-blur-sm flex justify-center items-center hidden" id="transFormCard">
+
+    <div class="w-max h-max bg-white rounded-2xl border-slate-200 p-8 shadow-sm ">
+        <!-- Header -->
+        <div class="mb-8">
+            <h2 class="text-3xl font-bold text-slate-800">
+                Add Transaction
+            </h2>
+            <p class="mt-2 text-sm text-slate-500">
+                Record a new income or expense.
+            </p>
         </div>
-        <form class="field-group">
-          <!-- Type -->
-          <div class="field">
-            <label for="trans-type">Transaction Type</label>
-            <select id="trans-type">
-              <option>Income</option>
-              <option>Expense</option>
-            </select>
-          </div>
-          <!-- Amount -->
-          <div class="field">
-            <label>Amount</label>
-            <input type="number" placeholder="₹0.00" />
-          </div>
-          <!-- Purpose -->
-          <div class="field">
-            <label>Purpose</label>
-            <input type="text" placeholder="Amazon" />
-          </div>
-          <!-- Category -->
-          <div class="field">
-            <label>Category</label>
-            <select>
-              <option>Food</option>
-              <option>Shopping</option>
-              <option>Travel</option>
-              <option>Salary</option>
-              <option>Investment</option>
-              <option>Utilities</option>
-            </select>
-          </div>
-          <!-- Date -->
-          <div class="field">
-            <label>Date</label>
-            <input type="date" />
-          </div>
-          <!-- Buttons -->
-          <div class="modal-actions">
-            <button type="button" id="cancelBtn">Cancel</button>
-            <button type="submit" id="submitBtn">Save Transaction</button>
-          </div>
+        <form class="space-y-6">
+            <!-- Type -->
+            <div>
+                <label class="mb-3 block text-sm font-semibold text-slate-700">
+                    Transaction Type
+                </label>
+                <select
+                    class="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-sky-500 focus:ring-4 focus:ring-sky-100" id="trans-type">
+                    <option>Income</option>
+                    <option>Expense</option>
+                </select>
+            </div>
+            <!-- Amount -->
+            <div>
+                <label class="mb-2 block text-sm font-semibold text-slate-700">
+                    Amount
+                </label>
+                <input
+                    type="number"
+                    placeholder="₹0.00"
+                    class="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-sky-500 focus:ring-4 focus:ring-sky-100">
+            </div>
+            <!-- Purpose -->
+            <div>
+                <label class="mb-2 block text-sm font-semibold text-slate-700">
+                    Purpose
+                </label>
+                <input
+                    type="text"
+                    placeholder="Amazon"
+                    class="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-sky-500 focus:ring-4 focus:ring-sky-100">
+            </div>
+            <!-- Category -->
+            <div>
+                <label class="mb-2 block text-sm font-semibold text-slate-700">
+                    Category
+                </label>
+                <select
+                    class="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-sky-500 focus:ring-4 focus:ring-sky-100">
+                    <option>Food</option>
+                    <option>Shopping</option>
+                    <option>Travel</option>
+                    <option>Salary</option>
+                    <option>Investment</option>
+                    <option>Utilities</option>
+                </select>
+            </div>
+            <!-- Date -->
+            <div>
+                <label class="mb-2 block text-sm font-semibold text-slate-700">
+                    Date
+                </label>
+                <input
+                    type="date"
+                    class="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-sky-500 focus:ring-4 focus:ring-sky-100">
+            </div>
+            <!-- Buttons -->
+            <div class="flex justify-end gap-4 pt-4">
+                <button
+                    type="button"
+                    class="rounded-xl border border-slate-300 px-6 py-3 font-semibold text-slate-600 transition hover:bg-slate-100" id="cancelBtn">
+                    Cancel
+                </button>
+                <button
+                    type="submit"
+                    class="rounded-xl bg-sky-500 px-6 py-3 font-semibold text-white shadow transition hover:bg-sky-600" id="submitBtn">
+                    Save Transaction
+                </button>
+            </div>
         </form>
-      </div>
     </div>
 
-    <!-- SIDEBAR -->
-    <nav class="sidebar">
-      <div class="sidebar-top">
-        <div class="logo-text">Fin<span class="logo-mark">Track</span> Pro</div>
-        <div class="nav-menu">
-          <div class="nav-item dashboard-a" href="./index.html">
-            <span class="icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="8" height="8" rx="1.5" fill="currentColor"/><rect x="13" y="3" width="8" height="5" rx="1.5" fill="currentColor" opacity="0.6"/><rect x="13" y="10" width="8" height="11" rx="1.5" fill="currentColor" opacity="0.6"/><rect x="3" y="13" width="8" height="8" rx="1.5" fill="currentColor" opacity="0.6"/></svg>
-            </span>
-            <a href="./index.html">Dashboard</a>
+</div>
+    <nav
+      class="bg-[var(--bg-secondary)] h-screen w-min flex flex-col justify-between p-5 shadow-(--shadow-md)"
+    >
+      <div class="upper-nav flex flex-col gap-5">
+        <div class="logo-text text-(--primary) text-4xl font-semibold">
+          FinTrack Pro
+        </div>
+        <div class="nav-menu text-(length:--text-xl) flex flex-col gap-4">
+          <div class="dashboard-a flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) cursor-pointer text-(--text-primary)" href="./index.html">
+            <i class="ri-dashboard-fill"></i> <a href="./index.html">Dashboard</a>
           </div>
-          <div class="nav-item active transcations-a">
-            <span class="icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="6" width="20" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg>
-            </span>
-            <a href="./transcations.html">Transcations</a>
+          <div class="transcations-a flex gap-2 items-center p-4 rounded-[var(--radius-md)] bg-(--primary) cursor-pointer text-(--text-primary)">
+            <i class="ri-cash-line"></i> <a href="./transcations.html">Transcations</a>
           </div>
-          <div class="nav-item settings-a">
-            <span class="icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M19.4 13.5a1.7 1.7 0 0 0 .34 1.87l.06.06a2.06 2.06 0 1 1-2.9 2.9l-.06-.06a1.7 1.7 0 0 0-1.87-.34 1.7 1.7 0 0 0-1.03 1.56V19.6a2.06 2.06 0 0 1-4.12 0v-.09a1.7 1.7 0 0 0-1.11-1.56 1.7 1.7 0 0 0-1.87.34l-.06.06a2.06 2.06 0 1 1-2.9-2.9l.06-.06a1.7 1.7 0 0 0 .34-1.87 1.7 1.7 0 0 0-1.56-1.03H4.4a2.06 2.06 0 0 1 0-4.12h.09a1.7 1.7 0 0 0 1.56-1.11 1.7 1.7 0 0 0-.34-1.87l-.06-.06a2.06 2.06 0 1 1 2.9-2.9l.06.06a1.7 1.7 0 0 0 1.87.34H10.5a1.7 1.7 0 0 0 1.03-1.56V4.4a2.06 2.06 0 0 1 4.12 0v.09a1.7 1.7 0 0 0 1.03 1.56 1.7 1.7 0 0 0 1.87-.34l.06-.06a2.06 2.06 0 1 1 2.9 2.9l-.06.06a1.7 1.7 0 0 0-.34 1.87v.02a1.7 1.7 0 0 0 1.56 1.03h.09a2.06 2.06 0 0 1 0 4.12h-.09a1.7 1.7 0 0 0-1.56 1.03z" stroke="currentColor" stroke-width="1.3"/></svg>
-            </span>
-            <a href="./settings.html">Settings</a>
+            
+          <div class="settings-a flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) cursor-pointer text-(--text-primary)">
+            <i class="ri-settings-2-line"></i> <a href="./settings.html">Settings</a>
           </div>
         </div>
       </div>
-      <div class="profile-section">
+      <div class="profile-section flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) cursor-pointer">
         <div class="profile-photo">
           <img
             src="https://plus.unsplash.com/premium_photo-1683121366070-5ceb7e007a97?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="user profile photo"
+            alt="user profile photo" class="h-[50px] w-[50px] rounded-[50%]"
           />
         </div>
-        <div class="profile-name"><span>ALEX MORGAN</span></div>
+        <div class="profile-name text-(--text-primary)"><span>ALEX MORGAN</span></div>
+        </div>
       </div>
     </nav>
+    
+    <div class="w-full bg-(--bg-primary) shadow-sm flex flex-col gap-4">
 
-    <!-- MAIN CONTENT -->
-    <div class="content">
-      <!-- Header -->
-      <div class="page-header">
+    <!-- Header -->
+    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 p-8">
+
         <div>
-          <h2 class="page-title">Transactions</h2>
-          <p class="page-subtitle">Manage and track all your fiscal movements</p>
+            <h2 class="text-3xl font-bold text-(--text-primary)">
+                Transactions
+            </h2>
+
+            <p class="mt-2 text-(--text-muted)">
+                Manage and track all your fiscal movements
+            </p>
         </div>
 
-        <div class="header-actions">
-          <div class="total-items-card">
-            <p class="total-items-label">Total Items</p>
-            <p id="total-trans"></p>
-          </div>
+        <div class="flex gap-4">
 
-          <button id="add-new-btn">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
-            <span>Add New</span>
-          </button>
-        </div>
-      </div>
+            <div class="rounded-xl border border-(--border-light) px-6 py-3 bg-(--bg-tertiary)">
+                <p class="text-(length:--text-base) uppercase tracking-widest text-(--text-secondary) font-semibold">
+                    Total Items
+                </p>
 
-      <!-- Filters -->
-      <div class="filters-bar">
-        <div class="filter-toggle-group">
-          <button class="filter-toggle active">All</button>
-          <button class="filter-toggle">Income</button>
-          <button class="filter-toggle">Expense</button>
+                <p class="text-2xl font-bold text-(--primary) text-(length:--text-3xl)" id="total-trans">
+                    
+                </p>
+            </div>
+
+            <button
+                class="rounded-xl bg-(--primary) hover:bg-(--primary-hover) transition px-8 py-4 font-semibold text-(--surface) flex items-center gap-3 text-(length:--text-xl)" id="add-new-btn">
+                <i class="ri-add-large-line"></i>
+                <span>Add New</span>
+            </button>
+
         </div>
 
-        <div class="filter-right">
-          <button class="filter-pill">Last 30 Days ▼</button>
-          <button class="filter-pill">☰</button>
-        </div>
-      </div>
-
-      <!-- Table -->
-      <div class="table-wrap">
-        <div class="table-card">
-          <table>
-            <thead>
-              <tr>
-                <th>Date</th>
-                <th>Category</th>
-                <th>Description</th>
-                <th>Amount</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody id="trans-table"></tbody>
-          </table>
-        </div>
-      </div>
     </div>
 
+    <!-- Filters -->
+    <div class="flex flex-col lg:flex-row justify-between gap-5 p-3 bg-(--bg-tertiary) ">
+
+        <div class="flex rounded-xl bg-(--surface) p-2 gap-1">
+
+            <button class="rounded-lg bg-(--primary) hover:bg-(--primary-hover) hover:text-(--text-primary) cursor-pointer px-6 py-2 text-(--text-primary) font-semibold">
+                All
+            </button>
+
+            <button class="rounded-lg px-6 py-2 text-(--text-secondary) hover:bg-(--primary-hover) hover:text-(--text-primary) cursor-pointer">
+                Income
+            </button>
+
+            <button class="rounded-lg px-6 py-2 text-(--text-secondary) hover:bg-(--primary-hover) hover:text-(--text-primary) cursor-pointer">
+                Expense
+            </button>
+
+        </div>
+
+        <div class="flex gap-3">
+
+            <button
+                class="rounded-xl border border-(--border) px-5 py-2 text-(--text-secondary)">
+                Last 30 Days ▼
+            </button>
+
+            <button
+                class="rounded-xl border border-(--border) px-4 py-2 text-(--text-secondary)">
+                ☰
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Table -->
+    <div class="px-6 pb-6">
+
+        <div class="overflow-x-auto rounded-2xl border border-(--border) text-(--text-secondary)">
+
+            <table class="w-full">
+
+                <!-- Table Head -->
+                <thead class="bg-(--bg-secondary)">
+
+                    <tr class="text-left text-xs uppercase tracking-wide text-(--text-muted)">
+
+                        <th class="px-6 py-5">Date</th>
+                        <th class="px-6 py-5">Category</th>
+                        <th class="px-6 py-5">Description</th>
+                        <th class="px-6 py-5 text-right">Amount</th>
+                        <th class="px-6 py-5 text-center">Actions</th>
+
+                    </tr>
+
+                </thead>
+
+                <!-- Body -->
+                <tbody class="divide-y divide-(--surface-dim) bg-(--bg-tertiary)" id="trans-table">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+
+    </div>
+
+</div>
+
     <script type="module" src="./js/main.js"></script>
-    <script>
-      // Presentational-only helpers (kept out of main.js so it stays untouched):
-      // quick-add modal toggling + filter pill active state.
-      document.addEventListener("DOMContentLoaded", () => {
-        const modal = document.getElementById("transFormCard");
-        const openBtn = document.getElementById("add-new-btn");
-        const cancelBtn = document.getElementById("cancelBtn");
-
-        openBtn?.addEventListener("click", () => modal.classList.remove("hidden"));
-        cancelBtn?.addEventListener("click", (e) => {
-          e.preventDefault();
-          modal.classList.add("hidden");
-        });
-        modal?.addEventListener("click", (e) => {
-          if (e.target === modal) modal.classList.add("hidden");
-        });
-
-        document.querySelectorAll(".filter-toggle").forEach((btn) => {
-          btn.addEventListener("click", () => {
-            document.querySelectorAll(".filter-toggle").forEach((b) => b.classList.remove("active"));
-            btn.classList.add("active");
-          });
-        });
-      });
-    </script>
   </body>
 </html>
