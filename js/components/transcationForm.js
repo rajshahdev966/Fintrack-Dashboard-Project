@@ -42,6 +42,7 @@ export function transModalSubmit() {
 
 export const openEditModal = (index)=>{
   openTransactionModal();
-  let form = document.querySelector("form");
   
+  let form = document.querySelector("form");
+
 }
