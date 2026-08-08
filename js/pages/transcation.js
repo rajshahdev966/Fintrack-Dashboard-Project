@@ -69,7 +69,7 @@ export const delTrans = (index)=>{
 window.delTrans = delTrans;
 
 export const editTrans = (index)=>{
-openEditModal();
+openEditModal(index);
 
 }
 window.editTrans = editTrans;
