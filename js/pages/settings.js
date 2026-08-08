@@ -17,9 +17,9 @@ export const themeSwitch = ()=>{
       
     }
   }
-  if(!document.body.id == "settings-page") return;
+  if(!(document.body.id == "settings-page")) return;
   const switchBtn = document.querySelector("#switch-btn");
-  const switchLogo = document.querySelector("#switch-logo");
+  // const switchLogo = document.querySelector("#switch-logo");
   switchBtn.addEventListener("click", ()=>{
     console.log("Theme Chnaged");
     toggleTheme();
