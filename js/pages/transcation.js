@@ -1,4 +1,4 @@
-import { closeTransactionModal, openTransactionModal, transModalSubmit } from "../components/transcationForm.js";
+import { closeTransactionModal, openEditModal, openTransactionModal, transModalSubmit } from "../components/transcationForm.js";
 import { allTrans, saveTrans } from "../core/storage.js";
 
 
@@ -69,7 +69,7 @@ export const delTrans = (index)=>{
 window.delTrans = delTrans;
 
 export const editTrans = (index)=>{
-
+openEditModal();
 
 }
 window.editTrans = editTrans;
