@@ -82,5 +82,6 @@ export function initDashboard (){
     transModalSubmit();
     allAmountUpdate();
     dashboardTransUpd();
+    updateGraph();
 
 }
