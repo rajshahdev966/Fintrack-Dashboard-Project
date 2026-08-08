@@ -36,7 +36,7 @@ export const netWorthUpdate = ()=>{
                 total += transaction.amount;
             }else{
                 netWorth -= transaction.amount;
-                total -= transaction.amount;
+                total += transaction.amount;
             }
         })
     }
