@@ -1,7 +1,7 @@
 import { closeTransactionModal, openTransactionModal, transModalSubmit } from "../components/transcationForm.js";
 import { allTrans, saveTrans } from "../core/storage.js";
 
-export let delTrans;
+let delTrans;
 
 export let allTransUpdate = ()=>{
     console.log("all Trans Update working");
