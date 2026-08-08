@@ -28,7 +28,7 @@ export const themeSwitch = ()=>{
 }
 
 
-export const initSettings = ()=>{
+export let initSettings = ()=>{
 themeSwitch();    
 
 }
