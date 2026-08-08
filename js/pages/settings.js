@@ -17,6 +17,9 @@ export const themeLogic = ()=>{
     // switchLogo.classList.replace("ri-sun-fill", "ri-moon-fill");
     
   }
+  console.log(document.body);
+  
+  document.body.classList.contains("dark")
 }
 
 export const themeSwitch = ()=>{
