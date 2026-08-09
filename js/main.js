@@ -9,7 +9,6 @@ const page = document.body.id;
 switch (page) {
   case "dashboard-page":
     initDashboard();
-    themeLogic();
     openNavOnMobile();
     // dashboardTransUpd();
     break;
