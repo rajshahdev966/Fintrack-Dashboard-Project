@@ -39,7 +39,8 @@ export const themeSwitch = () => {
 
 
 export const currencyChange = ()=>{
-  
+  const currencyBtn = document.querySelector("#currency-btn");
+  currencyBtn.addEventListener("onchange")
 } 
 
 
