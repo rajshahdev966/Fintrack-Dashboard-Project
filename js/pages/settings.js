@@ -18,9 +18,9 @@ export const themeLogoUpdate = () => {
   const switchLogo = document.querySelector("#switch-logo");
 
   if (darkOn) {
-    switchLogo.classList.replace("ri-moon-fill", "ri-sun-fill");
+    switchLogo.classList.replace("ri-moon-fill hover:text-blue-500", "ri-sun-fill hover:text-amber-300");
   } else {
-    switchLogo.classList.replace("ri-sun-fill", "ri-moon-fill");
+    switchLogo.classList.replace("ri-sun-fill hover:text-amber-300", "ri-moon-fill hover:text-blue-500");
   }
 };
 
