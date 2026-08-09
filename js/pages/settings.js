@@ -7,18 +7,21 @@ export const themeLogic = () => {
 
   if (darkOn) {
     document.body.classList.add("dark");
-    if (document.body.id == "settings-page") {
-      switchLogo.classList.replace("ri-moon-fill", "ri-sun-fill");
-    }
+    
   } else {
     document.body.classList.remove("dark");
-    if (document.body.id == "settings-page") {
-      switchLogo.classList.replace("ri-sun-fill", "ri-moon-fill");
-    }
+    
   }
-  console.log(document.body);
+};
 
-  document.body.classList.contains("dark");
+export const themeLogoUpdate = () => {
+  const switchLogo = document.querySelector("#switch-logo");
+
+  if (darkOn) {
+    switchLogo.classList.replace("ri-moon-fill", "ri-sun-fill");
+  } else {
+    switchLogo.classList.replace("ri-sun-fill", "ri-moon-fill");
+  }
 };
 
 export const themeSwitch = () => {
@@ -29,6 +32,7 @@ export const themeSwitch = () => {
     toggleTheme();
     themeLogic();
     saveTheme();
+    themeLogoUpdate();
   });
 };
 
