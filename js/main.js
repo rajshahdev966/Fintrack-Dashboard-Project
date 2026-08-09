@@ -15,14 +15,12 @@ switch (page) {
     
     case "transactions-page":
       initTransPage();
-      themeLogic();
       openNavOnMobile();
       // allTransUpdate();
       break;
       
       case "settings-page":
         initSettings();
-        themeLogic();
         openNavOnMobile();
     break;
 }

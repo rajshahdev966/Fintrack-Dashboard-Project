@@ -95,4 +95,5 @@ export function initDashboard() {
   updateGraph();
   currencyUpdate();
   themeLogic();
+  
 }   

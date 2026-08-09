@@ -106,4 +106,5 @@ export let initSettings = () => {
   currencyChange();
   delAllData();
   preCurrencyUpdate();
+  themeLogic();
 };
