@@ -2,7 +2,7 @@ import { updateGraph } from "../components/charts.js";
 import { openNavOnMobile } from "../components/navbar.js";
 import {
   closeTransactionModal,
-  openTransactionModal,
+  openModal,
   transModalSubmit,
 } from "../components/transcationForm.js";
 import { allTrans, currency } from "../core/storage.js";
@@ -89,7 +89,7 @@ export const currencyUpdate = () => {
 export function initDashboard() {
   document
     .querySelector("#quickAddBtn")
-    .addEventListener("click", openTransactionModal);
+    .addEventListener("click", openModal);
 
   document
     .querySelector("#cancelBtn")

@@ -9,7 +9,7 @@ import {
 import { allTransUpdate, totalTransUpdate } from "../pages/transcation.js";
 import { updateGraph } from "./charts.js";
 
-export function openTransactionModal() {
+export function openModal() {
   const form = document.querySelector("#transFormCard");
   form.classList.remove("hidden");
 }
@@ -50,7 +50,7 @@ export function transModalSubmit() {
 }
 
 export const openEditModal = (index) => {
-  openTransactionModal();
+  openModal();
   console.log("Edit Clicked", index);
   console.log(allTrans[index]);
   const formCard = document.querySelector("form");
