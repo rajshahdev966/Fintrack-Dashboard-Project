@@ -70,6 +70,7 @@ export const expenseUpdate = () => {
 export const allAmountUpdate = () => {
   netWorthUpdate();
   expenseUpdate();
+  updateGraph(income, expense, total);
 };
 
 export const currencyUpdate = () => {
@@ -95,5 +96,4 @@ export function initDashboard() {
   updateGraph(income, expense, total);
   currencyUpdate();
   themeLogic();
-  
-}   
+}
