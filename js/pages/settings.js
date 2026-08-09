@@ -91,7 +91,10 @@ export const preCurrencyUpdate = ()=>{
 
 export const delAllData = ()=>{
   const allDataDelBtn = document.querySelector("#all-data-del-btn");
-  
+  allDataDelBtn.addEventListener("click", ()=>{
+    localStorage.removeItem('savedTrans')
+    
+  })
 }
 
 export let initSettings = () => {
@@ -101,5 +104,6 @@ export let initSettings = () => {
   userMailChange();
   preMailUpd();
   currencyChange();
+  delAllData();
   preCurrencyUpdate();
 };
