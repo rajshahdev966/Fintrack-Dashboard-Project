@@ -1,5 +1,4 @@
 
-import { navProfileUpdate } from "./components/navvbar.js";
 import { dashboardTransUpd, initDashboard } from "./pages/dashboard.js";
 import { initSettings, themeLogic, themeSwitch } from "./pages/settings.js";
 import { allTransUpdate, initTransPage } from "./pages/transcation.js";
