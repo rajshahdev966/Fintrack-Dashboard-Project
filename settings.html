@@ -18,255 +18,235 @@
       rel="stylesheet"
     />
   </head>
-  <body class="bg-[var(--bg-primary)] font-[var(--font-mono)] text-nowrap flex" id="settings-page">
-    <nav
-      class="navbar"
-    >
+  <body
+    class="bg-[var(--bg-primary)] font-[var(--font-mono)] text-nowrap flex"
+    id="settings-page"
+  >
+
+    <!-- NAVBAR  -->
+    <nav class="navbar">
       <div class="upper-nav flex flex-col gap-5">
+        <!-- NAVBAR LOGO  -->
         <div class="logo-text text-(--primary) text-4xl font-semibold">
           FinTrack Pro
         </div>
+        <!-- NAVBAR MENU  -->
         <div class="nav-menu text-(length:--text-xl) flex flex-col gap-4">
           <div class="dashboard-a navbar-links" href="./index.html">
-            <i class="ri-dashboard-fill"></i> <a href="./index.html">Dashboard</a>
+            <i class="ri-dashboard-fill"></i>
+            <a href="./index.html">Dashboard</a>
           </div>
           <div class="transcations-a navbar-links">
-            <i class="ri-cash-line"></i> <a href="./transcations.html">Transcations</a>
+            <i class="ri-cash-line"></i>
+            <a href="./transcations.html">Transcations</a>
           </div>
-          
+
           <div class="settings-a navbar-selected">
-            <i class="ri-settings-2-line"></i> <a href="./settings.html">Settings</a>
+            <i class="ri-settings-2-line"></i>
+            <a href="./settings.html">Settings</a>
           </div>
         </div>
       </div>
-      <div class="profile-section flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) cursor-pointer">
+      <!-- NAVBAR AVATAR  -->
+      <div
+        class="profile-section flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) cursor-pointer"
+      >
         <div class="profile-photo">
-           <div
-                    class="h-10 w-10 rounded-full bg-(--primary) flex items-center justify-center text-xl font-bold text-slate-600" id="profile-icon">
-                
-                </div>
+          <div
+            class="h-10 w-10 rounded-full bg-(--primary) flex items-center justify-center text-xl font-bold text-slate-600"
+            id="profile-icon"
+          ></div>
         </div>
-        <div class="profile-name text-(--text-primary)"><span>ALEX MORGAN</span></div>
+        <div class="profile-name text-(--text-primary)">
+          <span>ALEX MORGAN</span>
+        </div>
       </div>
     </nav>
-    
+
     <div class="max-w-5xl mx-auto space-y-10">
-
-    <!-- ================= PROFILE ================= -->
-    <section>
-
-        <h2 class="text-2xl font-bold text-(--text-primary) mb-5">
-            Profile
-        </h2>
-
-        <div class="rounded-2xl border border-(--border-light) bg-(--bg-tertiary) p-6 shadow-sm">
-
-            <div class="flex flex-col md:flex-row gap-6 items-center">
-
-                <!-- Avatar -->
-                <div
-                    class="h-20 w-20 rounded-full bg-(--primary) flex items-center justify-center text-3xl font-bold text-slate-600" id="profile-icon">
-                
-                </div>
-
-                <!-- Form -->
-                <div class="flex-1 space-y-5">
-
-                    <div>
-                        <label class="block text-xs font-semibold uppercase text-(--text-secondary) mb-2">
-                            Full Name
-                        </label>
-
-                        <input
-                            type="text"
-                            value="Alexander Sterling"
-                            class="w-full rounded-lg border border-(--border-light) px-4 py-3 focus:outline-none focus:ring-2 focus:ring-(--primary) text-(--text-muted)" id="name-input">
-                    </div>
-
-                    <div>
-                        <label class="block text-xs font-semibold uppercase text-(--text-secondary) mb-2">
-                            Email Address
-                        </label>
-
-                        <input
-                            type="email"
-                            value="alex.sterling@fintrack.pro"
-                            class="w-full rounded-lg border border-(--border-light) px-4 py-3 focus:outline-none focus:ring-2 focus:ring-(--primary) text-(--text-muted)" id="mail-input">
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ================= PREFERENCES ================= -->
-    <section>
-
-        <h2 class="text-2xl font-bold text-(--text-secondary) mb-5">
-            Preferences
-        </h2>
-
-        <div class="rounded-2xl border border-(--border-light) bg-(--bg-tertiary) shadow-sm divide-y">
-
-            <!-- Currency -->
-            <div class="flex justify-between items-center p-6">
-
-                <div>
-                    <h3 class="font-semibold text-(--text-secondary)">
-                        Preferred Currency
-                    </h3>
-
-                    <p class="text-sm text-(--text-muted)">
-                        Default currency for summaries
-                    </p>
-                </div>
-
-                <select
-                    class="rounded-lg border border-(--border) px-4 py-2 bg-(--surface) text-(--text-muted) focus:ring-2 focus:ring-(--primary)" id="currency-option">
-                    <option>USD ($)</option>
-                    <option>EUR (€)</option>
-                    <option>INR (₹)</option>
-                </select>
-
-            </div>
-
-            <!-- Dark Mode -->
-            <div class="flex justify-between items-center p-6">
-
-                <div>
-                    <h3 class="font-semibold text-(--text-secondary)">
-                        Appearance
-                    </h3>
-
-                    <p class="text-sm text-(--text-muted)">
-                        Switch between Light and Dark mode
-                    </p>
-                </div>
-
-                <button class="text-4xl  transition cursor-pointer" id="switch-btn"><i class="ri-sun-fill" id="switch-logo"></i></button>
-
-
-            </div>
-
-            <!-- Language -->
-            <div class="flex justify-between items-center p-6">
-
-                <div>
-                    <h3 class="font-semibold text-(--text-secondary)">
-                        Language
-                    </h3>
-
-                    <p class="text-sm text-(--text-muted)">
-                        Regional formatting and display
-                    </p>
-                </div>
-
-                <button class="text-slate-600 font-medium">
-                    English (US) →
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ================= DATA ================= -->
-    <section>
-
-        <h2 class="text-2xl font-bold text-(--text-secondary) mb-5">
-            Data Management
-        </h2>
+      <!-- ================= PROFILE ================= -->
+      <section>
+        <h2 class="text-2xl font-bold text-(--text-primary) mb-5">Profile</h2>
 
         <div
-            class="rounded-2xl border border-(--border-light) bg-(--bg-tertiary) shadow-sm p-6">
-
-            <div class="flex gap-4">
-
-                <div class="text-xl">
-                    ⚠
-                </div>
-
-                <div>
-
-                    <h3 class="font-semibold text-(--danger)" id="all-clear-btn">
-                        Reset All Data
-                    </h3>
-
-                    <p class="mt-2 text-sm text-(--text-muted)">
-                        This action permanently deletes your financial history,
-                        categories and settings stored in this browser.
-                    </p>
-
-                    <p class="text-sm text-(--text-muted)">
-                        This cannot be undone.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <button
-                class="mt-6 w-full rounded-xl bg-(--danger) py-4 font-semibold text-(--text-secondary) hover:bg-red-600 transition" id="all-data-del-btn">
-                🗑 Reset Account Data
-            </button>
-
-        </div>
-
-    </section>
-
-    <!-- ================= ABOUT ================= -->
-    <section>
-
-        <h2 class="text-2xl font-bold text-(--text-secondary) mb-5">
-            About FinTrack Pro
-        </h2>
-
-        <div
-            class="rounded-2xl border border-(--border-light) bg-(--bg-tertiary) shadow-sm p-6">
-
-            <div class="flex gap-4">
-
-                <div class="text-xl">
-                    🛡
-                </div>
-
-                <div>
-
-                    <h3 class="font-semibold text-(--text-secondary)">
-                        Privacy First Architecture
-                    </h3>
-
-                    <p class="mt-2 text-sm leading-6 text-(--text-muted) text-wrap">
-                        FinTrack Pro is built on a Local-Only principle.
-                        Your financial data is stored using browser Local Storage.
-                        No transaction data, account balances or personal
-                        identifiers ever leave your device.
-                    </p>
-
-                </div>
-
-            </div>
-
+          class="rounded-2xl border border-(--border-light) bg-(--bg-tertiary) p-6 shadow-sm"
+        >
+          <div class="flex flex-col md:flex-row gap-6 items-center">
+            <!-- Avatar -->
             <div
-                class="mt-6 flex justify-between border-t border-(--border-light) pt-5 text-sm text-(--text-muted)">
+              class="h-20 w-20 rounded-full bg-(--primary) flex items-center justify-center text-3xl font-bold text-slate-600"
+              id="profile-icon"
+            ></div>
 
-                <span>Version 2.4.0 (Corporate Build)</span>
+            <!-- Form -->
+            <div class="flex-1 space-y-5">
+              <div>
+                <label
+                  class="block text-xs font-semibold uppercase text-(--text-secondary) mb-2"
+                >
+                  Full Name
+                </label>
 
-                <button class="text-(--primary) hover:underline">
-                    Privacy Policy
-                </button>
+                <input
+                  type="text"
+                  value="Alexander Sterling"
+                  class="w-full rounded-lg border border-(--border-light) px-4 py-3 focus:outline-none focus:ring-2 focus:ring-(--primary) text-(--text-muted)"
+                  id="name-input"
+                />
+              </div>
 
+              <div>
+                <label
+                  class="block text-xs font-semibold uppercase text-(--text-secondary) mb-2"
+                >
+                  Email Address
+                </label>
+
+                <input
+                  type="email"
+                  value="alex.sterling@fintrack.pro"
+                  class="w-full rounded-lg border border-(--border-light) px-4 py-3 focus:outline-none focus:ring-2 focus:ring-(--primary) text-(--text-muted)"
+                  id="mail-input"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PREFERENCES ================= -->
+      <section>
+        <h2 class="text-2xl font-bold text-(--text-secondary) mb-5">
+          Preferences
+        </h2>
+
+        <div
+          class="rounded-2xl border border-(--border-light) bg-(--bg-tertiary) shadow-sm divide-y"
+        >
+          <!-- Currency -->
+          <div class="flex justify-between items-center p-6">
+            <div>
+              <h3 class="font-semibold text-(--text-secondary)">
+                Preferred Currency
+              </h3>
+
+              <p class="text-sm text-(--text-muted)">
+                Default currency for summaries
+              </p>
             </div>
 
+            <select
+              class="rounded-lg border border-(--border) px-4 py-2 bg-(--surface) text-(--text-muted) focus:ring-2 focus:ring-(--primary)"
+              id="currency-option"
+            >
+              <option>USD ($)</option>
+              <option>EUR (€)</option>
+              <option>INR (₹)</option>
+            </select>
+          </div>
+
+          <!-- Dark Mode -->
+          <div class="flex justify-between items-center p-6">
+            <div>
+              <h3 class="font-semibold text-(--text-secondary)">Appearance</h3>
+
+              <p class="text-sm text-(--text-muted)">
+                Switch between Light and Dark mode
+              </p>
+            </div>
+
+            <button class="text-4xl transition cursor-pointer" id="switch-btn">
+              <i class="ri-sun-fill" id="switch-logo"></i>
+            </button>
+          </div>
+
+          <!-- Language -->
+          <div class="flex justify-between items-center p-6">
+            <div>
+              <h3 class="font-semibold text-(--text-secondary)">Language</h3>
+
+              <p class="text-sm text-(--text-muted)">
+                Regional formatting and display
+              </p>
+            </div>
+
+            <button class="text-slate-600 font-medium">English (US) →</button>
+          </div>
         </div>
+      </section>
 
-    </section>
+      <!-- ================= DATA ================= -->
+      <section>
+        <h2 class="text-2xl font-bold text-(--text-secondary) mb-5">
+          Data Management
+        </h2>
 
-</div>
+        <div
+          class="rounded-2xl border border-(--border-light) bg-(--bg-tertiary) shadow-sm p-6"
+        >
+          <div class="flex gap-4">
+            <div class="text-xl">⚠</div>
+
+            <div>
+              <h3 class="font-semibold text-(--danger)" id="all-clear-btn">
+                Reset All Data
+              </h3>
+
+              <p class="mt-2 text-sm text-(--text-muted)">
+                This action permanently deletes your financial history,
+                categories and settings stored in this browser.
+              </p>
+
+              <p class="text-sm text-(--text-muted)">This cannot be undone.</p>
+            </div>
+          </div>
+
+          <button
+            class="mt-6 w-full rounded-xl bg-(--danger) py-4 font-semibold text-(--text-secondary) hover:bg-red-600 transition"
+            id="all-data-del-btn"
+          >
+            🗑 Reset Account Data
+          </button>
+        </div>
+      </section>
+
+      <!-- ================= ABOUT ================= -->
+      <section>
+        <h2 class="text-2xl font-bold text-(--text-secondary) mb-5">
+          About FinTrack Pro
+        </h2>
+
+        <div
+          class="rounded-2xl border border-(--border-light) bg-(--bg-tertiary) shadow-sm p-6"
+        >
+          <div class="flex gap-4">
+            <div class="text-xl">🛡</div>
+
+            <div>
+              <h3 class="font-semibold text-(--text-secondary)">
+                Privacy First Architecture
+              </h3>
+
+              <p class="mt-2 text-sm leading-6 text-(--text-muted) text-wrap">
+                FinTrack Pro is built on a Local-Only principle. Your financial
+                data is stored using browser Local Storage. No transaction data,
+                account balances or personal identifiers ever leave your device.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="mt-6 flex justify-between border-t border-(--border-light) pt-5 text-sm text-(--text-muted)"
+          >
+            <span>Version 2.4.0 (Corporate Build)</span>
+
+            <button class="text-(--primary) hover:underline">
+              Privacy Policy
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
     <script type="module" src="./js/main.js"></script>
   </body>
 </html>

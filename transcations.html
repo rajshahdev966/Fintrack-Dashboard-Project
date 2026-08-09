@@ -118,31 +118,22 @@
         </form>
       </div>
     </div>
-    <nav
-      class="bg-[var(--bg-secondary)] h-screen w-min flex flex-col justify-between p-5 shadow-(--shadow-md)"
-    >
+    <nav class="navbar">
       <div class="upper-nav flex flex-col gap-5">
         <div class="logo-text text-(--primary) text-4xl font-semibold">
           FinTrack Pro
         </div>
         <div class="nav-menu text-(length:--text-xl) flex flex-col gap-4">
-          <div
-            class="dashboard-a flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) cursor-pointer text-(--text-primary)"
-            href="./index.html"
-          >
+          <div class="dashboard-a navbar-links" href="./index.html">
             <i class="ri-dashboard-fill"></i>
             <a href="./index.html">Dashboard</a>
           </div>
-          <div
-            class="transcations-a flex gap-2 items-center p-4 rounded-[var(--radius-md)] bg-(--primary) cursor-pointer text-(--text-primary)"
-          >
+          <div class="transcations-a navbar-selected">
             <i class="ri-cash-line"></i>
             <a href="./transcations.html">Transcations</a>
           </div>
 
-          <div
-            class="settings-a flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) cursor-pointer text-(--text-primary)"
-          >
+          <div class="settings-a navbar-links">
             <i class="ri-settings-2-line"></i>
             <a href="./settings.html">Settings</a>
           </div>
