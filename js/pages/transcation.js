@@ -11,7 +11,7 @@ export let allTransUpdate = ()=>{
     if(!transTable) return;
     transTable.innerHTML = ``
     allTrans.forEach((transcation, index)=>{
-        transTable.innerHTML += `<tr class="hover:bg-(--surface-bright) transition block md:table-row">
+        transTable.innerHTML += `<tr class="hover:bg-(--surface-bright) transition block relative p-4 md:table-row md:p-0 ">
         
         <td class="px-6 py-6 font-medium block md:table-cell">
         ${transcation.date}
