@@ -13,6 +13,7 @@ switch (page) {
   case "dashboard-page":
     initDashboard();
     themeLogic();
+    navProfileUpdate();
     // dashboardTransUpd();
     break;
     
@@ -27,5 +28,4 @@ switch (page) {
         themeLogic();
     break;
 }
-navProfileUpdate();
 console.log("Main Work!");
