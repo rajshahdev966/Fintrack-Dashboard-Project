@@ -92,7 +92,7 @@ export function initDashboard() {
   transModalSubmit();
   allAmountUpdate();
   dashboardTransUpd();
-  updateGraph();
+  updateGraph(income, expense, total);
   currencyUpdate();
   themeLogic();
   
