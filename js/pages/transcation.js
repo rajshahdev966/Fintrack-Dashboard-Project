@@ -36,7 +36,7 @@ export let allTransUpdate = ()=>{
         ${transcation.amount}
         </td>
         
-        <td class="px-6 py-6 text-center flex items-center justify-center gap-4 text-3xl md:">
+        <td class="px-6 py-6 text-center block items-center justify-center gap-4 text-3xl md:table-cell md:flex">
         <span class="hover:text-(--danger) cursor-pointer" onclick="delTrans(${index})"><i class="ri-close-circle-fill"></i></span>
         <span class="hover:text-(--primary) cursor-pointer" onclick="editTrans(${index})"><i class="ri-pencil-fill"></i></span>
         </td>
