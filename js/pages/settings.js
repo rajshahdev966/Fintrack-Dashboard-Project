@@ -44,9 +44,9 @@ export const profileUpdate = (e) =>{
   // profileIcon.innerHTML = `${e.target.value.split(" ")[0].charAt(0)} ${e.target.value.split(" ")[1].charAt(0)}`
 }
 
-export const currencyChange = ()=>{
-  const currencyBtn = document.querySelector("#currency-btn");
-  currencyBtn.addEventListener("change", ()=>{
+export const profileChange = ()=>{
+  const nameInput = document.querySelector("#name-input");
+  nameInput.addEventListener("change", ()=>{
     profileUpdate();
   })
 } 
@@ -55,5 +55,4 @@ export const currencyChange = ()=>{
 
 
 export let initSettings = () => {
-  themeSwitch();
-};
+  themeSwitch();
