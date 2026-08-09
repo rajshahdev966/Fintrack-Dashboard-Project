@@ -75,6 +75,8 @@ export const userMailChange = ()=>{
   })
 }
 
+
+
 export let initSettings = () => {
   themeSwitch();
   profileChange();
