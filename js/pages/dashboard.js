@@ -1,6 +1,6 @@
 import { updateGraph } from "../components/charts.js";
 import { closeTransactionModal, openTransactionModal, transModalSubmit } from "../components/transcationForm.js";
-import { allTrans } from "../core/storage.js";
+import { allTrans, currency } from "../core/storage.js";
 
 export let dashboardTransUpd = ()=>{
     const recentList = document.querySelector("#recent-trans-list")
@@ -69,6 +69,11 @@ export const allAmountUpdate = ()=>{
 
 }
 
+export const dashboardCurrencyUpdate = ()=>{
+    const currencyDisplay = document.querySelector("#currency-display");
+    currencyDisplay.textContent = `${currency.split("(")[1].charAt(0)}`
+} 
+
 export function initDashboard (){
 
     console.log("Dashboard Work!");
@@ -83,5 +88,5 @@ export function initDashboard (){
     allAmountUpdate();
     dashboardTransUpd();
     updateGraph();
-
+    dashboardCurrencyUpdate();
 }
