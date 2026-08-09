@@ -1,4 +1,4 @@
-import { allTrans, darkOn, saveTheme, toggleTheme, updNameInStor, userName } from "../core/storage.js";
+import { allTrans, darkOn, mailInStor, saveTheme, toggleTheme, updNameInStor, userName, userMail } from "../core/storage.js";
 import { dashboardTransUpd } from "./dashboard.js";
 import { allTransUpdate } from "./transcation.js";
 
@@ -44,6 +44,13 @@ export const profileUpdate = (response) =>{
 
 }
 
+export const preProfileUpd = ()=>{
+  let response = userName;
+  profileUpdate(response);
+  const nameInput = document.querySelector("#name-input");
+  nameInput.value = response;
+}
+
 
 
 export const profileChange = ()=>{
@@ -54,9 +61,24 @@ export const profileChange = ()=>{
 } 
 
 
+export const preMailUpd = ()=>{
+  let response = userMail;
+  const mailInput = document.querySelector("#mail-input");
+  mailInput.value = response;
+}
 
+export const userMailChange = ()=>{
+  const mailInput = document.querySelector("#mail-input");
+  mailInput.addEventListener("input", ()=>{
+    mailInStor(mailInput.value);
+
+  })
+}
 
 export let initSettings = () => {
   themeSwitch();
   profileChange();
+  preProfileUpd();
+  userMailChange();
+  preMailUpd();
 };
