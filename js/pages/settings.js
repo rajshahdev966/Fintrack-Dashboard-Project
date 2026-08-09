@@ -37,10 +37,16 @@ export const themeSwitch = () => {
   });
 };
 
+export const profileUpdate = (e) =>{
+  const profileIcon = document.querySelector("#profile-icon");
+  profileIcon.innerHTML = `${e.target}`
+}
 
 export const currencyChange = ()=>{
   const currencyBtn = document.querySelector("#currency-btn");
-  currencyBtn.addEventListener("onchange")
+  currencyBtn.addEventListener("change", ()=>{
+
+  })
 } 
 
 
