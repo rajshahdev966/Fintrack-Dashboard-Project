@@ -1,6 +1,7 @@
 import { closeTransactionModal, openEditModal, openTransactionModal, transModalSubmit } from "../components/transcationForm.js";
 import { transSort } from "../components/transcationTable.js";
 import { allTrans, saveTrans } from "../core/storage.js";
+import { currencyUpdate } from "./dashboard.js";
 import { themeLogic } from "./settings.js";
 
 
@@ -30,8 +31,9 @@ export let allTransUpdate = ()=>{
         </td>
         
         <td class="px-6 py-6 text-right font-bold text-(--${transcation.type == "Income" ? "success" : "danger"})">
+        <span>${transcation.type == "Income" ? "+" : "-"}</span>
         <span id="currency-display"></span>
-        ${transcation.type == "Income" ? "+" : "-"}${transcation.amount}
+        ${transcation.amount}
         </td>
         
         <td class="px-6 py-6 text-center flex items-center justify-center gap-4 text-3xl">
@@ -63,6 +65,7 @@ export function initTransPage(){
     allTransUpdate();
     transSort();
     themeLogic();
+    currencyUpdate();
 }
 
 export const delTrans = (index)=>{

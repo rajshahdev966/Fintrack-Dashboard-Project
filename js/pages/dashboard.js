@@ -73,7 +73,7 @@ export const allAmountUpdate = ()=>{
 
 }
 
-export const dashboardCurrencyUpdate = ()=>{
+export const currencyUpdate = ()=>{
     let response = currency;
     const currencyDisplay = document.querySelectorAll("#currency-display");
     currencyDisplay.forEach((ele)=>{
@@ -95,5 +95,5 @@ export function initDashboard (){
     allAmountUpdate();
     dashboardTransUpd();
     updateGraph();
-    dashboardCurrencyUpdate();
+    currencyUpdate();
 }
