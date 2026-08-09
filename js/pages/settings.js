@@ -3,7 +3,6 @@ import { dashboardTransUpd } from "./dashboard.js";
 import { allTransUpdate } from "./transcation.js";
 
 export const themeLogic = () => {
-  console.log("darkon = " + darkOn);
 
   if (darkOn) {
     document.body.classList.add("dark");
@@ -31,7 +30,6 @@ export const themeSwitch = () => {
   const switchBtn = document.querySelector("#switch-btn");
   const switchLogo = document.querySelector("#switch-logo");
   switchBtn.addEventListener("click", () => {
-    console.log("Theme Chnaged");
     toggleTheme();
     themeLogic();
     saveTheme();

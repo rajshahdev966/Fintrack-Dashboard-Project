@@ -7,7 +7,6 @@ export function saveTrans (){
     localStorage.setItem('savedTrans', JSON.stringify(allTrans));
 }
 export const saveTheme = ()=>{
-    console.log("Storage: ", darkOn);
     localStorage.setItem('darkOn', JSON.stringify(darkOn))
 }
 export const toggleTheme = ()=>{
