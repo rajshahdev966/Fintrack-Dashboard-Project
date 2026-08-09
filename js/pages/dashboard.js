@@ -70,8 +70,9 @@ export const allAmountUpdate = ()=>{
 }
 
 export const dashboardCurrencyUpdate = ()=>{
+    let response = currency;
     const currencyDisplay = document.querySelector("#currency-display");
-    currencyDisplay.textContent = `${currency.split("(")[1].charAt(0)}`
+    currencyDisplay.textContent = `${response.split("(")[1].charAt(0)}`
 } 
 
 export function initDashboard (){
