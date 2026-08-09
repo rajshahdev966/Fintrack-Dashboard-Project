@@ -19,7 +19,6 @@ export let dashboardTransUpd = ()=>{
                     </div>
                 </div>` 
     })
-    console.log("dashboard should get updated");
     
 }
 
@@ -82,8 +81,6 @@ export const currencyUpdate = ()=>{
 } 
 
 export function initDashboard (){
-
-    console.log("Dashboard Work!");
 
     document.querySelector("#quickAddBtn")
             .addEventListener("click", openTransactionModal)

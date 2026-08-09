@@ -4,9 +4,6 @@ import { dashboardTransUpd, initDashboard } from "./pages/dashboard.js";
 import { initSettings, themeLogic, themeSwitch } from "./pages/settings.js";
 import { allTransUpdate, initTransPage } from "./pages/transcation.js";
 
-console.log("Main Work");
-
-
 const page = document.body.id;
 
 switch (page) {
@@ -30,4 +27,3 @@ switch (page) {
         openNavOnMobile();
     break;
 }
-console.log("Main Work!");

@@ -6,9 +6,4 @@ export const updateGraph = ()=>{
     let expenseGraph = document.querySelector("#expense-graph")
     incomeGraph.style.height = `${((income/total) * (totalGraph.clientHeight))}px`
     expenseGraph.style.height = `${((expense/total) * (totalGraph.clientHeight))}px`
-    console.log(income);
-    console.log(expense);
-    console.log(total);
-    console.log(netWorth);
-    
 }
