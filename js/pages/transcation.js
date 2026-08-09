@@ -11,6 +11,7 @@ export let allTransUpdate = ()=>{
     if(!transTable) return;
     transTable.innerHTML = ``
     allTrans.forEach((transcation, index)=>{
+        console.log(transcation.type == "Income" ? "success" : "danger");
         transTable.innerHTML += `<tr class="hover:bg-(--surface-bright) transition ">
         
         <td class="px-6 py-6 font-medium">

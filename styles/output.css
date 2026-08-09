@@ -647,6 +647,9 @@
   .text-\(--secondary\) {
     color: var(--secondary);
   }
+  .text-\(--success\) {
+    color: var(--success);
+  }
   .text-\(--surface\) {
     color: var(--surface);
   }
