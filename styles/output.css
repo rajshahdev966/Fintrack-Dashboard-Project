@@ -894,6 +894,17 @@
     }
   }
 }
+.navbar {
+  display: flex;
+  height: 100vh;
+  width: min-content;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--bg-secondary);
+  padding: calc(var(--spacing) * 5);
+  --tw-shadow: var(--shadow-md);
+  box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+}
 @property --tw-space-y-reverse {
   syntax: "*";
   inherits: false;

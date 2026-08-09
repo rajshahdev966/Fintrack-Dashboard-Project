@@ -22,7 +22,6 @@
     class="bg-(--bg-primary) font-(--font-mono) text-nowrap flex relative"
     id="dashboard-page"
   >
-  
     <div
       class="w-full h-full rounded-2xl bg-transparent p-8 shadow-sm absolute backdrop-blur-sm flex justify-center items-center hidden"
       id="transFormCard"
@@ -123,7 +122,7 @@
     <!-- NAVBAR -->
 
     <nav
-      class="bg-(--bg-secondary) h-screen w-min flex flex-col justify-between p-5 shadow-(--shadow-md)"
+      class="navbar"
     >
       <!-- LOGO OF NAVBAR -->
       <div class="upper-nav flex flex-col gap-5">
@@ -133,22 +132,16 @@
 
         <!-- NAVABAR MENU  -->
         <div class="nav-menu text-(length:--text-xl) flex flex-col gap-4">
-          <div
-            class="dashboard-a navbar-selected"
-          >
+          <div class="dashboard-a navbar-selected">
             <i class="ri-dashboard-fill"></i>
             <a href="./index.html">Dashboard</a>
           </div>
-          <div
-            class="transcations-a navbar-links"
-          >
+          <div class="transcations-a navbar-links">
             <i class="ri-cash-line"></i>
             <a href="./transcations.html">Transcations</a>
           </div>
 
-          <div
-            class="settings-a flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) cursor-pointer text-(--text-primary)"
-          >
+          <div class="settings-a navbar-links">
             <i class="ri-settings-2-line"></i>
             <a href="./settings.html">Settings</a>
           </div>
@@ -159,10 +152,9 @@
       >
         <div class="profile-photo">
           <div
-                    class="h-10 w-10 rounded-full bg-(--primary) flex items-center justify-center text-3xl font-bold text-slate-600" id="profile-icon">
-                
-                </div>
-
+            class="h-10 w-10 rounded-full bg-(--primary) flex items-center justify-center text-3xl font-bold text-slate-600"
+            id="profile-icon"
+          ></div>
         </div>
         <div class="profile-name text-(--text-primary)">
           <span>ALEX MORGAN</span>
@@ -183,7 +175,8 @@
               <p class="text-sm">TOTAL NET WORTH</p>
 
               <div class="flex gap-1">
-                <h1 class="text-5xl font-bold" id="currency-display"></h1><h1 class="text-5xl font-bold" id="net-worth"></h1>
+                <h1 class="text-5xl font-bold" id="currency-display"></h1>
+                <h1 class="text-5xl font-bold" id="net-worth"></h1>
               </div>
             </div>
 
@@ -271,11 +264,12 @@
 
           <!-- Placeholder Chart -->
           <div
-            class="h-100 rounded-2xl border-2 border-dashed border-slate-300 flex items-end justify-center gap-5" id="total-graph"
+            class="h-100 rounded-2xl border-2 border-dashed border-slate-300 flex items-end justify-center gap-5"
+            id="total-graph"
           >
-          <div class="w-40 bg-(--success) " id="income-graph">Income</div>
-          <div class="w-40 bg-(--danger) " id="expense-graph">Expense</div>
-        </div>
+            <div class="w-40 bg-(--success)" id="income-graph">Income</div>
+            <div class="w-40 bg-(--danger)" id="expense-graph">Expense</div>
+          </div>
         </div>
       </div>
 
@@ -286,7 +280,10 @@
         <div class="flex justify-between items-center">
           <h2 class="text-3xl font-bold text-(--text-primary)">Recent</h2>
 
-          <button class="text-(--primary-hover) font-semibold cursor-pointer" onclick="window.location.href='./transcations.html';">
+          <button
+            class="text-(--primary-hover) font-semibold cursor-pointer"
+            onclick="window.location.href = './transcations.html'"
+          >
             VIEW ALL
           </button>
         </div>
