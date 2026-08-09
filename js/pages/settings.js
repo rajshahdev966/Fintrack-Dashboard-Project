@@ -22,7 +22,7 @@ export const themeLogoUpdate = () => {
     switchLogo.classList.replace("ri-moon-fill", "ri-sun-fill");
     switchBtn.classList.replace("hover:text-blue-500", "hover:text-amber-300");
   } else {
-    switchLogo.classList.replace("ri-sun-fill hover:text-amber-300", "ri-moon-fill hover:text-blue-500");
+    switchLogo.classList.replace("ri-sun-fill", "ri-moon-fill");
     switchBtn.classList.replace("hover:text-amber-300", "hover:text-blue-500");
   }
 };
