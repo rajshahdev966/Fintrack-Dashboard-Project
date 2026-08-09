@@ -1,4 +1,4 @@
-import { allTrans, darkOn, mailInStor, saveTheme, toggleTheme, updNameInStor, userName, userMail } from "../core/storage.js";
+import { allTrans, darkOn, mailInStor, saveTheme, toggleTheme, updNameInStor, userName, userMail, currencyStore, currency } from "../core/storage.js";
 import { dashboardTransUpd } from "./dashboard.js";
 import { allTransUpdate } from "./transcation.js";
 
@@ -77,6 +77,16 @@ export const userMailChange = ()=>{
 
 export const currencyChange = ()=>{
   const currencyOption = document.querySelector("#currency-option")
+  currencyOption.addEventListener("change", (e)=>{
+    currencyStore(e.target.value);
+  })
+}
+
+export const preCurrencyUpdate = ()=>{
+  let response = currency;
+  const currencyOption = document.querySelector("#currency-option")
+  currencyOption.value = response;
+
 }
 
 export let initSettings = () => {
@@ -85,4 +95,6 @@ export let initSettings = () => {
   preProfileUpd();
   userMailChange();
   preMailUpd();
+  currencyChange();
+  preCurrencyUpdate();
 };
