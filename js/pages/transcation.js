@@ -30,7 +30,7 @@ export let allTransUpdate = ()=>{
         ${transcation.purpose}
         </td>
         
-        <td class="px-6 py-6 text-right font-bold text-(--${transcation.type == "Income" ? "success" : "danger"}) w-min block md:table-cell">
+        <td class="px-6 py-6 text-right font-bold text-(--${transcation.type == "Income" ? "success" : "danger"}) w-min block text-right md:table-cell">
         <span>${transcation.type == "Income" ? "+" : "-"}</span>
         <span id="currency-display"></span>
         ${transcation.amount}
