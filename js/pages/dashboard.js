@@ -63,8 +63,8 @@ export const expIncCount = () => {
     });
   };
 
-export const expeIncUpdate = () => {
-  expenseCount();
+export const expIncUpdate = () => {
+  expIncCount();
   let expenseDisplay = document.querySelector("#expense-display");
   let incomeDisplay = document.querySelector("#income-display");
   expenseDisplay.textContent = expense;
@@ -73,7 +73,7 @@ export const expeIncUpdate = () => {
 
 export const allAmountUpdate = () => {
   netWorthUpdate();
-  expenseUpdate();
+  expIncUpdate();
   updateGraph(income, expense, total);
 };
 
