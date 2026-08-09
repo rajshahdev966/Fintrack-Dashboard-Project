@@ -89,7 +89,10 @@ export const preCurrencyUpdate = ()=>{
 
 }
 
-export
+export const delAllData = ()=>{
+  const allDataDelBtn = document.querySelector("#all-data-del-btn");
+  
+}
 
 export let initSettings = () => {
   themeSwitch();
