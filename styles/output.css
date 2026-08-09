@@ -858,6 +858,15 @@
     .md\:hidden {
       display: none;
     }
+    .md\:table {
+      display: table;
+    }
+    .md\:table-cell {
+      display: table-cell;
+    }
+    .md\:table-row {
+      display: table-row;
+    }
     .md\:translate-full {
       --tw-translate-x: 100%;
       --tw-translate-y: 100%;
