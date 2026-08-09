@@ -37,6 +37,14 @@ export const themeSwitch = () => {
   });
 };
 
+
+export const currencyChange = ()=>{
+  
+} 
+
+
+
+
 export let initSettings = () => {
   themeSwitch();
 };
