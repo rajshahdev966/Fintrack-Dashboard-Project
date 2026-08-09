@@ -1,4 +1,4 @@
-import { allTrans, darkOn, saveTheme, toggleTheme } from "../core/storage.js";
+import { allTrans, darkOn, saveTheme, toggleTheme, updNameInStor, userName } from "../core/storage.js";
 import { dashboardTransUpd } from "./dashboard.js";
 import { allTransUpdate } from "./transcation.js";
 
@@ -39,17 +39,17 @@ export const themeSwitch = () => {
 
 export const profileUpdate = (response) =>{
   const profileIcon = document.querySelector("#profile-icon");
-  console.log("I am changed");
+  userName = response ?? localStorage.getItem('userName');
+  updNameInStor();
   profileIcon.innerHTML = `${(response.split(" ")[0] ?? "").charAt(0)}${(response.split(" ")[1] ?? "").charAt(0) ?? ""}`
 }
+
+
 
 export const profileChange = ()=>{
   const nameInput = document.querySelector("#name-input");
   nameInput.addEventListener("input", ()=>{
     profileUpdate(nameInput.value);
-    
-    
-    
   })
 } 
 
