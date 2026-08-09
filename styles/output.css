@@ -924,6 +924,9 @@
   --tw-duration: 300ms;
   transition-duration: 300ms;
   @media (width >= 48rem) {
+    position: static;
+  }
+  @media (width >= 48rem) {
     --tw-translate-x: 0px;
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }

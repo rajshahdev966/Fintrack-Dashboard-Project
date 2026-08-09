@@ -5,5 +5,5 @@
     @apply flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) cursor-pointer text-(--text-primary);
 }
 .navbar{
-    @apply bg-(--bg-secondary) h-screen w-min flex flex-col justify-between p-5 shadow-(--shadow-md) fixed -translate-x-full md:translate-x-0 transition-transform duration-300 z-50 ;
+    @apply bg-(--bg-secondary) h-screen w-min flex flex-col justify-between p-5 shadow-(--shadow-md) fixed md:static -translate-x-full md:translate-x-0 transition-transform duration-300 z-50 ;
 }
