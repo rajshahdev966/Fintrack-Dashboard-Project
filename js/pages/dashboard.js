@@ -50,8 +50,8 @@ export const netWorthUpdate = () => {
   let netWorthDisplay = document.querySelector("#net-worth");
   netWorthDisplay.textContent = netWorth;
 };
-export const expenseUpdate = () => {
-  let expenseCount = () => {
+
+export const expIncCount = () => {
     expense = 0;
     income = 0;
     allTrans.forEach((transaction, index) => {
@@ -62,12 +62,15 @@ export const expenseUpdate = () => {
       }
     });
   };
+
+export const expeIncUpdate = () => {
   expenseCount();
   let expenseDisplay = document.querySelector("#expense-display");
   let incomeDisplay = document.querySelector("#income-display");
   expenseDisplay.textContent = expense;
   incomeDisplay.textContent = income;
 };
+
 export const allAmountUpdate = () => {
   netWorthUpdate();
   expenseUpdate();
