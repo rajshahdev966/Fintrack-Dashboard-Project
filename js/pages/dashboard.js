@@ -31,8 +31,7 @@ export let expense;
 export let netWorth;
 export let total;
 
-export const netWorthUpdate = () => {
-  let netWorthCount = () => {
+export const netWorthCount = () => {
     netWorth = 0;
     total = 0;
     allTrans.forEach((transaction, index) => {
@@ -45,6 +44,8 @@ export const netWorthUpdate = () => {
       }
     });
   };
+
+export const netWorthUpdate = () => {
   netWorthCount();
   let netWorthDisplay = document.querySelector("#net-worth");
   netWorthDisplay.textContent = netWorth;
@@ -93,7 +94,6 @@ export function initDashboard() {
   transModalSubmit();
   allAmountUpdate();
   dashboardTransUpd();
-  updateGraph(income, expense, total);
   currencyUpdate();
   themeLogic();
 }

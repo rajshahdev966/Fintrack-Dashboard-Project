@@ -1,5 +1,3 @@
-import { expense, income, netWorth, total } from "../pages/dashboard.js"
-
 export const updateGraph = (income,expense,total)=>{
     let totalGraph = document.querySelector("#total-graph")
     let incomeGraph = document.querySelector("#income-graph")
