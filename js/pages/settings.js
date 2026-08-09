@@ -89,6 +89,8 @@ export const preCurrencyUpdate = ()=>{
 
 }
 
+export
+
 export let initSettings = () => {
   themeSwitch();
   profileChange();
