@@ -839,6 +839,9 @@
     .md\:flex {
       display: flex;
     }
+    .md\:grid {
+      display: grid;
+    }
     .md\:hidden {
       display: none;
     }
@@ -853,8 +856,17 @@
     .md\:grid-cols-3 {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+    .md\:grid-cols-5 {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
     .md\:flex-row {
       flex-direction: row;
+    }
+    .md\:p-10 {
+      padding: calc(var(--spacing) * 10);
+    }
+    .md\:p-20 {
+      padding: calc(var(--spacing) * 20);
     }
   }
   @media (width >= 64rem) {
@@ -892,6 +904,9 @@
     }
     .lg\:justify-between {
       justify-content: space-between;
+    }
+    .lg\:p-0 {
+      padding: 0px;
     }
   }
   @media (width >= 80rem) {
