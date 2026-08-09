@@ -3,8 +3,7 @@ export const openNavOnMobile = ()=>{
     const navBar = document.querySelector("nav")
     hamBtn.addEventListener("click", ()=>{
         console.log("Hello before");
-        navBar.classList.toggle("translate-x-0")
-        navBar.classList.remove("-tra")
+        navBar.classList.toggle("-translate-x-full")
         console.log("Hello after");
         
     })

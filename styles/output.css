@@ -317,6 +317,10 @@
     --tw-translate-y: calc(var(--spacing) * -1.5);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
+  .-translate-x-0 {
+    --tw-translate-x: 0px;
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
   .-translate-x-full {
     --tw-translate-x: -100%;
     translate: var(--tw-translate-x) var(--tw-translate-y);
