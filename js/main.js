@@ -1,4 +1,5 @@
 
+import { openNavOnMobile } from "./components/navbar.js";
 import { dashboardTransUpd, initDashboard } from "./pages/dashboard.js";
 import { initSettings, themeLogic, themeSwitch } from "./pages/settings.js";
 import { allTransUpdate, initTransPage } from "./pages/transcation.js";
@@ -12,6 +13,7 @@ switch (page) {
   case "dashboard-page":
     initDashboard();
     themeLogic();
+    openNavOnMobile();
     // dashboardTransUpd();
     break;
     
