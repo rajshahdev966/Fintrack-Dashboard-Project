@@ -39,13 +39,15 @@ export const themeSwitch = () => {
 
 export const profileUpdate = (e) =>{
   const profileIcon = document.querySelector("#profile-icon");
-  profileIcon.innerHTML = `${e.target}`
+  console.log("I am changed");
+  
+  // profileIcon.innerHTML = `${e.target.value.split(" ")[0].charAt(0)} ${e.target.value.split(" ")[1].charAt(0)}`
 }
 
 export const currencyChange = ()=>{
   const currencyBtn = document.querySelector("#currency-btn");
   currencyBtn.addEventListener("change", ()=>{
-
+    profileUpdate();
   })
 } 
 
