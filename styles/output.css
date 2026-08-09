@@ -702,6 +702,10 @@
     --tw-leading: calc(var(--spacing) * 6);
     line-height: calc(var(--spacing) * 6);
   }
+  .font-\(--font-mono\) {
+    --tw-font-weight: var(--font-mono);
+    font-weight: var(--font-mono);
+  }
   .font-\[var\(--font-mono\)\] {
     --tw-font-weight: var(--font-mono);
     font-weight: var(--font-mono);

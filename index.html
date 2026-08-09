@@ -19,9 +19,10 @@
     />
   </head>
   <body
-    class="bg-[var(--bg-primary)] font-[var(--font-mono)] text-nowrap flex relative "
+    class="bg-(--bg-primary) font-(--font-mono) text-nowrap flex relative"
     id="dashboard-page"
   >
+  
     <div
       class="w-full h-full rounded-2xl bg-transparent p-8 shadow-sm absolute backdrop-blur-sm flex justify-center items-center hidden"
       id="transFormCard"
@@ -119,13 +120,18 @@
       </div>
     </div>
 
+    <!-- NAVBAR -->
+
     <nav
-      class="bg-[var(--bg-secondary)] h-screen w-min flex flex-col justify-between p-5 shadow-(--shadow-md)"
+      class="bg-(--bg-secondary) h-screen w-min flex flex-col justify-between p-5 shadow-(--shadow-md)"
     >
+      <!-- LOGO OF NAVBAR -->
       <div class="upper-nav flex flex-col gap-5">
         <div class="logo-text text-(--primary) text-4xl font-semibold">
           FinTrack Pro
         </div>
+
+        <!-- NAVABAR MENU  -->
         <div class="nav-menu text-(length:--text-xl) flex flex-col gap-4">
           <div
             class="dashboard-a flex gap-2 items-center p-4 rounded-[var(--radius-md)] bg-(--primary) cursor-pointer text-(--text-primary)"
