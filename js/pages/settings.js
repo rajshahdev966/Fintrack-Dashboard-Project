@@ -16,11 +16,14 @@ export const themeLogic = () => {
 
 export const themeLogoUpdate = () => {
   const switchLogo = document.querySelector("#switch-logo");
+  const switchBtn = document.querySelector("#switch-btn")
 
   if (darkOn) {
-    switchLogo.classList.replace("ri-moon-fill hover:text-blue-500", "ri-sun-fill hover:text-amber-300");
+    switchLogo.classList.replace("ri-moon-fill", "ri-sun-fill");
+    switchBtn.classList.replace("hover:text-blue-500", "hover:text-amber-300");
   } else {
     switchLogo.classList.replace("ri-sun-fill hover:text-amber-300", "ri-moon-fill hover:text-blue-500");
+    switchBtn.classList.replace("hover:text-amber-300", "hover:text-blue-500");
   }
 };
 
