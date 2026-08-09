@@ -14,7 +14,7 @@ export function openModal() {
   form.classList.remove("hidden");
 }
 
-export function closeTransactionModal() {
+export function closeModal() {
   const form = document.querySelector("#transFormCard");
   form.classList.add("hidden");
 }
@@ -45,7 +45,7 @@ export function transModalSubmit() {
       allTransUpdate();
     }
     form.reset();
-    closeTransactionModal();
+    closeModal();
   });
 }
 
@@ -72,7 +72,7 @@ export const openEditModal = (index) => {
       totalTransUpdate();
       allTransUpdate();
     formCard.reset();
-    closeTransactionModal();
+    closeModal();
     formEdit = false;
   });
 };

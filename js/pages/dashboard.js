@@ -1,7 +1,7 @@
 import { updateGraph } from "../components/charts.js";
 import { openNavOnMobile } from "../components/navbar.js";
 import {
-  closeTransactionModal,
+  closeModal,
   openModal,
   transModalSubmit,
 } from "../components/transcationForm.js";
@@ -93,7 +93,7 @@ export function initDashboard() {
 
   document
     .querySelector("#cancelBtn")
-    .addEventListener("click", closeTransactionModal);
+    .addEventListener("click", closeModal);
 
   transModalSubmit();
   allAmountUpdate();

@@ -1,4 +1,4 @@
-import { closeTransactionModal, openEditModal, openModal, transModalSubmit } from "../components/transcationForm.js";
+import { closeModal, openEditModal, openModal, transModalSubmit } from "../components/transcationForm.js";
 import { transSort } from "../components/transcationTable.js";
 import { allTrans, saveTrans } from "../core/storage.js";
 import { currencyUpdate } from "./dashboard.js";
@@ -59,7 +59,7 @@ export function initTransPage(){
     .addEventListener("click", openModal)
     
     document.querySelector("#cancelBtn")
-    .addEventListener("click", closeTransactionModal)
+    .addEventListener("click", closeModal)
     
     transModalSubmit();
     totalTransUpdate();
