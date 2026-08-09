@@ -12,6 +12,7 @@ export let dashboardTransUpd = ()=>{
                         <h3 class="font-semibold text-(--text-primary)">${transcation.purpose}</h3>
                         <p class="text-(--text-muted) text-sm">${transcation.category}</p>
                     </div>
+                    <span class="text-(--${transcation.type == "Income" ? "success" : "danger"}) font-bold id="currency-display""></span>
                     <span class="text-(--${transcation.type == "Income" ? "success" : "danger"}) font-bold">${transcation.type == "Income" ? "+" : "-"}${transcation.amount}</span>
                 </div>` 
     })
