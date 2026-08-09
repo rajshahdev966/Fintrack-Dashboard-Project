@@ -1,4 +1,6 @@
 .navbar-selected{
-    @apply flex gap-2 items-center p-4 cursor-pointer text-(--text-primary);
-    
+    @apply flex gap-2 items-center p-4 cursor-pointer text-(--text-primary) rounded-[var(--radius-md)] bg-(--primary);    
+}
+.navbar-links{
+    @apply flex gap-2 items-center p-4 rounded-[var(--radius-md)] hover:bg-(--bg-tertiary) cursor-pointer text-(--text-primary);
 }
