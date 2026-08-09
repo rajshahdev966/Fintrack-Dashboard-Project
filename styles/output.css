@@ -307,6 +307,11 @@
   .border-collapse {
     border-collapse: collapse;
   }
+  .-translate-1\.5 {
+    --tw-translate-x: calc(var(--spacing) * -1.5);
+    --tw-translate-y: calc(var(--spacing) * -1.5);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
   .-translate-x-full {
     --tw-translate-x: -100%;
     translate: var(--tw-translate-x) var(--tw-translate-y);
@@ -781,6 +786,9 @@
     }
     .md\:grid {
       display: grid;
+    }
+    .md\:hidden {
+      display: none;
     }
     .md\:translate-x-0 {
       --tw-translate-x: 0px;
