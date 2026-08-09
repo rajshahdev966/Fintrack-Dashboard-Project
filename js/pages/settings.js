@@ -39,9 +39,9 @@ export const themeSwitch = () => {
 
 export const profileUpdate = (response) =>{
   const profileIcon = document.querySelector("#profile-icon");
-  userName = response ?? localStorage.getItem('userName');
-  updNameInStor();
+  updNameInStor(response);
   profileIcon.innerHTML = `${(response.split(" ")[0] ?? "").charAt(0)}${(response.split(" ")[1] ?? "").charAt(0) ?? ""}`
+
 }
 
 

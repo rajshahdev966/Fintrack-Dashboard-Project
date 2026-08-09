@@ -13,6 +13,6 @@ export const saveTheme = ()=>{
 export const toggleTheme = ()=>{
     darkOn = !darkOn;
 }
-export const updNameInStor = ()=>{
-    localStorage.setItem('userName', JSON.stringify(userName))
+export const updNameInStor = (newName)=>{
+    localStorage.setItem('userName', JSON.stringify(newName))
 }
