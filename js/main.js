@@ -9,8 +9,6 @@ const page = document.body.id;
 switch (page) {
   case "dashboard-page":
     initDashboard();
-    openNavOnMobile();
-    // dashboardTransUpd();
     break;
     
     case "transactions-page":

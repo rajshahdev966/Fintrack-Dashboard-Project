@@ -1,4 +1,5 @@
 import { updateGraph } from "../components/charts.js";
+import { openNavOnMobile } from "../components/navbar.js";
 import {
   closeTransactionModal,
   openTransactionModal,
@@ -99,4 +100,5 @@ export function initDashboard() {
   dashboardTransUpd();
   currencyUpdate();
   themeLogic();
+  openNavOnMobile();
 }
