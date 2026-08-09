@@ -40,14 +40,13 @@ export const themeSwitch = () => {
 export const profileUpdate = (e) =>{
   const profileIcon = document.querySelector("#profile-icon");
   console.log("I am changed");
-  
-  // profileIcon.innerHTML = `${e.target.value.split(" ")[0].charAt(0)} ${e.target.value.split(" ")[1].charAt(0)}`
+  profileIcon.innerHTML = `${e.target.value.split(" ")[0].charAt(0)} ${e.target.value.split(" ")[1].charAt(0)}`
 }
 
 export const profileChange = ()=>{
-  const currencyBtn = document.querySelector("#currency-btn");
-  currencyBtn.addEventListener("change", ()=>{
-    console.log("Hello");
+  const nameInput = document.querySelector("#name-input");
+  nameInput.addEventListener("change", ()=>{
+    profileUpdate();
     
   })
 } 
@@ -57,4 +56,5 @@ export const profileChange = ()=>{
 
 export let initSettings = () => {
   themeSwitch();
+  profileChange();
 };
