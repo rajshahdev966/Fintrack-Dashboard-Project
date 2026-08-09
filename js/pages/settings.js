@@ -8,6 +8,7 @@ export const themeLogic = ()=>{
   if(darkOn){
     console.log("Theme should be dark");
     document.body.classList.add("dark")
+    if(document.body.id == "settings-page")
     // switchLogo.classList.replace("ri-moon-fill", "ri-sun-fill");
     
     

@@ -1,7 +1,6 @@
 export let allTrans = JSON.parse(localStorage.getItem('savedTrans')) ?? [];
 export let darkOn = JSON.parse(localStorage.getItem('darkOn')) ?? false;
 
-console.log("Storage: ", darkOn);
 
 
 export function saveTrans (){
