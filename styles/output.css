@@ -389,6 +389,16 @@
   .gap-6 {
     gap: calc(var(--spacing) * 6);
   }
+  :where(.space-y-2 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
+  }
+  :where(.space-y-3 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 3) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-y-reverse)));
+  }
   :where(.space-y-5 > :not(:last-child)) {
     --tw-space-y-reverse: 0;
     margin-block-start: calc(calc(var(--spacing) * 5) * var(--tw-space-y-reverse));
@@ -836,6 +846,9 @@
     .md\:col-span-3 {
       grid-column: span 3 / span 3;
     }
+    .md\:block {
+      display: block;
+    }
     .md\:flex {
       display: flex;
     }
@@ -861,6 +874,9 @@
     }
     .md\:flex-row {
       flex-direction: row;
+    }
+    .md\:gap-6 {
+      gap: calc(var(--spacing) * 6);
     }
     .md\:p-10 {
       padding: calc(var(--spacing) * 10);
