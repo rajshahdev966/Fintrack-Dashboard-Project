@@ -45,9 +45,10 @@ export const profileUpdate = (e) =>{
 }
 
 export const profileChange = ()=>{
-  const nameInput = document.querySelector("#name-input");
-  nameInput.addEventListener("change", ()=>{
-    profileUpdate();
+  const currencyBtn = document.querySelector("#currency-btn");
+  currencyBtn.addEventListener("change", ()=>{
+    console.log("Hello");
+    
   })
 } 
 
@@ -55,4 +56,5 @@ export const profileChange = ()=>{
 
 
 export let initSettings = () => {
-  themeSwitch();
+  themeSwitch();
+};
