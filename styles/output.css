@@ -11,6 +11,7 @@
     --color-red-100: oklch(93.6% 0.032 17.717);
     --color-red-600: oklch(57.7% 0.245 27.325);
     --color-amber-300: oklch(87.9% 0.169 91.605);
+    --color-amber-400: oklch(82.8% 0.189 84.429);
     --color-emerald-100: oklch(95% 0.052 163.051);
     --color-sky-100: oklch(95.1% 0.026 236.824);
     --color-sky-500: oklch(68.5% 0.169 237.323);
@@ -455,6 +456,9 @@
   }
   .bg-\[var\(--bg-secondary\)\] {
     background-color: var(--bg-secondary);
+  }
+  .bg-amber-400 {
+    background-color: var(--color-amber-400);
   }
   .bg-emerald-100 {
     background-color: var(--color-emerald-100);
