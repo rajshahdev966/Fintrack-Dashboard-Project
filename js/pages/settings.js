@@ -75,7 +75,9 @@ export const userMailChange = ()=>{
   })
 }
 
-
+export const currencyChange = ()=>{
+  const currencyOption = document.querySelector("#currency-option")
+}
 
 export let initSettings = () => {
   themeSwitch();
