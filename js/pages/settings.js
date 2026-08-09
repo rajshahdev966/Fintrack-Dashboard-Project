@@ -40,10 +40,7 @@ export const themeSwitch = () => {
 export const profileUpdate = (response) =>{
   const profileIcon = document.querySelectorAll("#profile-icon");
   updNameInStor(response);
-  profileIcon.forEach((ele)=>{
-
-    ele.innerHTML = `${(response.split(" ")[0] ?? "").charAt(0)}${(response.split(" ")[1] ?? "").charAt(0) ?? ""}`
-  })
+  profileIcon.innerHTML = `${(response.split(" ")[0] ?? "").charAt(0)}${(response.split(" ")[1] ?? "").charAt(0) ?? ""}`
 
 }
 
