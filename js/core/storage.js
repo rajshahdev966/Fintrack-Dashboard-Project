@@ -12,3 +12,6 @@ export const saveTheme = ()=>{
 export const toggleTheme = ()=>{
     darkOn = !darkOn;
 }
+export const updNameInStor = ()=>{
+    
+}

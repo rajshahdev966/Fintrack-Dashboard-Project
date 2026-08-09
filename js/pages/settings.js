@@ -47,7 +47,7 @@ export const profileChange = ()=>{
   const nameInput = document.querySelector("#name-input");
   nameInput.addEventListener("input", ()=>{
     profileUpdate(nameInput.value);
-    // console.log(nameInput.value);
+    
     
     
   })
