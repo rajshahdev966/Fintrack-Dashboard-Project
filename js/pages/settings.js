@@ -105,4 +105,5 @@ export let initSettings = () => {
   delAllData();
   preCurrencyUpdate();
   themeLogic();
+  profileUpdate(userName)
 };
