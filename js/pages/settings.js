@@ -1,6 +1,4 @@
 import { allTrans, darkOn, mailInStor, saveTheme, toggleTheme, updNameInStor, userName, userMail, currencyStore, currency } from "../core/storage.js";
-import { dashboardTransUpd } from "./dashboard.js";
-import { allTransUpdate } from "./transcation.js";
 
 export const themeLogic = () => {
 
