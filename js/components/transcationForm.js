@@ -43,7 +43,7 @@ export function transModalSubmit(onSuccess) {
   });
 }
 
-const insertValueInEditModal = (form)=>{
+const insertValueInEditModal = (form, index)=>{
   form[0].value = allTrans[index].type;
   form[1].value = allTrans[index].amount;
   form[2].value = allTrans[index].purpose;
