@@ -86,6 +86,12 @@ export const currencyUpdate = () => {
   });
 };
 
+const updateAfterTranscation = ()=>{
+  allAmountUpdate();
+      dashboardTransUpd();
+      updateGraph();
+}
+
 export function initDashboard() {
   document
     .querySelector("#quickAddBtn")
@@ -101,5 +107,5 @@ export function initDashboard() {
   currencyUpdate();
   themeLogic();
   openNavOnMobile();
-      updateGraph();
+  
 }

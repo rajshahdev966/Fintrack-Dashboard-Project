@@ -33,7 +33,7 @@ const getTranscationFromForm = (form)=>{
     };
 }
 
-export function transModalSubmit() {
+export function transModalSubmit(onSuccess) {
   const form = document.querySelector("form");
   
   form.addEventListener("submit", (e) => {
@@ -42,7 +42,7 @@ export function transModalSubmit() {
 
     let transcation = getTranscationFromForm(form)
     saveTranscation(transcation);
-
+    
     if (document.body.id == "dashboard-page") {
       
     }
