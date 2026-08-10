@@ -45,10 +45,9 @@ export function transModalSubmit(onSuccess) {
 
 export const openEditModal = (index) => {
   openModal();
-  console.log("Edit Clicked", index);
-  console.log(allTrans[index]);
   const formCard = document.querySelector("form");
   const submit = document.querySelector("#submit-btn")
+
   formCard[0].value = allTrans[index].type;
   formCard[1].value = allTrans[index].amount;
   formCard[2].value = allTrans[index].purpose;
@@ -62,7 +61,6 @@ export const openEditModal = (index) => {
     allTrans[index].category = formCard[3].value;
     allTrans[index].date = formCard[4].value;
     saveTrans();
-    console.log(allTrans[index]);
       totalTransUpdate();
       allTransUpdate();
     formCard.reset();
