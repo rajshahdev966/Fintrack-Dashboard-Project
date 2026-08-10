@@ -59,7 +59,7 @@ const updateTransAfterEdit = (form, index)=>{
     allTrans[index].date = form[4].value;
 }
 
-export const openEditModal = (index) => {
+export const openEditModal = (index, onSuccess) => {
   openModal();
   const form = document.querySelector("form");
   const submit = document.querySelector("#submit-btn")

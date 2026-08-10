@@ -41,7 +41,7 @@ export let allTransUpdate = () => {
         </td>
         
         <td class="px-6 py-6 text-center flex items-center justify-center gap-4 text-3xl">
-        <span class="hover:text-(--danger) cursor-pointer" onclick="delTrans(${index})"><i class="ri-close-circle-fill"></i></span>
+        <span class="hover:text-(--danger) cursor-pointer" onclick="delTrans(${index}, upsate)"><i class="ri-close-circle-fill"></i></span>
         <span class="hover:text-(--primary) cursor-pointer" onclick="editTrans(${index})"><i class="ri-pencil-fill"></i></span>
         </td>
         </tr>`;
