@@ -70,7 +70,7 @@ export const openEditModal = (index, onSuccess) => {
 
  insertValueInEditModal(form, index);
 
-  submit.addEventListener("click", (e) => {
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
     
     updateTransAfterEdit(form, index)
