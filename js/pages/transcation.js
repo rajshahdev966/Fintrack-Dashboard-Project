@@ -57,7 +57,6 @@ export const updateAfterTranscation = () => {
   totalTransUpdate();
   allTransUpdate();
 };
-window.updateAfterTranscation = updateAfterTranscation;
 
 export function initTransPage() {
   console.log("TransPage Work!");
@@ -81,9 +80,9 @@ export const delTrans = (index) => {
   saveTrans();
   allTransUpdate();
 };
-window.delTrans = delTrans;
+
 
 export const editTrans = (index) => {
   openEditModal(index);
 };
-window.editTrans = editTrans;
+
