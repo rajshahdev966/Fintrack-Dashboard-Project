@@ -43,6 +43,10 @@ export function transModalSubmit(onSuccess) {
   });
 }
 
+const insertValueInEditModal = (form)=>{
+
+}
+
 export const openEditModal = (index) => {
   openModal();
   const formCard = document.querySelector("form");
@@ -53,8 +57,9 @@ export const openEditModal = (index) => {
   formCard[2].value = allTrans[index].purpose;
   formCard[3].value = allTrans[index].category;
   formCard[4].value = allTrans[index].date;
+
   submit.addEventListener("click", (e) => {
-      e.preventDefault();
+    e.preventDefault();
     allTrans[index].type = formCard[0].value;
     allTrans[index].amount = Number(formCard[1].value);
     allTrans[index].purpose = formCard[2].value;
@@ -63,6 +68,7 @@ export const openEditModal = (index) => {
     saveTrans();
       totalTransUpdate();
       allTransUpdate();
+
     formCard.reset();
     closeModal();
     formEdit = false;
