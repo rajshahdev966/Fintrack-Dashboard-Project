@@ -1,8 +1,8 @@
 export let allTrans = JSON.parse(localStorage.getItem('savedTrans')) ?? [];
 export let darkOn = JSON.parse(localStorage.getItem('darkOn')) ?? false;
-export let userName = JSON.parse(localStorage.getItem('userName')) ?? ""
-export let userMail = JSON.parse(localStorage.getItem('userMail')) ?? ""
-export let currency = JSON.parse(localStorage.getItem('currency')) ?? ""
+export let userName = JSON.parse(localStorage.getItem('userName')) ?? "User Name"
+export let userMail = JSON.parse(localStorage.getItem('userMail')) ?? "user@mail.com"
+export let currency = JSON.parse(localStorage.getItem('currency')) ?? "INR(₹)"
  
 
 export function saveTrans (){
