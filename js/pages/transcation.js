@@ -53,7 +53,7 @@ export const totalTransUpdate = () => {
   totalDisplay.textContent = allTrans.length;
 };
 
-export const updateAfterTranscation = () => {
+const updateAfterTranscation = () => {
   totalTransUpdate();
   allTransUpdate();
 };
