@@ -9,12 +9,12 @@ import { allTrans, saveTrans } from "../core/storage.js";
 import { currencyUpdate } from "./dashboard.js";
 import { themeLogic } from "./settings.js";
 
-export let allTransUpdate = () => {
+export let allTransUpdate = (remove) => {
   const transTable = document.querySelector("#trans-table");
   if (!transTable) return;
   transTable.innerHTML = ``;
   allTrans.forEach((transcation, index) => {
-    console.log(transcation.type == "Income" ? "success" : "danger");
+    if(transcation.type == remove) return;
     transTable.innerHTML += `<tr class="hover:bg-(--surface-bright) transition ">
         
         <td class="px-6 py-6 font-medium">
