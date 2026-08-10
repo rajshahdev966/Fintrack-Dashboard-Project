@@ -26,4 +26,3 @@ switch (page) {
 
 window.delTrans = delTrans;
 window.editTrans = editTrans;
-window.updateAfterTranscation = updateAfterTranscation;
