@@ -19,20 +19,26 @@ export function closeModal() {
   form.classList.add("hidden");
 }
 
+
+
 export let formEdit = false;
 
+const getTranscationFromForm = (form)=>{
+  return {
+      type: form[0].value,
+      amount: Number(form[1].value),
+      purpose: form[2].value,
+      category: form[3].value,
+      date: form[4].value,
+    };
+}
+
 export function transModalSubmit() {
-  let form = document.querySelector("form");
+  const form = document.querySelector("form");
   form.addEventListener("submit", (e) => {
     if(formEdit) return;
     e.preventDefault();
-    let transcation = {
-      type: e.target[0].value,
-      amount: Number(e.target[1].value),
-      purpose: e.target[2].value,
-      category: e.target[3].value,
-      date: e.target[4].value,
-    };
+    let transcation = getTranscationFromForm(form)
     allTrans.push(transcation);
     saveTrans();
     if (document.body.id == "dashboard-page") {
