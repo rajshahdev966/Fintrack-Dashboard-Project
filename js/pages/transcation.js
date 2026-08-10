@@ -67,7 +67,7 @@ export function initTransPage() {
     .querySelector("#cancelBtn")
     .addEventListener("click", closeModal);
 
-  transModalSubmit();
+  transModalSubmit(updateAfterTranscation);
   totalTransUpdate();
   allTransUpdate();
   transSort();
