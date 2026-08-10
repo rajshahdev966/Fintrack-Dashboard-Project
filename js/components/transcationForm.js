@@ -33,7 +33,7 @@ export function transModalSubmit(onSuccess) {
     e.preventDefault();
 
     if(editIndex !== null){
-       updateTransAfterEdit(form, index)
+       updateTransAfterEdit(form, editIndex)
        editIndex = null;
     }else{
 
