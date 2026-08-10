@@ -35,6 +35,7 @@ const getTranscationFromForm = (form)=>{
 
 export function transModalSubmit() {
   const form = document.querySelector("form");
+  
   form.addEventListener("submit", (e) => {
     if(formEdit) return;
     e.preventDefault();

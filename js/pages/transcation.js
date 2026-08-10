@@ -1,4 +1,4 @@
-import { closenModal, openEditModal, openModal, transModalSubmit } from "../components/transcationForm.js";
+import { closeModal, openEditModal, openModal, transModalSubmit } from "../components/transcationForm.js";
 import { transSort } from "../components/transcationTable.js";
 import { allTrans, saveTrans } from "../core/storage.js";
 import { currencyUpdate } from "./dashboard.js";
