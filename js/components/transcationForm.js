@@ -1,4 +1,4 @@
-import { allTrans, saveTrans } from "../core/storage.js";
+import { allTrans, saveTrans, saveTranscation } from "../core/storage.js";
 import {
   allAmountUpdate,
   dashboardTransUpd,
@@ -39,13 +39,12 @@ export function transModalSubmit() {
   form.addEventListener("submit", (e) => {
     if(formEdit) return;
     e.preventDefault();
+
     let transcation = getTranscationFromForm(form)
-    allTrans.push(transcation);
-    saveTrans();
+    saveTranscation(transcation);
+
     if (document.body.id == "dashboard-page") {
-      allAmountUpdate();
-      dashboardTransUpd();
-      updateGraph();
+      
     }
     if (document.body.id == "transactions-page") {
       totalTransUpdate();

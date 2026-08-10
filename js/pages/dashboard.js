@@ -101,4 +101,5 @@ export function initDashboard() {
   currencyUpdate();
   themeLogic();
   openNavOnMobile();
+      updateGraph();
 }

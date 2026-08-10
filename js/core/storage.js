@@ -23,3 +23,8 @@ export const mailInStor = (newMail)=>{
 export const currencyStore = (newCurrency)=>{
     localStorage.setItem('currency', JSON.stringify(newCurrency))
 }
+
+export const saveTranscation = (transaction)=>{
+    allTrans.push(transaction);
+    saveTrans();
+}
