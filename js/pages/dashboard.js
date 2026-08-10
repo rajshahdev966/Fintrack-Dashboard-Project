@@ -33,18 +33,18 @@ export let netWorth;
 export let total;
 
 export const netWorthCount = () => {
-    netWorth = 0;
-    total = 0;
-    allTrans.forEach((transaction, index) => {
-      if (transaction.type == "Income") {
-        netWorth += transaction.amount;
-        total += transaction.amount;
-      } else {
-        netWorth -= transaction.amount;
-        total += transaction.amount;
-      }
-    });
-  };
+  netWorth = 0;
+  total = 0;
+  allTrans.forEach((transaction, index) => {
+    if (transaction.type == "Income") {
+      netWorth += transaction.amount;
+      total += transaction.amount;
+    } else {
+      netWorth -= transaction.amount;
+      total += transaction.amount;
+    }
+  });
+};
 
 export const netWorthUpdate = () => {
   netWorthCount();
@@ -53,16 +53,16 @@ export const netWorthUpdate = () => {
 };
 
 export const expIncCount = () => {
-    expense = 0;
-    income = 0;
-    allTrans.forEach((transaction, index) => {
-      if (transaction.type == "Income") {
-        income += Number(transaction.amount);
-      } else {
-        expense += Number(transaction.amount);
-      }
-    });
-  };
+  expense = 0;
+  income = 0;
+  allTrans.forEach((transaction, index) => {
+    if (transaction.type == "Income") {
+      income += Number(transaction.amount);
+    } else {
+      expense += Number(transaction.amount);
+    }
+  });
+};
 
 export const expIncUpdate = () => {
   expIncCount();
@@ -86,26 +86,21 @@ export const currencyUpdate = () => {
   });
 };
 
-const updateAfterTranscation = ()=>{
+const updateAfterTranscation = () => {
   allAmountUpdate();
-      dashboardTransUpd();
-      updateGraph();
-}
+  dashboardTransUpd();
+  updateGraph();
+};
 
 export function initDashboard() {
-  document
-    .querySelector("#quickAddBtn")
-    .addEventListener("click", openModal);
+  document.querySelector("#quickAddBtn").addEventListener("click", openModal);
 
-  document
-    .querySelector("#cancelBtn")
-    .addEventListener("click", closeModal);
+  document.querySelector("#cancelBtn").addEventListener("click", closeModal);
 
-  transModalSubmit();
+  transModalSubmit(updateAfterTranscation);
   allAmountUpdate();
   dashboardTransUpd();
   currencyUpdate();
   themeLogic();
   openNavOnMobile();
-  
 }

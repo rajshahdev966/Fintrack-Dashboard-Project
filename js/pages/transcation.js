@@ -1,18 +1,21 @@
-import { closeModal, openEditModal, openModal, transModalSubmit } from "../components/transcationForm.js";
+import {
+  closeModal,
+  openEditModal,
+  openModal,
+  transModalSubmit,
+} from "../components/transcationForm.js";
 import { transSort } from "../components/transcationTable.js";
 import { allTrans, saveTrans } from "../core/storage.js";
 import { currencyUpdate } from "./dashboard.js";
 import { themeLogic } from "./settings.js";
 
-
-
-export let allTransUpdate = ()=>{
-    const transTable = document.querySelector("#trans-table");
-    if(!transTable) return;
-    transTable.innerHTML = ``
-    allTrans.forEach((transcation, index)=>{
-        console.log(transcation.type == "Income" ? "success" : "danger");
-        transTable.innerHTML += `<tr class="hover:bg-(--surface-bright) transition ">
+export let allTransUpdate = () => {
+  const transTable = document.querySelector("#trans-table");
+  if (!transTable) return;
+  transTable.innerHTML = ``;
+  allTrans.forEach((transcation, index) => {
+    console.log(transcation.type == "Income" ? "success" : "danger");
+    transTable.innerHTML += `<tr class="hover:bg-(--surface-bright) transition ">
         
         <td class="px-6 py-6 font-medium">
         ${transcation.date}
@@ -41,43 +44,45 @@ export let allTransUpdate = ()=>{
         <span class="hover:text-(--danger) cursor-pointer" onclick="delTrans(${index})"><i class="ri-close-circle-fill"></i></span>
         <span class="hover:text-(--primary) cursor-pointer" onclick="editTrans(${index})"><i class="ri-pencil-fill"></i></span>
         </td>
-        </tr>`
-    })
+        </tr>`;
+  });
+};
+
+export const totalTransUpdate = () => {
+  const totalDisplay = document.querySelector("#total-trans");
+  totalDisplay.textContent = allTrans.length;
+};
+
+const updateAfterTranscation = () => {
+  totalTransUpdate();
+  allTransUpdate();
+};
+
+export function initTransPage() {
+  console.log("TransPage Work!");
+
+  document.querySelector("#add-new-btn").addEventListener("click", openModal);
+
+  document
+    .querySelector("#cancelBtn")
+    .addEventListener("click", closeTransactionModal);
+
+  transModalSubmit();
+  totalTransUpdate();
+  allTransUpdate();
+  transSort();
+  themeLogic();
+  currencyUpdate();
 }
 
-export const totalTransUpdate = ()=>{
-    const totalDisplay = document.querySelector("#total-trans")
-    totalDisplay.textContent = allTrans.length;
-}
-
-
-export function initTransPage(){
-    
-    console.log("TransPage Work!");
-    
-    document.querySelector("#add-new-btn")
-    .addEventListener("click", openModal)
-    
-    document.querySelector("#cancelBtn")
-    .addEventListener("click", closeTransactionModal)
-    
-    transModalSubmit();
-    totalTransUpdate();
-    allTransUpdate();
-    transSort();
-    themeLogic();
-    currencyUpdate();
-}
-
-export const delTrans = (index)=>{
-    allTrans.splice(index , 1);
-    saveTrans();
-    allTransUpdate();
-}
+export const delTrans = (index) => {
+  allTrans.splice(index, 1);
+  saveTrans();
+  allTransUpdate();
+};
 window.delTrans = delTrans;
 
-export const editTrans = (index)=>{
-openEditModal(index);
-
-}
+export const editTrans = (index) => {
+  openEditModal(index);
+};
 window.editTrans = editTrans;
