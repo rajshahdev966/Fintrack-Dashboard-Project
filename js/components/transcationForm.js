@@ -32,6 +32,9 @@ export function transModalSubmit(onSuccess) {
     if(formEdit) return;
     e.preventDefault();
 
+    if(editIndex !== null){
+       updateTransAfterEdit(form, index)
+    }
     let transcation = getTranscationFromForm(form)
     saveTranscation(transcation);
     
@@ -56,11 +59,7 @@ const updateTransAfterEdit = (form, index)=>{
     allTrans[index].purpose = form[2].value;
     allTrans[index].category = form[3].value;
     allTrans[index].date = form[4].value;
-    console.log("type:", form[0].value);
-console.log("amount:", Number(form[1].value));
-console.log("purpose:", form[2].value);
-console.log("category:", form[3].value);
-console.log("date:", form[4].value);
+  saveTrans();
 }
 
 export const openEditModal = (index, onSuccess) => {
@@ -74,11 +73,6 @@ export const openEditModal = (index, onSuccess) => {
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    
-    updateTransAfterEdit(form, index)
-
-    saveTrans();
-    
     onSuccess();
 
     form.reset();
