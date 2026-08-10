@@ -53,10 +53,11 @@ export const totalTransUpdate = () => {
   totalDisplay.textContent = allTrans.length;
 };
 
-const updateAfterTranscation = () => {
+export const updateAfterTranscation = () => {
   totalTransUpdate();
   allTransUpdate();
 };
+window.updateAfterTranscation = updateAfterTranscation;
 
 export function initTransPage() {
   console.log("TransPage Work!");
