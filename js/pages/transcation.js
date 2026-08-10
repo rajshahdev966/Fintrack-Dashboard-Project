@@ -53,12 +53,16 @@ export const totalTransUpdate = () => {
   totalDisplay.textContent = allTrans.length;
 };
 
+let remove = "none"
+
 export const updateAfterTranscation = () => {
+
   totalTransUpdate();
   allTransUpdate(remove);
 };
 
 export function initTransPage() {
+    
   console.log("TransPage Work!");
 
   document.querySelector("#add-new-btn").addEventListener("click", openModal);
@@ -69,7 +73,7 @@ export function initTransPage() {
 
   transModalSubmit(updateAfterTranscation);
   totalTransUpdate();
-  allTransUpdate();
+  allTransUpdate(remove);
   transSort();
   themeLogic();
   currencyUpdate();
@@ -79,7 +83,7 @@ export const delTrans = (index) => {
   allTrans.splice(index, 1);
   saveTrans();
   totalTransUpdate();
-  allTransUpdate();
+  allTransUpdate(remove);
 };
 
 
