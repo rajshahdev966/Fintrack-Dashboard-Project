@@ -34,9 +34,12 @@ export function transModalSubmit(onSuccess) {
 
     if(editIndex !== null){
        updateTransAfterEdit(form, index)
+       editIndex = null;
+    }else{
+
+      let transcation = getTranscationFromForm(form)
+      saveTranscation(transcation);
     }
-    let transcation = getTranscationFromForm(form)
-    saveTranscation(transcation);
     
    onSuccess();
 
@@ -70,13 +73,4 @@ export const openEditModal = (index, onSuccess) => {
   const submit = document.querySelector("#submit-btn")
 
  insertValueInEditModal(form, index);
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    onSuccess();
-
-    form.reset();
-    closeModal();
-    formEdit = false;
-  });
 };
