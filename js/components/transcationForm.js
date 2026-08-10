@@ -56,7 +56,7 @@ export const openEditModal = (index) => {
   const form = document.querySelector("form");
   const submit = document.querySelector("#submit-btn")
 
- insertValueInEditModal(form);
+ insertValueInEditModal(form, index);
 
   submit.addEventListener("click", (e) => {
     e.preventDefault();
