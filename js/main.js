@@ -14,7 +14,6 @@ switch (page) {
     case "transactions-page":
       initTransPage();
       openNavOnMobile();
-      // allTransUpdate();
       break;
       
       case "settings-page":

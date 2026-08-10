@@ -55,7 +55,7 @@ export const totalTransUpdate = () => {
 
 export const updateAfterTranscation = () => {
   totalTransUpdate();
-  allTransUpdate();
+  allTransUpdate(remove);
 };
 
 export function initTransPage() {

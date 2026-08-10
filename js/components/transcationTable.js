@@ -7,21 +7,22 @@ export const transSort = () => {
   const expSortBtn = document.querySelector("#exp-sort-btn");
   const allBtn = document.querySelector("#all-btn")
 
-  let remove;
+  export  remove;
 
   allBtn.addEventListener("click", ()=>{
-    allTransUpdate();
+    remove = "none"
+    allTransUpdate(remove);
   })
 
   incSortBtn.addEventListener("click", () => {
     remove = "Expense";
-    sortUpdate();
+    allTransUpdate(remove)
   });
   expSortBtn.addEventListener("click", () => {
     remove = "Income";
-    sortUpdate();
+    allTransUpdate(remove)
   });
-  
+
   const sortUpdate = () => {
     const transTable = document.querySelector("#trans-table");
     if (!transTable) return;
