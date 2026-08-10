@@ -57,7 +57,7 @@ const updateTransAfterEdit = (form, index)=>{
     allTrans[index].category = form[3].value;
     allTrans[index].date = form[4].value;
     console.log("type:", form[0].value);
-console.log("amount:", form[1].value);
+console.log("amount:", Number(form[1].value));
 console.log("purpose:", form[2].value);
 console.log("category:", form[3].value);
 console.log("date:", form[4].value);
