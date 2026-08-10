@@ -78,6 +78,7 @@ export function initTransPage() {
 export const delTrans = (index) => {
   allTrans.splice(index, 1);
   saveTrans();
+  totalTransUpdate();
   allTransUpdate();
 };
 
