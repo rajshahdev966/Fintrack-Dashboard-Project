@@ -51,6 +51,14 @@ const insertValueInEditModal = (form, index)=>{
   form[4].value = allTrans[index].date;
 }
 
+const updateTransAfterEdit = (form, index)=>{
+  allTrans[index].type = form[0].value;
+    allTrans[index].amount = Number(form[1].value);
+    allTrans[index].purpose = form[2].value;
+    allTrans[index].category = form[3].value;
+    allTrans[index].date = form[4].value;
+}
+
 export const openEditModal = (index) => {
   openModal();
   const form = document.querySelector("form");
@@ -60,14 +68,12 @@ export const openEditModal = (index) => {
 
   submit.addEventListener("click", (e) => {
     e.preventDefault();
-    allTrans[index].type = form[0].value;
-    allTrans[index].amount = Number(form[1].value);
-    allTrans[index].purpose = form[2].value;
-    allTrans[index].category = form[3].value;
-    allTrans[index].date = form[4].value;
+    
+    updateTransAfterEdit(form, index)
+
     saveTrans();
-      totalTransUpdate();
-      allTransUpdate();
+    totalTransUpdate();
+    allTransUpdate();
 
     form.reset();
     closeModal();
