@@ -1,5 +1,4 @@
 import { allTrans, saveTrans, saveTranscation } from "../core/storage.js";
-import { allTransUpdate, totalTransUpdate } from "../pages/transcation.js";
 import { updateGraph } from "./charts.js";
 
 export function openModal() {
@@ -72,8 +71,8 @@ export const openEditModal = (index, onSuccess) => {
     updateTransAfterEdit(form, index)
 
     saveTrans();
-    totalTransUpdate();
-    allTransUpdate();
+    
+    onSuccess();
 
     form.reset();
     closeModal();
