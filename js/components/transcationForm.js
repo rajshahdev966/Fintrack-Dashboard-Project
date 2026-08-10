@@ -44,32 +44,32 @@ export function transModalSubmit(onSuccess) {
 }
 
 const insertValueInEditModal = (form)=>{
-
+  form[0].value = allTrans[index].type;
+  form[1].value = allTrans[index].amount;
+  form[2].value = allTrans[index].purpose;
+  form[3].value = allTrans[index].category;
+  form[4].value = allTrans[index].date;
 }
 
 export const openEditModal = (index) => {
   openModal();
-  const formCard = document.querySelector("form");
+  const form = document.querySelector("form");
   const submit = document.querySelector("#submit-btn")
 
-  formCard[0].value = allTrans[index].type;
-  formCard[1].value = allTrans[index].amount;
-  formCard[2].value = allTrans[index].purpose;
-  formCard[3].value = allTrans[index].category;
-  formCard[4].value = allTrans[index].date;
+ insertValueInEditModal(form);
 
   submit.addEventListener("click", (e) => {
     e.preventDefault();
-    allTrans[index].type = formCard[0].value;
-    allTrans[index].amount = Number(formCard[1].value);
-    allTrans[index].purpose = formCard[2].value;
-    allTrans[index].category = formCard[3].value;
-    allTrans[index].date = formCard[4].value;
+    allTrans[index].type = form[0].value;
+    allTrans[index].amount = Number(form[1].value);
+    allTrans[index].purpose = form[2].value;
+    allTrans[index].category = form[3].value;
+    allTrans[index].date = form[4].value;
     saveTrans();
       totalTransUpdate();
       allTransUpdate();
 
-    formCard.reset();
+    form.reset();
     closeModal();
     formEdit = false;
   });
