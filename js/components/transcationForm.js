@@ -12,8 +12,8 @@ export function closeModal() {
 }
 
 
-
 export let formEdit = false;
+export let editIndex = null;
 
 const getTranscationFromForm = (form)=>{
   return {
@@ -65,6 +65,8 @@ console.log("date:", form[4].value);
 
 export const openEditModal = (index, onSuccess) => {
   openModal();
+
+  editIndex = index; 
   const form = document.querySelector("form");
   const submit = document.querySelector("#submit-btn")
 
