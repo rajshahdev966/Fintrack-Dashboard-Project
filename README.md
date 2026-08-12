@@ -20,7 +20,7 @@
 
 <div align="center">
 
-*(Add dashboard screenshot / GIF here)*
+*()*
 
 </div>
 
