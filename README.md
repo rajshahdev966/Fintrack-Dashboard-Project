@@ -83,16 +83,51 @@ The single biggest shift in this project: moving from **one script** to **respon
 **The rule that made it work:** higher-level modules can depend on lower-level ones — never the reverse. That one principle eliminated every circular dependency in the codebase.
 
 ```
-js/
-├── main.js
-├── core/storage.js
-├── components/
-│   ├── navbar.js
-│   └── transactionForm.js
-└── pages/
-    ├── dashboard.js
-    ├── transaction.js
-    └── settings.js
+FinTrack/
+├── .vscode/
+│
+├── js/
+│   ├── components/
+│   │   ├── charts.js
+│   │   ├── navbar.js
+│   │   ├── transactionForm.js
+│   │   └── transactionTable.js
+│   │
+│   ├── core/
+│   │   └── storage.js
+│   │
+│   ├── pages/
+│   │   ├── dashboard.js
+│   │   ├── settings.js
+│   │   └── transaction.js
+│   │
+│   └── main.js
+│
+├── node_modules/
+│
+├── screenshot/
+│   ├── homePage.png
+│   ├── homePhone.png
+│   ├── settingsDesktop.png
+│   ├── settingsPhone.png
+│   ├── transactionDesktop.png
+│   └── transactionPhone.png
+│
+├── styles/
+│   ├── components.css
+│   ├── input.css
+│   ├── output.css
+│   └── variables.css
+│
+├── .gitignore
+├── index.html
+├── navbar.html
+├── package-lock.json
+├── package.json
+├── README.md
+├── script.js
+├── settings.html
+└── transactions.html
 ```
 
 ---
