@@ -20,7 +20,7 @@
 
 <div align="center">
 
-![](./screenshot/homePage.png) ![](./screenshot/homePage.png)
+![](./screenshot/homePage.png) ![](./screenshot/transcationDesktop.png) ![](./screenshot/settingsDesktop.png)
 
 </div>
 
