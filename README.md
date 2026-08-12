@@ -12,7 +12,7 @@
 [![ES Modules](https://img.shields.io/badge/Architecture-ES%20Modules-blueviolet?style=for-the-badge)](#)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](#-license)
 
-**[▶ Live Demo](#)** &nbsp;·&nbsp; **[🐛 Report Bug](#)** &nbsp;·&nbsp; **[💡 Request Feature](#)**
+**[▶ Live Demo](https://fintrack-dashboard-project.vercel.app/)** &nbsp;·&nbsp; **[🐛 Report Bug](https://www.linkedin.com/in/rajshah-dev/)** &nbsp;·&nbsp; **[💡 Request Feature](https://www.linkedin.com/in/rajshah-dev/)**
 
 </div>
 
